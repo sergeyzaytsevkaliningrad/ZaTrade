@@ -12,6 +12,10 @@
 		5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55393239253734A900D59D05 /* ZaTrade.xcdatamodeld */; };
 		5539323D253734AB00D59D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5539323C253734AB00D59D05 /* Assets.xcassets */; };
 		55393240253734AB00D59D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5539323E253734AB00D59D05 /* LaunchScreen.storyboard */; };
+		F45500B32539E58A00D22EE6 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500B22539E58A00D22EE6 /* CustomView.swift */; };
+		F45500B82539E5A700D22EE6 /* CustomButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500B72539E5A700D22EE6 /* CustomButtonPlus.swift */; };
+		F45500C2253A010A00D22EE6 /* CustomSwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500C1253A010A00D22EE6 /* CustomSwich.swift */; };
+		F45500C5253A0DCB00D22EE6 /* PoehaliButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500C4253A0DCB00D22EE6 /* PoehaliButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		5539323C253734AB00D59D05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5539323F253734AB00D59D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55393241253734AB00D59D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F45500B22539E58A00D22EE6 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		F45500B72539E5A700D22EE6 /* CustomButtonPlus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonPlus.swift; sourceTree = "<group>"; };
+		F45500C1253A010A00D22EE6 /* CustomSwich.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwich.swift; sourceTree = "<group>"; };
+		F45500C4253A0DCB00D22EE6 /* PoehaliButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoehaliButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 				55C00C1A25396FFD003E2237 /* View */,
 				55C00C1D25397031003E2237 /* Controller */,
 				55C00C1C2539701E003E2237 /* Presenter */,
+				F45500B52539E59100D22EE6 /* UIElements */,
 				55393230253734A900D59D05 /* AppDelegate.swift */,
 				55393234253734A900D59D05 /* ViewController.swift */,
 				5539323C253734AB00D59D05 /* Assets.xcassets */,
@@ -94,6 +103,17 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F45500B52539E59100D22EE6 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				F45500B22539E58A00D22EE6 /* CustomView.swift */,
+				F45500B72539E5A700D22EE6 /* CustomButtonPlus.swift */,
+				F45500C4253A0DCB00D22EE6 /* PoehaliButton.swift */,
+				F45500C1253A010A00D22EE6 /* CustomSwich.swift */,
+			);
+			path = UIElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,9 +185,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F45500B32539E58A00D22EE6 /* CustomView.swift in Sources */,
+				F45500C5253A0DCB00D22EE6 /* PoehaliButton.swift in Sources */,
+				F45500C2253A010A00D22EE6 /* CustomSwich.swift in Sources */,
 				55393235253734A900D59D05 /* ViewController.swift in Sources */,
 				55393231253734A900D59D05 /* AppDelegate.swift in Sources */,
 				5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */,
+				F45500B82539E5A700D22EE6 /* CustomButtonPlus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

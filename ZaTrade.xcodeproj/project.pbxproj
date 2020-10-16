@@ -54,6 +54,10 @@
 		5539322F253734A900D59D05 /* ZaTrade */ = {
 			isa = PBXGroup;
 			children = (
+				55C00C1B2539700E003E2237 /* Model */,
+				55C00C1A25396FFD003E2237 /* View */,
+				55C00C1D25397031003E2237 /* Controller */,
+				55C00C1C2539701E003E2237 /* Presenter */,
 				55393230253734A900D59D05 /* AppDelegate.swift */,
 				55393234253734A900D59D05 /* ViewController.swift */,
 				5539323C253734AB00D59D05 /* Assets.xcassets */,
@@ -62,6 +66,34 @@
 				55393239253734A900D59D05 /* ZaTrade.xcdatamodeld */,
 			);
 			path = ZaTrade;
+			sourceTree = "<group>";
+		};
+		55C00C1A25396FFD003E2237 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55C00C1B2539700E003E2237 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55C00C1C2539701E003E2237 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		55C00C1D25397031003E2237 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -6,12 +6,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow()
-        
-        let viewController = ViewController()
+    
+        let viewController = InfoCountryController().configure()
         let navigationController = UINavigationController(rootViewController: viewController)
-        
+        print(viewController.presenter)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
@@ -65,4 +67,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

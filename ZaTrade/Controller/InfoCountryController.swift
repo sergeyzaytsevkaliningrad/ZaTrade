@@ -11,7 +11,7 @@ final class InfoCountryController {
     
     let presenter = InfoCountryPresenter()
     let view = InfoCountryViewController()
-    let model = InfoCountryModel()
+    let model = InfoCountryModel(generalInfo: "", firstStep: "", secondStep: "" , thirdStep: "")
     
     
     func configure() -> InfoCountryController  {

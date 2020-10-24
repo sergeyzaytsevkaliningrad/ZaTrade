@@ -13,12 +13,12 @@ class InfoCountryModel  {
     var firstStep: String  =  ""
     var secondStep: String = ""
     var thirdStep: String = ""
-//
-//    init(generalInfo: String, firstStep: String, secondStep: String, thirdStep: String) {
-//        self.generalInfo = generalInfo
-//        self.firstStep = firstStep
-//        self.secondStep = secondStep
-//        self.thirdStep = thirdStep
-//    }
-//    
+
+    init(generalInfo: String, firstStep: String, secondStep: String, thirdStep: String) {
+        self.generalInfo = generalInfo
+        self.firstStep = firstStep
+        self.secondStep = secondStep
+        self.thirdStep = thirdStep
+    }
+    
 }

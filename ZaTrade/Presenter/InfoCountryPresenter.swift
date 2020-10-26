@@ -7,15 +7,9 @@
 
 import Foundation
 
-protocol InfoCountryPresenterProtocol: class {
-    var view : InfoCountryViewProtocol? {get set}
-    var model: InfoCountryModel? { get set }
-}
-
-final class InfoCountryPresenter: InfoCountryPresenterProtocol {
-    
-    var view : InfoCountryViewProtocol?
-    var model: InfoCountryModel?
-    
+final class InfoCountryPresenter {
+    var view: InfoCountryViewController?
+    let model = InfoCountryModel(generalInfo: "generalInfo", firstStep: "firstStep", secondStep: "secondStep" , thirdStep: "thirdStep")
+        
 }
 

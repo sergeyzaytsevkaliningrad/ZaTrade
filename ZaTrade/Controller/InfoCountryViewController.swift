@@ -7,11 +7,10 @@
 
 import UIKit
 
-protocol InfoCountryViewProtocol: class {}
-
-final class InfoCountryViewController: UIViewController, InfoCountryViewProtocol {
+final class InfoCountryViewController: UIViewController {
     
-    weak var presenter: InfoCountryPresenterProtocol?
+    let presenter = InfoCountryPresenter()
+    
 //    private let cView = CustomView(frame: CGRect(origin: CGPoint(x: 18, y: 91), size: CGSize(width: 335, height: 627)) )
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -30,6 +29,7 @@ final class InfoCountryViewController: UIViewController, InfoCountryViewProtocol
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter.view = self
         self.setup()
     }
 
@@ -72,7 +72,7 @@ final class InfoCountryViewController: UIViewController, InfoCountryViewProtocol
         generalInfoLabel.font = UIFont(name: "Rubik-Light", size: 14)
         generalInfoLabel.numberOfLines = 0
         generalInfoLabel.lineBreakMode = .byWordWrapping
-        generalInfoLabel.attributedText = NSMutableAttributedString(string: presenter?.model?.generalInfo ?? "0")
+        generalInfoLabel.attributedText = NSMutableAttributedString(string: presenter.model.generalInfo )
         contentView.addSubview(generalInfoLabel)
         
         registerTaxFreeLabel.frame.size = CGSize(width: 311, height: 42)
@@ -97,7 +97,7 @@ final class InfoCountryViewController: UIViewController, InfoCountryViewProtocol
         firstStepInfoLabel.font = UIFont(name: "Rubik-Light", size: 14)
         firstStepInfoLabel.numberOfLines = 0
         firstStepInfoLabel.lineBreakMode = .byWordWrapping
-        firstStepInfoLabel.attributedText = NSMutableAttributedString(string: presenter?.model?.firstStep ?? "0")
+        firstStepInfoLabel.attributedText = NSMutableAttributedString(string: presenter.model.firstStep )
         contentView.addSubview(firstStepInfoLabel)
         
         secondStepLabel.frame.size = CGSize (width: 71, height: 20)
@@ -113,7 +113,7 @@ final class InfoCountryViewController: UIViewController, InfoCountryViewProtocol
         secondStepInfoLabel.font = UIFont(name: "Rubik-Light", size: 14)
         secondStepInfoLabel.numberOfLines = 0
         secondStepInfoLabel.lineBreakMode = .byWordWrapping
-        secondStepInfoLabel.attributedText = NSMutableAttributedString(string: presenter?.model?.secondStep ?? "0")
+        secondStepInfoLabel.attributedText = NSMutableAttributedString(string: presenter.model.secondStep )
         contentView.addSubview(secondStepInfoLabel)
         
         thirdStepLabel.frame.size = CGSize(width: 71, height: 20)
@@ -129,7 +129,7 @@ final class InfoCountryViewController: UIViewController, InfoCountryViewProtocol
         thirdStepInfoLabel.font = UIFont(name: "Rubik-Light", size: 14)
         thirdStepInfoLabel.numberOfLines = 0
         thirdStepInfoLabel.lineBreakMode = .byWordWrapping
-        thirdStepInfoLabel.attributedText = NSMutableAttributedString(string: presenter?.model?.thirdStep ?? "0" )
+        thirdStepInfoLabel.attributedText = NSMutableAttributedString(string: presenter.model.thirdStep )
         contentView.addSubview(thirdStepInfoLabel)
         
         returnMoney.frame.size = CGSize(width: 174, height: 20)

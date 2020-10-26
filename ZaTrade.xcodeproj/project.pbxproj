@@ -15,7 +15,6 @@
 		5D42583D253B73CF004771D1 /* InfoCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42583C253B73CF004771D1 /* InfoCountryViewController.swift */; };
 		5D42583F253B74AD004771D1 /* InfoCountryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42583E253B74AD004771D1 /* InfoCountryPresenter.swift */; };
 		5D425841253B74B9004771D1 /* InfoCountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D425840253B74B9004771D1 /* InfoCountryModel.swift */; };
-		5D425843253B74C7004771D1 /* InfoCountryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D425842253B74C7004771D1 /* InfoCountryController.swift */; };
 		5D425845253B7860004771D1 /* customview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D425844253B7860004771D1 /* customview.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		5D42583C253B73CF004771D1 /* InfoCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCountryViewController.swift; sourceTree = "<group>"; };
 		5D42583E253B74AD004771D1 /* InfoCountryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCountryPresenter.swift; sourceTree = "<group>"; };
 		5D425840253B74B9004771D1 /* InfoCountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCountryModel.swift; sourceTree = "<group>"; };
-		5D425842253B74C7004771D1 /* InfoCountryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCountryController.swift; sourceTree = "<group>"; };
 		5D425844253B7860004771D1 /* customview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +80,6 @@
 		55C00C1A25396FFD003E2237 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5D42583C253B73CF004771D1 /* InfoCountryViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,7 +103,7 @@
 		55C00C1D25397031003E2237 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5D425842253B74C7004771D1 /* InfoCountryController.swift */,
+				5D42583C253B73CF004771D1 /* InfoCountryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,7 +184,6 @@
 				55393231253734A900D59D05 /* AppDelegate.swift in Sources */,
 				5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */,
 				5D42583F253B74AD004771D1 /* InfoCountryPresenter.swift in Sources */,
-				5D425843253B74C7004771D1 /* InfoCountryController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

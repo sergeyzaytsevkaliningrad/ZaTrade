@@ -9,35 +9,31 @@ import UIKit
 
 final class CustomSwich: UIControl {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private var padding: CGFloat = 1
+    private var onTintColor: UIColor = UIColor(red: 0.729, green: 0.553, blue: 0.82, alpha: 0.5)
+    private var offTintColor: UIColor = UIColor(red: 0.729, green: 0.553, blue: 0.82, alpha: 0.5)
+    private var thumbTintColor: UIColor = UIColor(red: 0.729, green: 0.553, blue: 0.82, alpha: 1)
+    private var thumbShadowColor: UIColor = UIColor.black 
+    private var thumbCornerRadius: CGFloat = 3 
+    private var thumbSize: CGSize = CGSize(width: 32, height: 23)
+    
+    public var isOn: Bool = true 
+    private var animationDuration: Double = 0.5
+    
+    private var thumbView = UIView(frame: .zero)
+    private var onPoint = CGPoint.zero
+    private var offPoint = CGPoint.zero
+    private var isAnimating = false
+    
+    init() {
+        super.init(frame: .zero)
         setupUI()
-
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupUI()
-
     }
-    
-    private var padding: CGFloat = 1
-    private var onTintColor: UIColor = UIColor(red: 0.729, green: 0.553, blue: 0.82, alpha: 0.5)
-    private var offTintColor: UIColor = UIColor(red: 0.729, green: 0.553, blue: 0.82, alpha: 0.5)
-    private var thumbTintColor: UIColor = UIColor(red: 0.729, green: 0.553, blue: 0.82, alpha: 1)
-    private var thumbCornerRadius: CGFloat = 3 
-    private var thumbSize: CGSize = CGSize(width: 32, height: 23)
-    
-    private var thumbShadowColor: UIColor = UIColor.black 
-    
-    
-    public var isOn: Bool = true 
-    private var animationDuration: Double = 0.5
-    
-    fileprivate var thumbView = UIView(frame: .zero)
-    fileprivate var onPoint = CGPoint.zero
-    fileprivate var offPoint = CGPoint.zero
-    fileprivate var isAnimating = false
     
     public override func layoutSubviews() {
         super.layoutSubviews()
@@ -67,6 +63,9 @@ final class CustomSwich: UIControl {
         self.thumbView.backgroundColor = self.thumbTintColor
         self.thumbView.isUserInteractionEnabled = false
         self.thumbView.layer.cornerRadius = thumbCornerRadius
+        translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(equalToConstant: 64).isActive = true
+        heightAnchor.constraint(equalToConstant: 23).isActive = true  
         self.addSubview(self.thumbView)
     }
     
@@ -91,8 +90,6 @@ final class CustomSwich: UIControl {
         self.animate()
         return true
     }
-    
-    
 }
 
 

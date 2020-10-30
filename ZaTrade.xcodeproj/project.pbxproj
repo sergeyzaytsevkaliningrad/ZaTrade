@@ -12,6 +12,7 @@
 		5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55393239253734A900D59D05 /* ZaTrade.xcdatamodeld */; };
 		5539323D253734AB00D59D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5539323C253734AB00D59D05 /* Assets.xcassets */; };
 		55393240253734AB00D59D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5539323E253734AB00D59D05 /* LaunchScreen.storyboard */; };
+		F43453D1254C468A00B5A281 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43453D0254C468A00B5A281 /* Rubik-Bold.ttf */; };
 		F45500B32539E58A00D22EE6 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500B22539E58A00D22EE6 /* CustomView.swift */; };
 		F45500B82539E5A700D22EE6 /* CustomButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500B72539E5A700D22EE6 /* CustomButtonPlus.swift */; };
 		F45500C2253A010A00D22EE6 /* CustomSwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500C1253A010A00D22EE6 /* CustomSwich.swift */; };
@@ -26,6 +27,7 @@
 		5539323C253734AB00D59D05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5539323F253734AB00D59D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55393241253734AB00D59D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F43453D0254C468A00B5A281 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		F45500B22539E58A00D22EE6 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F45500B72539E5A700D22EE6 /* CustomButtonPlus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonPlus.swift; sourceTree = "<group>"; };
 		F45500C1253A010A00D22EE6 /* CustomSwich.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwich.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				5539323C253734AB00D59D05 /* Assets.xcassets */,
 				5539323E253734AB00D59D05 /* LaunchScreen.storyboard */,
 				55393241253734AB00D59D05 /* Info.plist */,
+				F43453D0254C468A00B5A281 /* Rubik-Bold.ttf */,
 				55393239253734A900D59D05 /* ZaTrade.xcdatamodeld */,
 			);
 			path = ZaTrade;
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55393240253734AB00D59D05 /* LaunchScreen.storyboard in Resources */,
+				F43453D1254C468A00B5A281 /* Rubik-Bold.ttf in Resources */,
 				5539323D253734AB00D59D05 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

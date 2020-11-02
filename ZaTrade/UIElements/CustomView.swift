@@ -31,14 +31,6 @@ final class CustomView : UIView {
         layer.shadowOpacity = 1
         layer.shadowRadius = 7
         layer.shadowOffset = CGSize(width: 0, height: 4)
-    }
-    
-    private func setupShapes() {
-        let layer1 = CALayer()
-        layer1.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-        layer1.frame  = layer.bounds
-        layer1.cornerRadius = 28
-        self.layer.addSublayer(layer1)
         self.layer.cornerRadius = 28
     }
     
@@ -47,8 +39,8 @@ final class CustomView : UIView {
             view.removeFromSuperview()
         }
     }
+    
     override func layoutSubviews() {
         steupShadows()
-        setupShapes()
     }
 }

@@ -14,7 +14,6 @@
 		55393240253734AB00D59D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5539323E253734AB00D59D05 /* LaunchScreen.storyboard */; };
 		F43453D1254C468A00B5A281 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43453D0254C468A00B5A281 /* Rubik-Bold.ttf */; };
 		F43453D4254C567600B5A281 /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43453D3254C567600B5A281 /* CalculatorPresenter.swift */; };
-		F43453D7254C568A00B5A281 /* CalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43453D6254C568A00B5A281 /* CalculatorController.swift */; };
 		F43453DA254C56A800B5A281 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43453D9254C56A800B5A281 /* CalculatorViewController.swift */; };
 		F43453DD254C56B700B5A281 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43453DC254C56B700B5A281 /* CalculatorModel.swift */; };
 		F45500B32539E58A00D22EE6 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500B22539E58A00D22EE6 /* CustomView.swift */; };
@@ -33,7 +32,6 @@
 		55393241253734AB00D59D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F43453D0254C468A00B5A281 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		F43453D3254C567600B5A281 /* CalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
-		F43453D6254C568A00B5A281 /* CalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorController.swift; sourceTree = "<group>"; };
 		F43453D9254C56A800B5A281 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		F43453DC254C56B700B5A281 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 		F45500B22539E58A00D22EE6 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 		55C00C1D25397031003E2237 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F43453D6254C568A00B5A281 /* CalculatorController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,7 +203,6 @@
 				F45500C5253A0DCB00D22EE6 /* PoehaliButton.swift in Sources */,
 				F45500C2253A010A00D22EE6 /* CustomSwich.swift in Sources */,
 				55393235253734A900D59D05 /* ViewController.swift in Sources */,
-				F43453D7254C568A00B5A281 /* CalculatorController.swift in Sources */,
 				55393231253734A900D59D05 /* AppDelegate.swift in Sources */,
 				F43453DD254C56B700B5A281 /* CalculatorModel.swift in Sources */,
 				5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */,

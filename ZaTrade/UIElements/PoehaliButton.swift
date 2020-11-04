@@ -10,6 +10,8 @@ import UIKit
 class PoehaliButton: UIButton {
 
     let label = UILabel()
+    private var color = UIColor(red: 0.859, green: 0.278, blue: 0.71, alpha: 1)
+    private let layer0 = CALayer()
 
     init() {
         super.init(frame: .zero)
@@ -21,13 +23,14 @@ class PoehaliButton: UIButton {
         setup()
     }
     
+    
     private func setup() {
-        backgroundColor = UIColor(red: 0.859, green: 0.278, blue: 0.71, alpha: 1)
+        backgroundColor = color
         layer.cornerRadius = 14
         
         translatesAutoresizingMaskIntoConstraints = false
         widthAnchor.constraint(equalToConstant: 270).isActive = true
-        heightAnchor.constraint(equalToConstant: 47).isActive = true        
+        heightAnchor.constraint(equalToConstant: 47).isActive = true   
     }
     
     override func layoutSubviews() {
@@ -41,4 +44,24 @@ class PoehaliButton: UIButton {
         self.addSubview(label)
     }
     
+    override var isHighlighted: Bool {
+        didSet {
+            if isHighlighted {
+                touchDown()
+            } else {
+                cancelTracking(with: nil)
+                touchUp()
+            }
+        }
+    }
+
+    func touchDown() {
+        layer.backgroundColor = color.withAlphaComponent(0.5).cgColor
+        label.textColor = UIColor.white.withAlphaComponent(0.5)
+    }
+
+    func touchUp() {
+        layer.backgroundColor = color.withAlphaComponent(1).cgColor
+        label.textColor = UIColor.white.withAlphaComponent(1)
+    }
 }

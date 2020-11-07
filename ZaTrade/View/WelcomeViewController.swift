@@ -7,7 +7,7 @@ final class WelcomeViewController: UIViewController {
     let purpleLightColor = UIColor(red: 0.549, green: 0.184, blue: 0.733, alpha: 1).cgColor
     
     let mainImageView = UIImageView(image: UIImage(named: "za_label"))
-    let chooseCountry = UIButton(type: .system) // modal with UIPickerView
+    let chooseCountry = ChooseCountryButton() // modal with UIPickerView
     let letsGoButton = UIButton(type: .system) // TODO: Change to LetsGoButton
     let taxFreeInfo = UIButton(type: .system)
     
@@ -28,7 +28,7 @@ final class WelcomeViewController: UIViewController {
         
         // setup elements
         self.letsGoButton.setTitle("Поехали!", for: .normal)
-        self.chooseCountry.setTitle("Выберите вашу страну", for: .normal)
+        // self.chooseCountry.setTitle("Выберите вашу страну", for: .normal)
         self.taxFreeInfo.setTitle("Что такое Tax Free?", for: .normal)
         
         // enable constraints

@@ -12,6 +12,9 @@
 		5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55393239253734A900D59D05 /* ZaTrade.xcdatamodeld */; };
 		5539323D253734AB00D59D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5539323C253734AB00D59D05 /* Assets.xcassets */; };
 		55393240253734AB00D59D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5539323E253734AB00D59D05 /* LaunchScreen.storyboard */; };
+		55D4E0322553026B001263C4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4E0312553026B001263C4 /* WelcomeViewController.swift */; };
+		55D4E04025530D11001263C4 /* UIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4E03F25530D11001263C4 /* UIVIew.swift */; };
+		55D4E05025532766001263C4 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4E04F25532766001263C4 /* WelcomePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		5539323C253734AB00D59D05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5539323F253734AB00D59D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55393241253734AB00D59D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55D4E0312553026B001263C4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		55D4E03F25530D11001263C4 /* UIVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew.swift; sourceTree = "<group>"; };
+		55D4E04F25532766001263C4 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 				55C00C1A25396FFD003E2237 /* View */,
 				55C00C1D25397031003E2237 /* Controller */,
 				55C00C1C2539701E003E2237 /* Presenter */,
+				55D4E03E25530BDF001263C4 /* Additions */,
 				55393230253734A900D59D05 /* AppDelegate.swift */,
 				55393234253734A900D59D05 /* ViewController.swift */,
 				5539323C253734AB00D59D05 /* Assets.xcassets */,
@@ -71,6 +78,7 @@
 		55C00C1A25396FFD003E2237 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				55D4E0312553026B001263C4 /* WelcomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -85,6 +93,7 @@
 		55C00C1C2539701E003E2237 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				55D4E04F25532766001263C4 /* WelcomePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -94,6 +103,14 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		55D4E03E25530BDF001263C4 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				55D4E03F25530D11001263C4 /* UIVIew.swift */,
+			);
+			path = Additions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +182,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D4E04025530D11001263C4 /* UIVIew.swift in Sources */,
+				55D4E05025532766001263C4 /* WelcomePresenter.swift in Sources */,
 				55393235253734A900D59D05 /* ViewController.swift in Sources */,
+				55D4E0322553026B001263C4 /* WelcomeViewController.swift in Sources */,
 				55393231253734A900D59D05 /* AppDelegate.swift in Sources */,
 				5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */,
 			);

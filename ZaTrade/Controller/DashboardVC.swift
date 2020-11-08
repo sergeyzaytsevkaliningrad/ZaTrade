@@ -10,6 +10,8 @@ import UIKit
 import CoreML
 import Vision
 
+/*
+
 final class DashboardVC: UIViewController {
   var safeArea: UILayoutGuide!
   
@@ -253,3 +255,6 @@ extension DashboardVC: ModalViewDelegate {
     setupGestureRecognizers()
   }
 }
+
+*/
+ 

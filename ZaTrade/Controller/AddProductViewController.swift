@@ -20,7 +20,7 @@ final class AddProductViewController: UIViewController, UITextFieldDelegate {
     private let descriptionProductTextField = UITextField()
     private let typeTax = UILabel()
     private let typeTaxSwitch = CustomSwich()
-    private let addProduct = PoehaliButton()
+    private let addProduct = LetsGoButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()

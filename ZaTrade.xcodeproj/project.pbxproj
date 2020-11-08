@@ -31,7 +31,7 @@
 		55065A4E2558737400D2EDEC /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A492558737300D2EDEC /* CalculatorPresenter.swift */; };
 		55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */; };
 		55065A502558737400D2EDEC /* InfoCountryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A4B2558737400D2EDEC /* InfoCountryPresenter.swift */; };
-		55065A5A2558738B00D2EDEC /* PoehaliButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A532558738A00D2EDEC /* PoehaliButton.swift */; };
+		55065A5A2558738B00D2EDEC /* LetsGoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A532558738A00D2EDEC /* LetsGoButton.swift */; };
 		55065A5B2558738B00D2EDEC /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A542558738A00D2EDEC /* CustomView.swift */; };
 		55065A5C2558738B00D2EDEC /* CustomSwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A552558738A00D2EDEC /* CustomSwich.swift */; };
 		55065A5D2558738B00D2EDEC /* TableAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A562558738A00D2EDEC /* TableAPI.swift */; };
@@ -42,6 +42,9 @@
 		55065A6F255875B400D2EDEC /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A6E255875B400D2EDEC /* Buttons.swift */; };
 		55065A73255875F100D2EDEC /* UIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A72255875F100D2EDEC /* UIVIew.swift */; };
 		55065A77255876F100D2EDEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55065A75255876F100D2EDEC /* LaunchScreen.storyboard */; };
+		55065A8125587A5700D2EDEC /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A372558731700D2EDEC /* Rubik-Bold.ttf */; };
+		55065A8225587A5700D2EDEC /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A352558731700D2EDEC /* Rubik-Light.ttf */; };
+		55065A8325587A5700D2EDEC /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A362558731700D2EDEC /* Rubik-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +75,7 @@
 		55065A492558737300D2EDEC /* CalculatorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
 		55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductPresenter.swift; sourceTree = "<group>"; };
 		55065A4B2558737400D2EDEC /* InfoCountryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCountryPresenter.swift; sourceTree = "<group>"; };
-		55065A532558738A00D2EDEC /* PoehaliButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoehaliButton.swift; sourceTree = "<group>"; };
+		55065A532558738A00D2EDEC /* LetsGoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsGoButton.swift; sourceTree = "<group>"; };
 		55065A542558738A00D2EDEC /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		55065A552558738A00D2EDEC /* CustomSwich.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwich.swift; sourceTree = "<group>"; };
 		55065A562558738A00D2EDEC /* TableAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAPI.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		55065A6E255875B400D2EDEC /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		55065A72255875F100D2EDEC /* UIVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVIew.swift; sourceTree = "<group>"; };
 		55065A76255876F100D2EDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55065A7C255878B800D2EDEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5539322D253734A900D59D05 /* ZaTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZaTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -172,7 +176,7 @@
 				55065A592558738B00D2EDEC /* CustomButtonPlus.swift */,
 				55065A552558738A00D2EDEC /* CustomSwich.swift */,
 				55065A542558738A00D2EDEC /* CustomView.swift */,
-				55065A532558738A00D2EDEC /* PoehaliButton.swift */,
+				55065A532558738A00D2EDEC /* LetsGoButton.swift */,
 				55065A562558738A00D2EDEC /* TableAPI.swift */,
 				55065A582558738A00D2EDEC /* UIColor+NewRed.swift */,
 				55065A572558738A00D2EDEC /* UIView+anchors.swift */,
@@ -210,6 +214,7 @@
 				550659D12558703300D2EDEC /* Assets.xcassets */,
 				55065A75255876F100D2EDEC /* LaunchScreen.storyboard */,
 				550659DC2558703400D2EDEC /* ZaTrade.xcdatamodeld */,
+				55065A7C255878B800D2EDEC /* Info.plist */,
 			);
 			path = ZaTrade;
 			sourceTree = "<group>";
@@ -272,6 +277,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55065A8125587A5700D2EDEC /* Rubik-Bold.ttf in Resources */,
+				55065A8225587A5700D2EDEC /* Rubik-Light.ttf in Resources */,
+				55065A8325587A5700D2EDEC /* Rubik-Medium.ttf in Resources */,
 				550659E22558703400D2EDEC /* Assets.xcassets in Resources */,
 				55065A77255876F100D2EDEC /* LaunchScreen.storyboard in Resources */,
 			);
@@ -289,7 +297,7 @@
 				55065A602558738B00D2EDEC /* CustomButtonPlus.swift in Sources */,
 				55065A2D255872EE00D2EDEC /* InfoCountryViewController.swift in Sources */,
 				55065A422558735800D2EDEC /* InfoCountryModel.swift in Sources */,
-				55065A5A2558738B00D2EDEC /* PoehaliButton.swift in Sources */,
+				55065A5A2558738B00D2EDEC /* LetsGoButton.swift in Sources */,
 				55065A31255872EE00D2EDEC /* AddProductViewController.swift in Sources */,
 				55065A23255872CD00D2EDEC /* NotHotdogView.swift in Sources */,
 				55065A4E2558737400D2EDEC /* CalculatorPresenter.swift in Sources */,

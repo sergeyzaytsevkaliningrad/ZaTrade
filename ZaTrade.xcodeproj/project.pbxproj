@@ -28,6 +28,15 @@
 		5DD2C6FF2552FE8C008A271E /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD2C6FE2552FE8C008A271E /* Rubik-Bold.ttf */; };
 		5DD2C7022552FE97008A271E /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD2C7012552FE97008A271E /* Rubik-Medium.ttf */; };
 		5DD2C7052552FEA9008A271E /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD2C7042552FEA9008A271E /* Rubik-Light.ttf */; };
+=======
+		F43453D1254C468A00B5A281 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43453D0254C468A00B5A281 /* Rubik-Bold.ttf */; };
+		F43453D4254C567600B5A281 /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43453D3254C567600B5A281 /* CalculatorPresenter.swift */; };
+		F43453DA254C56A800B5A281 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43453D9254C56A800B5A281 /* CalculatorViewController.swift */; };
+		F43453DD254C56B700B5A281 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43453DC254C56B700B5A281 /* CalculatorModel.swift */; };
+		F45500B32539E58A00D22EE6 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500B22539E58A00D22EE6 /* CustomView.swift */; };
+		F45500B82539E5A700D22EE6 /* CustomButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500B72539E5A700D22EE6 /* CustomButtonPlus.swift */; };
+		F45500C2253A010A00D22EE6 /* CustomSwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500C1253A010A00D22EE6 /* CustomSwich.swift */; };
+		F45500C5253A0DCB00D22EE6 /* PoehaliButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45500C4253A0DCB00D22EE6 /* PoehaliButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +63,14 @@
 		5DD2C6FE2552FE8C008A271E /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		5DD2C7012552FE97008A271E /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		5DD2C7042552FEA9008A271E /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		F43453D0254C468A00B5A281 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		F43453D3254C567600B5A281 /* CalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
+		F43453D9254C56A800B5A281 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		F43453DC254C56B700B5A281 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
+		F45500B22539E58A00D22EE6 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		F45500B72539E5A700D22EE6 /* CustomButtonPlus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonPlus.swift; sourceTree = "<group>"; };
+		F45500C1253A010A00D22EE6 /* CustomSwich.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwich.swift; sourceTree = "<group>"; };
+		F45500C4253A0DCB00D22EE6 /* PoehaliButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoehaliButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +106,7 @@
 				55C00C1B2539700E003E2237 /* Model */,
 				55C00C1D25397031003E2237 /* Controller */,
 				55C00C1C2539701E003E2237 /* Presenter */,
+				F45500B52539E59100D22EE6 /* UIElements */,
 				55393230253734A900D59D05 /* AppDelegate.swift */,
 				5DB1E59125584984002DB99B /* CustomElements */,
 				5DD2C7072552FEB0008A271E /* Fonts */,
@@ -96,17 +114,33 @@
 				5539323C253734AB00D59D05 /* Assets.xcassets */,
 				5539323E253734AB00D59D05 /* LaunchScreen.storyboard */,
 				55393241253734AB00D59D05 /* Info.plist */,
+				F43453D0254C468A00B5A281 /* Rubik-Bold.ttf */,
 				55393239253734A900D59D05 /* ZaTrade.xcdatamodeld */,
 			);
 			path = ZaTrade;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		55C00C1B2539700E003E2237 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				5D425840253B74B9004771D1 /* InfoCountryModel.swift */,
 				5D1973BA25571B5700F92173 /* AddProductModel.swift */,
 				5DB1E592255856A8002DB99B /* ShowProductModel.swift */,
+=======
+		55C00C1A25396FFD003E2237 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F43453D9254C56A800B5A281 /* CalculatorViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55C00C1B2539700E003E2237 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F43453DC254C56B700B5A281 /* CalculatorModel.swift */,
+>>>>>>> master
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,10 +148,14 @@
 		55C00C1C2539701E003E2237 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				5DD2C6EC2552FC63008A271E /* GeneralInfoPresenter.swift */,
 				5D42583E253B74AD004771D1 /* InfoCountryPresenter.swift */,
 				5D1973C025571B8D00F92173 /* AddProductPresenter.swift */,
 				5DB1E598255856D9002DB99B /* ShowProductPresenter.swift */,
+=======
+				F43453D3254C567600B5A281 /* CalculatorPresenter.swift */,
+>>>>>>> master
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -132,6 +170,7 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		5DB1E59125584984002DB99B /* CustomElements */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +189,17 @@
 				5DD2C7042552FEA9008A271E /* Rubik-Light.ttf */,
 			);
 			path = Fonts;
+=======
+		F45500B52539E59100D22EE6 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				F45500B22539E58A00D22EE6 /* CustomView.swift */,
+				F45500B72539E5A700D22EE6 /* CustomButtonPlus.swift */,
+				F45500C4253A0DCB00D22EE6 /* PoehaliButton.swift */,
+				F45500C1253A010A00D22EE6 /* CustomSwich.swift */,
+			);
+			path = UIElements;
+>>>>>>> master
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +260,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				55393240253734AB00D59D05 /* LaunchScreen.storyboard in Resources */,
+<<<<<<< HEAD
 				5DD2C6FF2552FE8C008A271E /* Rubik-Bold.ttf in Resources */,
 				5DD2C7052552FEA9008A271E /* Rubik-Light.ttf in Resources */,
+=======
+				F43453D1254C468A00B5A281 /* Rubik-Bold.ttf in Resources */,
+>>>>>>> master
 				5539323D253734AB00D59D05 /* Assets.xcassets in Resources */,
 				5DD2C7022552FE97008A271E /* Rubik-Medium.ttf in Resources */,
 			);
@@ -224,7 +278,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				5D5515CA2557497500BCC53F /* PoehaliButton.swift in Sources */,
+=======
+				F43453DA254C56A800B5A281 /* CalculatorViewController.swift in Sources */,
+				F45500B32539E58A00D22EE6 /* CustomView.swift in Sources */,
+				F45500C5253A0DCB00D22EE6 /* PoehaliButton.swift in Sources */,
+				F45500C2253A010A00D22EE6 /* CustomSwich.swift in Sources */,
+>>>>>>> master
 				55393235253734A900D59D05 /* ViewController.swift in Sources */,
 				5D5515C72557480600BCC53F /* CustomSwich.swift in Sources */,
 				5D1973C125571B8D00F92173 /* AddProductPresenter.swift in Sources */,
@@ -237,9 +298,15 @@
 				5D42583D253B73CF004771D1 /* InfoCountryViewController.swift in Sources */,
 				5D425841253B74B9004771D1 /* InfoCountryModel.swift in Sources */,
 				55393231253734A900D59D05 /* AppDelegate.swift in Sources */,
+				F43453DD254C56B700B5A281 /* CalculatorModel.swift in Sources */,
 				5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */,
+<<<<<<< HEAD
 				5D42583F253B74AD004771D1 /* InfoCountryPresenter.swift in Sources */,
 				5DB1E599255856D9002DB99B /* ShowProductPresenter.swift in Sources */,
+=======
+				F43453D4254C567600B5A281 /* CalculatorPresenter.swift in Sources */,
+				F45500B82539E5A700D22EE6 /* CustomButtonPlus.swift in Sources */,
+>>>>>>> master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3A9536C2AF;
 				INFOPLIST_FILE = ZaTrade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -399,6 +467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3A9536C2AF;
 				INFOPLIST_FILE = ZaTrade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

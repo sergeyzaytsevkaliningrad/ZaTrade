@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow()
     
-        let viewController = InfoCountryViewController()
+        let viewController = AddProductViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
         
         window.rootViewController = navigationController

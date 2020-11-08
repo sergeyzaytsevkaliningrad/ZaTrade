@@ -12,9 +12,14 @@
 		5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55393239253734A900D59D05 /* ZaTrade.xcdatamodeld */; };
 		5539323D253734AB00D59D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5539323C253734AB00D59D05 /* Assets.xcassets */; };
 		55393240253734AB00D59D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5539323E253734AB00D59D05 /* LaunchScreen.storyboard */; };
+		5D1973BB25571B5700F92173 /* AddProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1973BA25571B5700F92173 /* AddProductModel.swift */; };
+		5D1973BE25571B7B00F92173 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1973BD25571B7B00F92173 /* AddProductViewController.swift */; };
+		5D1973C125571B8D00F92173 /* AddProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1973C025571B8D00F92173 /* AddProductPresenter.swift */; };
 		5D42583D253B73CF004771D1 /* InfoCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42583C253B73CF004771D1 /* InfoCountryViewController.swift */; };
 		5D42583F253B74AD004771D1 /* InfoCountryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42583E253B74AD004771D1 /* InfoCountryPresenter.swift */; };
 		5D425841253B74B9004771D1 /* InfoCountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D425840253B74B9004771D1 /* InfoCountryModel.swift */; };
+		5D5515C72557480600BCC53F /* CustomSwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5515C62557480600BCC53F /* CustomSwich.swift */; };
+		5D5515CA2557497500BCC53F /* PoehaliButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5515C92557497500BCC53F /* PoehaliButton.swift */; };
 		5D955CF4255300CA007C77A8 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D955CF3255300CA007C77A8 /* CustomView.swift */; };
 		5DD2C6ED2552FC64008A271E /* GeneralInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD2C6EC2552FC63008A271E /* GeneralInfoPresenter.swift */; };
 		5DD2C6FF2552FE8C008A271E /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD2C6FE2552FE8C008A271E /* Rubik-Bold.ttf */; };
@@ -30,9 +35,14 @@
 		5539323C253734AB00D59D05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5539323F253734AB00D59D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55393241253734AB00D59D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D1973BA25571B5700F92173 /* AddProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductModel.swift; sourceTree = "<group>"; };
+		5D1973BD25571B7B00F92173 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		5D1973C025571B8D00F92173 /* AddProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductPresenter.swift; sourceTree = "<group>"; };
 		5D42583C253B73CF004771D1 /* InfoCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCountryViewController.swift; sourceTree = "<group>"; };
 		5D42583E253B74AD004771D1 /* InfoCountryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCountryPresenter.swift; sourceTree = "<group>"; };
 		5D425840253B74B9004771D1 /* InfoCountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCountryModel.swift; sourceTree = "<group>"; };
+		5D5515C62557480600BCC53F /* CustomSwich.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwich.swift; sourceTree = "<group>"; };
+		5D5515C92557497500BCC53F /* PoehaliButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoehaliButton.swift; sourceTree = "<group>"; };
 		5D955CF3255300CA007C77A8 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		5DD2C6EC2552FC63008A271E /* GeneralInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralInfoPresenter.swift; sourceTree = "<group>"; };
 		5DD2C6FE2552FE8C008A271E /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
@@ -74,7 +84,7 @@
 				55C00C1D25397031003E2237 /* Controller */,
 				55C00C1C2539701E003E2237 /* Presenter */,
 				55393230253734A900D59D05 /* AppDelegate.swift */,
-				5D955CF3255300CA007C77A8 /* CustomView.swift */,
+				5DB1E59125584984002DB99B /* CustomElements */,
 				5DD2C7072552FEB0008A271E /* Fonts */,
 				55393234253734A900D59D05 /* ViewController.swift */,
 				5539323C253734AB00D59D05 /* Assets.xcassets */,
@@ -85,17 +95,11 @@
 			path = ZaTrade;
 			sourceTree = "<group>";
 		};
-		55C00C1A25396FFD003E2237 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		55C00C1B2539700E003E2237 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				5D425840253B74B9004771D1 /* InfoCountryModel.swift */,
+				5D1973BA25571B5700F92173 /* AddProductModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,6 +109,7 @@
 			children = (
 				5DD2C6EC2552FC63008A271E /* GeneralInfoPresenter.swift */,
 				5D42583E253B74AD004771D1 /* InfoCountryPresenter.swift */,
+				5D1973C025571B8D00F92173 /* AddProductPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -113,8 +118,19 @@
 			isa = PBXGroup;
 			children = (
 				5D42583C253B73CF004771D1 /* InfoCountryViewController.swift */,
+				5D1973BD25571B7B00F92173 /* AddProductViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5DB1E59125584984002DB99B /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				5D955CF3255300CA007C77A8 /* CustomView.swift */,
+				5D5515C92557497500BCC53F /* PoehaliButton.swift */,
+				5D5515C62557480600BCC53F /* CustomSwich.swift */,
+			);
+			path = CustomElements;
 			sourceTree = "<group>";
 		};
 		5DD2C7072552FEB0008A271E /* Fonts */ = {
@@ -199,8 +215,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5515CA2557497500BCC53F /* PoehaliButton.swift in Sources */,
 				55393235253734A900D59D05 /* ViewController.swift in Sources */,
+				5D5515C72557480600BCC53F /* CustomSwich.swift in Sources */,
+				5D1973C125571B8D00F92173 /* AddProductPresenter.swift in Sources */,
 				5D955CF4255300CA007C77A8 /* CustomView.swift in Sources */,
+				5D1973BE25571B7B00F92173 /* AddProductViewController.swift in Sources */,
+				5D1973BB25571B5700F92173 /* AddProductModel.swift in Sources */,
 				5DD2C6ED2552FC64008A271E /* GeneralInfoPresenter.swift in Sources */,
 				5D42583D253B73CF004771D1 /* InfoCountryViewController.swift in Sources */,
 				5D425841253B74B9004771D1 /* InfoCountryModel.swift in Sources */,

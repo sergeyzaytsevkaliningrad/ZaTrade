@@ -1,8 +1,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     let mainLabel = UILabel()
+    let cView = CustomView()
     let customview = CustomView()
     let customPlusButton = CustomButtonPlus()
     let customswich = CustomSwich()
@@ -11,11 +12,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.title = "ViewController"
         self.view.backgroundColor = .white
-        
         self.mainLabel.text = "ZaTrade"
+
+        self.view.addSubview(self.poehali)
+        self.view.addSubview(self.mainLabel)
+        self.view.addSubview(self.mainLabel)
+        self.view.addSubview(cView)
+
         self.view.addSubview(self.poehali)
         self.view.addSubview(self.mainLabel)
         self.view.addSubview(self.customview)
@@ -32,6 +37,7 @@ class ViewController: UIViewController {
         [
             self.customPlusButton,
             self.mainLabel,
+            self.cView,
             self.customview,
             self.customswich,
             self.poehali
@@ -48,6 +54,7 @@ class ViewController: UIViewController {
             self.mainLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.mainLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             
+            self.cView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.customview.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             self.customview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.customview.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
@@ -66,4 +73,5 @@ class ViewController: UIViewController {
     
 
 }
+
 

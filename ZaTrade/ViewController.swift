@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .white
         self.mainLabel.text = "ZaTrade"
 
+        self.view.addSubview(self.poehali)
+        self.view.addSubview(self.mainLabel)
         self.view.addSubview(self.mainLabel)
         self.view.addSubview(cView)
 

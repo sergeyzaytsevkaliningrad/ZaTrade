@@ -17,19 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="kJT-31-nzf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Фон Розовый" translatesAutoresizingMaskIntoConstraints="NO" id="yJh-dd-HFK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ZA" translatesAutoresizingMaskIntoConstraints="NO" id="dIH-l6-oLk">
+                                <rect key="frame" x="109" y="174" width="654" height="548"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="kJT-31-nzf" secondAttribute="bottom" id="0Io-0Z-EOm"/>
-                            <constraint firstItem="kJT-31-nzf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="6kI-d6-N2x"/>
-                            <constraint firstItem="kJT-31-nzf" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="B6f-n5-czZ"/>
-                            <constraint firstItem="kJT-31-nzf" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="eZi-F6-GZj"/>
-                            <constraint firstAttribute="trailing" secondItem="kJT-31-nzf" secondAttribute="trailing" id="wUf-gk-fWs"/>
-                            <constraint firstItem="kJT-31-nzf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xKw-Jp-rbZ"/>
+                            <constraint firstAttribute="bottom" secondItem="yJh-dd-HFK" secondAttribute="bottom" id="0pn-6c-GcU"/>
+                            <constraint firstItem="dIH-l6-oLk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="109" id="M2W-nY-r3r"/>
+                            <constraint firstItem="yJh-dd-HFK" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="RM3-os-Hgl"/>
+                            <constraint firstAttribute="trailing" secondItem="yJh-dd-HFK" secondAttribute="trailing" id="lJ3-qf-147"/>
+                            <constraint firstAttribute="trailing" secondItem="dIH-l6-oLk" secondAttribute="trailing" constant="-349" id="mCx-mQ-KpC"/>
+                            <constraint firstItem="dIH-l6-oLk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="qMo-tk-hf3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dIH-l6-oLk" secondAttribute="bottom" constant="140" id="tL8-dA-nte"/>
+                            <constraint firstItem="yJh-dd-HFK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vXA-cP-l31"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,7 +44,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchScreen_gradient" width="1000" height="1000"/>
+        <image name="ZA" width="849" height="383"/>
+        <image name="Фон Розовый" width="1500" height="3248"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

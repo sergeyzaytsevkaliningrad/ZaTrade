@@ -6,8 +6,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let window = UIWindow()
         
         let viewController = WelcomeViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = window
         window.makeKeyAndVisible()
+
         return true
     }
 
@@ -66,4 +68,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

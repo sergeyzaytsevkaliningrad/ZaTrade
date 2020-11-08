@@ -9,7 +9,7 @@ final class WelcomeViewController: UIViewController {
     let mainImageView = UIImageView(image: UIImage(named: "za_label"))
     let chooseCountry = ChooseCountryButton() // modal with UIPickerView
     let letsGoButton = UIButton(type: .system) // TODO: Change to LetsGoButton
-    let taxFreeInfo = UIButton(type: .system)
+    let taxFreeInfo = UnderlineButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()

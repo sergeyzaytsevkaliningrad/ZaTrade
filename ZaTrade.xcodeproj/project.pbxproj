@@ -21,6 +21,9 @@
 		5D5515C72557480600BCC53F /* CustomSwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5515C62557480600BCC53F /* CustomSwich.swift */; };
 		5D5515CA2557497500BCC53F /* PoehaliButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5515C92557497500BCC53F /* PoehaliButton.swift */; };
 		5D955CF4255300CA007C77A8 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D955CF3255300CA007C77A8 /* CustomView.swift */; };
+		5DB1E593255856A8002DB99B /* ShowProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1E592255856A8002DB99B /* ShowProductModel.swift */; };
+		5DB1E596255856C1002DB99B /* ShowProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1E595255856C1002DB99B /* ShowProductViewController.swift */; };
+		5DB1E599255856D9002DB99B /* ShowProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1E598255856D9002DB99B /* ShowProductPresenter.swift */; };
 		5DD2C6ED2552FC64008A271E /* GeneralInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD2C6EC2552FC63008A271E /* GeneralInfoPresenter.swift */; };
 		5DD2C6FF2552FE8C008A271E /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD2C6FE2552FE8C008A271E /* Rubik-Bold.ttf */; };
 		5DD2C7022552FE97008A271E /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD2C7012552FE97008A271E /* Rubik-Medium.ttf */; };
@@ -44,6 +47,9 @@
 		5D5515C62557480600BCC53F /* CustomSwich.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwich.swift; sourceTree = "<group>"; };
 		5D5515C92557497500BCC53F /* PoehaliButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoehaliButton.swift; sourceTree = "<group>"; };
 		5D955CF3255300CA007C77A8 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		5DB1E592255856A8002DB99B /* ShowProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProductModel.swift; sourceTree = "<group>"; };
+		5DB1E595255856C1002DB99B /* ShowProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProductViewController.swift; sourceTree = "<group>"; };
+		5DB1E598255856D9002DB99B /* ShowProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProductPresenter.swift; sourceTree = "<group>"; };
 		5DD2C6EC2552FC63008A271E /* GeneralInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralInfoPresenter.swift; sourceTree = "<group>"; };
 		5DD2C6FE2552FE8C008A271E /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		5DD2C7012552FE97008A271E /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
@@ -100,6 +106,7 @@
 			children = (
 				5D425840253B74B9004771D1 /* InfoCountryModel.swift */,
 				5D1973BA25571B5700F92173 /* AddProductModel.swift */,
+				5DB1E592255856A8002DB99B /* ShowProductModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 				5DD2C6EC2552FC63008A271E /* GeneralInfoPresenter.swift */,
 				5D42583E253B74AD004771D1 /* InfoCountryPresenter.swift */,
 				5D1973C025571B8D00F92173 /* AddProductPresenter.swift */,
+				5DB1E598255856D9002DB99B /* ShowProductPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -119,6 +127,7 @@
 			children = (
 				5D42583C253B73CF004771D1 /* InfoCountryViewController.swift */,
 				5D1973BD25571B7B00F92173 /* AddProductViewController.swift */,
+				5DB1E595255856C1002DB99B /* ShowProductViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -219,8 +228,10 @@
 				55393235253734A900D59D05 /* ViewController.swift in Sources */,
 				5D5515C72557480600BCC53F /* CustomSwich.swift in Sources */,
 				5D1973C125571B8D00F92173 /* AddProductPresenter.swift in Sources */,
+				5DB1E596255856C1002DB99B /* ShowProductViewController.swift in Sources */,
 				5D955CF4255300CA007C77A8 /* CustomView.swift in Sources */,
 				5D1973BE25571B7B00F92173 /* AddProductViewController.swift in Sources */,
+				5DB1E593255856A8002DB99B /* ShowProductModel.swift in Sources */,
 				5D1973BB25571B5700F92173 /* AddProductModel.swift in Sources */,
 				5DD2C6ED2552FC64008A271E /* GeneralInfoPresenter.swift in Sources */,
 				5D42583D253B73CF004771D1 /* InfoCountryViewController.swift in Sources */,
@@ -228,6 +239,7 @@
 				55393231253734A900D59D05 /* AppDelegate.swift in Sources */,
 				5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */,
 				5D42583F253B74AD004771D1 /* InfoCountryPresenter.swift in Sources */,
+				5DB1E599255856D9002DB99B /* ShowProductPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Фон Розовый.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "za_label.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

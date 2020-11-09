@@ -1,9 +1,8 @@
 //
-//  ModalView.swift
-//  HolyWurst
+//  TableCellViewController.swift
+//  ZaTrade
 //
-//  Created by Martin Lasek on 23.08.19.
-//  Copyright © 2019 Martin Lasek. All rights reserved.
+//  Created by Сергей Зайцев on 09.11.2020.
 //
 
 import UIKit
@@ -16,6 +15,7 @@ final class ModalView: UIView {
   private let introDescriptionLabel = UILabel()
   private let manualLabel = UILabel()
   private let manualDescriptionLabel = UILabel()
+ 
   
   private let okButton = UIButton()
   
@@ -34,16 +34,18 @@ final class ModalView: UIView {
   // MARK: - Setup View
   
   private func setupView() {
+    
     setupBackgroundView()
     setupContainerView()
-    
+
     setupIntroLabel()
     setupIntroDescriptionLabel()
     setupManualLabel()
     setupManualDescriptionLabel()
-    
+
     setupOKButton()
-  }
+    
+   }
   
   private func setupBackgroundView() {
     addSubview(backgroundView)
@@ -55,7 +57,7 @@ final class ModalView: UIView {
     let trailing = backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor)
     NSLayoutConstraint.activate([top, leading, bottom, trailing])
     
-    backgroundView.backgroundColor = .black
+    backgroundView.backgroundColor = .white
     backgroundView.layer.opacity = 0.33
   }
   
@@ -82,7 +84,7 @@ final class ModalView: UIView {
     let trailing = introLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15)
     NSLayoutConstraint.activate([top, leading, trailing])
     
-    introLabel.text = "INTRO"
+    introLabel.text = "Warning"
     introLabel.textAlignment = .center
     introLabel.font = .systemFont(ofSize: 24, weight: .heavy)
   }
@@ -96,7 +98,7 @@ final class ModalView: UIView {
     let trailing = introDescriptionLabel.trailingAnchor.constraint(equalTo: introLabel.trailingAnchor)
     NSLayoutConstraint.activate([top, leading, trailing])
     
-    introDescriptionLabel.text = "This app uses machine learning to help you identify hotdogs!"
+    introDescriptionLabel.text = "We are not responsible for currrncy accuracy if dont have a stable internet connection"
     introDescriptionLabel.numberOfLines = 0
     introDescriptionLabel.textAlignment = .center
     introDescriptionLabel.font = .systemFont(ofSize: 16)
@@ -104,6 +106,7 @@ final class ModalView: UIView {
   
   private func setupManualLabel() {
     containerView.addSubview(manualLabel)
+   
     
     manualLabel.translatesAutoresizingMaskIntoConstraints = false
     let top = manualLabel.topAnchor.constraint(equalTo: introDescriptionLabel.bottomAnchor, constant: 30)
@@ -111,7 +114,7 @@ final class ModalView: UIView {
     let trailing = manualLabel.trailingAnchor.constraint(equalTo: introDescriptionLabel.trailingAnchor)
     NSLayoutConstraint.activate([top, leading, trailing])
     
-    manualLabel.text = "MANUAL"
+    manualLabel.text = "How to go back"
     manualLabel.textAlignment = .center
     manualLabel.font = .systemFont(ofSize: 24, weight: .heavy)
   }
@@ -142,7 +145,7 @@ final class ModalView: UIView {
     let bottom = okButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 1)
     NSLayoutConstraint.activate([top, leading, trailing, height, bottom])
     
-    okButton.setTitle("OK", for: .normal)
+    okButton.setTitle("Agree", for: .normal)
     okButton.setTitleColor(.blue, for: .normal)
     okButton.layer.borderWidth = 1
     okButton.layer.borderColor = UIColor.gray.cgColor

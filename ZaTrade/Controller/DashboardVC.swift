@@ -19,8 +19,8 @@ final class DashboardVC: UIViewController {
   private let loadingView = LoadingView()
   
   private var imageView = UIImageView()
-  private let hotdogView = HotdogView()
-  private let notHotdogView = NotHotdogView()
+  private let hotdogView = IfModelTrue()
+  private let notHotdogView = IfModelFalse()
   
   private var classificationRequest: VNCoreMLRequest!
 
@@ -184,9 +184,9 @@ final class DashboardVC: UIViewController {
   }
   
   private func isLoading() {
-    hotdogView.isHidden = true
-    notHotdogView.isHidden = true
-    loadingView.layer.opacity = 1.0
+   // hotdogView.isHidden = true
+  //  notHotdogView.isHidden = true
+    loadingView.layer.opacity = 2.0
   }
   
   private func isNotLoading() {
@@ -194,14 +194,14 @@ final class DashboardVC: UIViewController {
   }
   
   private func classify(image: UIImage) {
-    let orientation = CGImagePropertyOrientation(image.imageOrientation)
+    let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue))
     guard let ciImage = CIImage(image: image) else {
       print("Unable to create a CIImage from UIImage")
       return
     }
     
     DispatchQueue.main.async {
-      let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
+        let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation!)
       do { try handler.perform([self.classificationRequest]) }
       catch { print("Failed to perform classification.\n\(error.localizedDescription)") }
     }

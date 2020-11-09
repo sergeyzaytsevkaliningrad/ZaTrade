@@ -6,13 +6,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ItemTable()
-        window?.makeKeyAndVisible()
-
+        let viewController = DashboardVC()
+        let navigationController = UINavigationController(rootViewController: viewController)
         
+        let window = UIWindow()
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+        
+        self.window = window
+        window.makeKeyAndVisible()
+
         return true
     }
 
@@ -62,4 +69,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

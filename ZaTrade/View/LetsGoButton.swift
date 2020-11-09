@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PoehaliButton: UIButton {
+class LetsGoButton: UIButton {
 
     let label = UILabel()
     private var color = UIColor(red: 0.859, green: 0.278, blue: 0.71, alpha: 1)

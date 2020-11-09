@@ -7,21 +7,89 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55393231253734A900D59D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55393230253734A900D59D05 /* AppDelegate.swift */; };
-		55393235253734A900D59D05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55393234253734A900D59D05 /* ViewController.swift */; };
-		5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55393239253734A900D59D05 /* ZaTrade.xcdatamodeld */; };
-		5539323D253734AB00D59D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5539323C253734AB00D59D05 /* Assets.xcassets */; };
-		55393240253734AB00D59D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5539323E253734AB00D59D05 /* LaunchScreen.storyboard */; };
+		126BF8AC2558A80B00D0B42F /* TableCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126BF8AB2558A80B00D0B42F /* TableCellViewController.swift */; };
+		550659E22558703400D2EDEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 550659D12558703300D2EDEC /* Assets.xcassets */; };
+		550659E42558703400D2EDEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550659D32558703300D2EDEC /* AppDelegate.swift */; };
+		550659ED2558703400D2EDEC /* ZaTrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 550659DC2558703400D2EDEC /* ZaTrade.xcdatamodeld */; };
+		55065A20255872CD00D2EDEC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A1B255872CC00D2EDEC /* LoadingView.swift */; };
+		55065A21255872CD00D2EDEC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A1C255872CD00D2EDEC /* IntroView.swift */; };
+		55065A22255872CD00D2EDEC /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A1D255872CD00D2EDEC /* ModalView.swift */; };
+		55065A23255872CD00D2EDEC /* IfModelFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A1E255872CD00D2EDEC /* IfModelFalse.swift */; };
+		55065A24255872CD00D2EDEC /* IfModelTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A1F255872CD00D2EDEC /* IfModelTrue.swift */; };
+		55065A2D255872EE00D2EDEC /* InfoCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A27255872EE00D2EDEC /* InfoCountryViewController.swift */; };
+		55065A2E255872EE00D2EDEC /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A28255872EE00D2EDEC /* DashboardVC.swift */; };
+		55065A2F255872EE00D2EDEC /* ShowProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A29255872EE00D2EDEC /* ShowProductViewController.swift */; };
+		55065A30255872EE00D2EDEC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2A255872EE00D2EDEC /* TableViewController.swift */; };
+		55065A31255872EE00D2EDEC /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2B255872EE00D2EDEC /* AddProductViewController.swift */; };
+		55065A32255872EF00D2EDEC /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2C255872EE00D2EDEC /* CalculatorViewController.swift */; };
+		55065A3A2558733400D2EDEC /* HotdogClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55065A392558733400D2EDEC /* HotdogClassifier.mlmodel */; };
+		55065A412558735800D2EDEC /* AddProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3D2558735800D2EDEC /* AddProductModel.swift */; };
+		55065A422558735800D2EDEC /* InfoCountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3E2558735800D2EDEC /* InfoCountryModel.swift */; };
+		55065A432558735800D2EDEC /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3F2558735800D2EDEC /* CalculatorModel.swift */; };
+		55065A442558735800D2EDEC /* ShowProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A402558735800D2EDEC /* ShowProductModel.swift */; };
+		55065A4C2558737400D2EDEC /* GeneralInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A472558737300D2EDEC /* GeneralInfoPresenter.swift */; };
+		55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A482558737300D2EDEC /* AddProductPresenter.swift */; };
+		55065A4E2558737400D2EDEC /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A492558737300D2EDEC /* CalculatorPresenter.swift */; };
+		55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */; };
+		55065A502558737400D2EDEC /* InfoCountryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A4B2558737400D2EDEC /* InfoCountryPresenter.swift */; };
+		55065A5A2558738B00D2EDEC /* LetsGoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A532558738A00D2EDEC /* LetsGoButton.swift */; };
+		55065A5B2558738B00D2EDEC /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A542558738A00D2EDEC /* CustomView.swift */; };
+		55065A5C2558738B00D2EDEC /* CustomSwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A552558738A00D2EDEC /* CustomSwich.swift */; };
+		55065A5D2558738B00D2EDEC /* TableAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A562558738A00D2EDEC /* TableAPI.swift */; };
+		55065A5E2558738B00D2EDEC /* UIView+anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A572558738A00D2EDEC /* UIView+anchors.swift */; };
+		55065A5F2558738B00D2EDEC /* UIColor+NewRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A582558738A00D2EDEC /* UIColor+NewRed.swift */; };
+		55065A602558738B00D2EDEC /* CustomButtonPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A592558738B00D2EDEC /* CustomButtonPlus.swift */; };
+		55065A692558754A00D2EDEC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A682558754A00D2EDEC /* WelcomeViewController.swift */; };
+		55065A6F255875B400D2EDEC /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A6E255875B400D2EDEC /* Buttons.swift */; };
+		55065A73255875F100D2EDEC /* UIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A72255875F100D2EDEC /* UIVIew.swift */; };
+		55065A77255876F100D2EDEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55065A75255876F100D2EDEC /* LaunchScreen.storyboard */; };
+		55065A8125587A5700D2EDEC /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A372558731700D2EDEC /* Rubik-Bold.ttf */; };
+		55065A8225587A5700D2EDEC /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A352558731700D2EDEC /* Rubik-Light.ttf */; };
+		55065A8325587A5700D2EDEC /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A362558731700D2EDEC /* Rubik-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		126BF8AB2558A80B00D0B42F /* TableCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellViewController.swift; sourceTree = "<group>"; };
+		550659D12558703300D2EDEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		550659D32558703300D2EDEC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		550659DD2558703400D2EDEC /* ZaTrade.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZaTrade.xcdatamodel; sourceTree = "<group>"; };
+		55065A1B255872CC00D2EDEC /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		55065A1C255872CD00D2EDEC /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		55065A1D255872CD00D2EDEC /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		55065A1E255872CD00D2EDEC /* IfModelFalse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IfModelFalse.swift; sourceTree = "<group>"; };
+		55065A1F255872CD00D2EDEC /* IfModelTrue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IfModelTrue.swift; sourceTree = "<group>"; };
+		55065A27255872EE00D2EDEC /* InfoCountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCountryViewController.swift; sourceTree = "<group>"; };
+		55065A28255872EE00D2EDEC /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		55065A29255872EE00D2EDEC /* ShowProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductViewController.swift; sourceTree = "<group>"; };
+		55065A2A255872EE00D2EDEC /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		55065A2B255872EE00D2EDEC /* AddProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		55065A2C255872EE00D2EDEC /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		55065A352558731700D2EDEC /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		55065A362558731700D2EDEC /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		55065A372558731700D2EDEC /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		55065A392558733400D2EDEC /* HotdogClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HotdogClassifier.mlmodel; sourceTree = "<group>"; };
+		55065A3D2558735800D2EDEC /* AddProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductModel.swift; sourceTree = "<group>"; };
+		55065A3E2558735800D2EDEC /* InfoCountryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCountryModel.swift; sourceTree = "<group>"; };
+		55065A3F2558735800D2EDEC /* CalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
+		55065A402558735800D2EDEC /* ShowProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductModel.swift; sourceTree = "<group>"; };
+		55065A472558737300D2EDEC /* GeneralInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralInfoPresenter.swift; sourceTree = "<group>"; };
+		55065A482558737300D2EDEC /* AddProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductPresenter.swift; sourceTree = "<group>"; };
+		55065A492558737300D2EDEC /* CalculatorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
+		55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductPresenter.swift; sourceTree = "<group>"; };
+		55065A4B2558737400D2EDEC /* InfoCountryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCountryPresenter.swift; sourceTree = "<group>"; };
+		55065A532558738A00D2EDEC /* LetsGoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsGoButton.swift; sourceTree = "<group>"; };
+		55065A542558738A00D2EDEC /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		55065A552558738A00D2EDEC /* CustomSwich.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwich.swift; sourceTree = "<group>"; };
+		55065A562558738A00D2EDEC /* TableAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAPI.swift; sourceTree = "<group>"; };
+		55065A572558738A00D2EDEC /* UIView+anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+anchors.swift"; sourceTree = "<group>"; };
+		55065A582558738A00D2EDEC /* UIColor+NewRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+NewRed.swift"; sourceTree = "<group>"; };
+		55065A592558738B00D2EDEC /* CustomButtonPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonPlus.swift; sourceTree = "<group>"; };
+		55065A682558754A00D2EDEC /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		55065A6E255875B400D2EDEC /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		55065A72255875F100D2EDEC /* UIVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVIew.swift; sourceTree = "<group>"; };
+		55065A76255876F100D2EDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55065A7C255878B800D2EDEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5539322D253734A900D59D05 /* ZaTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZaTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		55393230253734A900D59D05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55393234253734A900D59D05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5539323A253734A900D59D05 /* ZaTrade.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZaTrade.xcdatamodel; sourceTree = "<group>"; };
-		5539323C253734AB00D59D05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5539323F253734AB00D59D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		55393241253734AB00D59D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +103,90 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55065A0E2558728000D2EDEC /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				55065A1F255872CD00D2EDEC /* IfModelTrue.swift */,
+				55065A1E255872CD00D2EDEC /* IfModelFalse.swift */,
+				55065A1C255872CD00D2EDEC /* IntroView.swift */,
+				55065A1B255872CC00D2EDEC /* LoadingView.swift */,
+				55065A1D255872CD00D2EDEC /* ModalView.swift */,
+				55065A72255875F100D2EDEC /* UIVIew.swift */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		55065A26255872DD00D2EDEC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55065A682558754A00D2EDEC /* WelcomeViewController.swift */,
+				55065A2B255872EE00D2EDEC /* AddProductViewController.swift */,
+				55065A2C255872EE00D2EDEC /* CalculatorViewController.swift */,
+				55065A28255872EE00D2EDEC /* DashboardVC.swift */,
+				55065A27255872EE00D2EDEC /* InfoCountryViewController.swift */,
+				55065A29255872EE00D2EDEC /* ShowProductViewController.swift */,
+				55065A2A255872EE00D2EDEC /* TableViewController.swift */,
+				126BF8AB2558A80B00D0B42F /* TableCellViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		55065A342558730400D2EDEC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				55065A372558731700D2EDEC /* Rubik-Bold.ttf */,
+				55065A352558731700D2EDEC /* Rubik-Light.ttf */,
+				55065A362558731700D2EDEC /* Rubik-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		55065A382558731E00D2EDEC /* ML */ = {
+			isa = PBXGroup;
+			children = (
+				55065A392558733400D2EDEC /* HotdogClassifier.mlmodel */,
+			);
+			path = ML;
+			sourceTree = "<group>";
+		};
+		55065A3C2558733A00D2EDEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55065A3D2558735800D2EDEC /* AddProductModel.swift */,
+				55065A3F2558735800D2EDEC /* CalculatorModel.swift */,
+				55065A3E2558735800D2EDEC /* InfoCountryModel.swift */,
+				55065A402558735800D2EDEC /* ShowProductModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55065A462558736300D2EDEC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				55065A482558737300D2EDEC /* AddProductPresenter.swift */,
+				55065A492558737300D2EDEC /* CalculatorPresenter.swift */,
+				55065A472558737300D2EDEC /* GeneralInfoPresenter.swift */,
+				55065A4B2558737400D2EDEC /* InfoCountryPresenter.swift */,
+				55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		55065A522558737D00D2EDEC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55065A6E255875B400D2EDEC /* Buttons.swift */,
+				55065A592558738B00D2EDEC /* CustomButtonPlus.swift */,
+				55065A552558738A00D2EDEC /* CustomSwich.swift */,
+				55065A542558738A00D2EDEC /* CustomView.swift */,
+				55065A532558738A00D2EDEC /* LetsGoButton.swift */,
+				55065A562558738A00D2EDEC /* TableAPI.swift */,
+				55065A582558738A00D2EDEC /* UIColor+NewRed.swift */,
+				55065A572558738A00D2EDEC /* UIView+anchors.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		55393224253734A900D59D05 = {
 			isa = PBXGroup;
 			children = (
@@ -54,46 +206,20 @@
 		5539322F253734A900D59D05 /* ZaTrade */ = {
 			isa = PBXGroup;
 			children = (
-				55C00C1B2539700E003E2237 /* Model */,
-				55C00C1A25396FFD003E2237 /* View */,
-				55C00C1D25397031003E2237 /* Controller */,
-				55C00C1C2539701E003E2237 /* Presenter */,
-				55393230253734A900D59D05 /* AppDelegate.swift */,
-				55393234253734A900D59D05 /* ViewController.swift */,
-				5539323C253734AB00D59D05 /* Assets.xcassets */,
-				5539323E253734AB00D59D05 /* LaunchScreen.storyboard */,
-				55393241253734AB00D59D05 /* Info.plist */,
-				55393239253734A900D59D05 /* ZaTrade.xcdatamodeld */,
+				55065A0E2558728000D2EDEC /* Additions */,
+				55065A26255872DD00D2EDEC /* Controller */,
+				55065A342558730400D2EDEC /* Fonts */,
+				55065A382558731E00D2EDEC /* ML */,
+				55065A3C2558733A00D2EDEC /* Model */,
+				55065A462558736300D2EDEC /* Presenter */,
+				55065A522558737D00D2EDEC /* View */,
+				550659D32558703300D2EDEC /* AppDelegate.swift */,
+				550659D12558703300D2EDEC /* Assets.xcassets */,
+				55065A75255876F100D2EDEC /* LaunchScreen.storyboard */,
+				550659DC2558703400D2EDEC /* ZaTrade.xcdatamodeld */,
+				55065A7C255878B800D2EDEC /* Info.plist */,
 			);
 			path = ZaTrade;
-			sourceTree = "<group>";
-		};
-		55C00C1A25396FFD003E2237 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		55C00C1B2539700E003E2237 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		55C00C1C2539701E003E2237 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		55C00C1D25397031003E2237 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +253,7 @@
 				TargetAttributes = {
 					5539322C253734A900D59D05 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1210;
 					};
 				};
 			};
@@ -153,8 +280,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55393240253734AB00D59D05 /* LaunchScreen.storyboard in Resources */,
-				5539323D253734AB00D59D05 /* Assets.xcassets in Resources */,
+				55065A8125587A5700D2EDEC /* Rubik-Bold.ttf in Resources */,
+				55065A8225587A5700D2EDEC /* Rubik-Light.ttf in Resources */,
+				55065A8325587A5700D2EDEC /* Rubik-Medium.ttf in Resources */,
+				550659E22558703400D2EDEC /* Assets.xcassets in Resources */,
+				55065A77255876F100D2EDEC /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,19 +295,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55393235253734A900D59D05 /* ViewController.swift in Sources */,
-				55393231253734A900D59D05 /* AppDelegate.swift in Sources */,
-				5539323B253734A900D59D05 /* ZaTrade.xcdatamodeld in Sources */,
+				550659E42558703400D2EDEC /* AppDelegate.swift in Sources */,
+				55065A432558735800D2EDEC /* CalculatorModel.swift in Sources */,
+				55065A602558738B00D2EDEC /* CustomButtonPlus.swift in Sources */,
+				55065A2D255872EE00D2EDEC /* InfoCountryViewController.swift in Sources */,
+				55065A422558735800D2EDEC /* InfoCountryModel.swift in Sources */,
+				55065A5A2558738B00D2EDEC /* LetsGoButton.swift in Sources */,
+				55065A31255872EE00D2EDEC /* AddProductViewController.swift in Sources */,
+				55065A23255872CD00D2EDEC /* IfModelFalse.swift in Sources */,
+				55065A4E2558737400D2EDEC /* CalculatorPresenter.swift in Sources */,
+				55065A692558754A00D2EDEC /* WelcomeViewController.swift in Sources */,
+				55065A5D2558738B00D2EDEC /* TableAPI.swift in Sources */,
+				55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */,
+				55065A442558735800D2EDEC /* ShowProductModel.swift in Sources */,
+				55065A5F2558738B00D2EDEC /* UIColor+NewRed.swift in Sources */,
+				55065A3A2558733400D2EDEC /* HotdogClassifier.mlmodel in Sources */,
+				55065A4C2558737400D2EDEC /* GeneralInfoPresenter.swift in Sources */,
+				55065A502558737400D2EDEC /* InfoCountryPresenter.swift in Sources */,
+				55065A5C2558738B00D2EDEC /* CustomSwich.swift in Sources */,
+				55065A412558735800D2EDEC /* AddProductModel.swift in Sources */,
+				55065A24255872CD00D2EDEC /* IfModelTrue.swift in Sources */,
+				55065A2E255872EE00D2EDEC /* DashboardVC.swift in Sources */,
+				55065A21255872CD00D2EDEC /* IntroView.swift in Sources */,
+				55065A30255872EE00D2EDEC /* TableViewController.swift in Sources */,
+				55065A6F255875B400D2EDEC /* Buttons.swift in Sources */,
+				55065A73255875F100D2EDEC /* UIVIew.swift in Sources */,
+				126BF8AC2558A80B00D0B42F /* TableCellViewController.swift in Sources */,
+				550659ED2558703400D2EDEC /* ZaTrade.xcdatamodeld in Sources */,
+				55065A5E2558738B00D2EDEC /* UIView+anchors.swift in Sources */,
+				55065A20255872CD00D2EDEC /* LoadingView.swift in Sources */,
+				55065A5B2558738B00D2EDEC /* CustomView.swift in Sources */,
+				55065A32255872EF00D2EDEC /* CalculatorViewController.swift in Sources */,
+				55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */,
+				55065A22255872CD00D2EDEC /* ModalView.swift in Sources */,
+				55065A2F255872EE00D2EDEC /* ShowProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5539323E253734AB00D59D05 /* LaunchScreen.storyboard */ = {
+		55065A75255876F100D2EDEC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5539323F253734AB00D59D05 /* Base */,
+				55065A76255876F100D2EDEC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -236,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -291,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -306,7 +467,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3S3TW83623;
 				INFOPLIST_FILE = ZaTrade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -316,6 +479,7 @@
 				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ZaTradeTeam.ZaTrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -326,7 +490,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3S3TW83623;
 				INFOPLIST_FILE = ZaTrade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -365,12 +531,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		55393239253734A900D59D05 /* ZaTrade.xcdatamodeld */ = {
+		550659DC2558703400D2EDEC /* ZaTrade.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5539323A253734A900D59D05 /* ZaTrade.xcdatamodel */,
+				550659DD2558703400D2EDEC /* ZaTrade.xcdatamodel */,
 			);
-			currentVersion = 5539323A253734A900D59D05 /* ZaTrade.xcdatamodel */;
+			currentVersion = 550659DD2558703400D2EDEC /* ZaTrade.xcdatamodel */;
 			path = ZaTrade.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -11,10 +11,9 @@ import UIKit
 class ItemTable: UIViewController{
 
     let tableView = UITableView()
-    var safeArea: UILayoutGuide!
-    let itemList = ["MacBook","Trump","IPhone","Nothing"]
+    let itemList = ["MacBook","Trump","IPhone","Nothing","6","7","8"]
     let itemListLable = ["Sold","Vote","12 mini","Well still nothig"]
-    
+    var safeArea: UILayoutGuide!
 
     override func viewDidLoad(){
         
@@ -24,6 +23,7 @@ class ItemTable: UIViewController{
 //            self.view.insertSubview(backgroundImage, at: 0)
 //
        
+     //   setupRedCircle()
         
         setupBackground()
         
@@ -51,7 +51,11 @@ class ItemTable: UIViewController{
         tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
         tableView.layer.cornerRadius = 28
         
+        
 }
+    
+    
+    
 
 }
 
@@ -87,5 +91,8 @@ extension ItemTable: UITableViewDataSource {
         layer0.position = view.center
         view.layer.addSublayer(layer0)
     }
+    
+    
+    
 }
 

@@ -9,6 +9,7 @@ import UIKit
 
 class ItemTableCell: UITableViewCell {
     
+    let redCircleIV = UIImageView(image: UIImage(named: "Background"))
     let imageIV = UIImageView()
     let nameLable = UILabel()
     let itemListLable = UILabel()
@@ -30,6 +31,7 @@ class ItemTableCell: UITableViewCell {
     func setupView(){
         safeArea = layoutMarginsGuide
         setupImageView()
+        setupRedCircle()
     }
     
     func setupImageView() {
@@ -46,6 +48,20 @@ class ItemTableCell: UITableViewCell {
         
        
         
+    }
+    func setupRedCircle() {
+        addSubview(redCircleIV)
+        
+        
+      
+      redCircleIV.translatesAutoresizingMaskIntoConstraints = false
+        redCircleIV.rightAnchor.constraint(equalTo: safeArea.rightAnchor).isActive = true
+        redCircleIV.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        redCircleIV.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        redCircleIV.heightAnchor.constraint(equalToConstant: 40).isActive = true
+      
+      redCircleIV.contentMode = .scaleAspectFit
+      redCircleIV.isHidden = false
     }
     
     

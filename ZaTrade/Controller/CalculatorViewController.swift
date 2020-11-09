@@ -7,14 +7,9 @@
 
 import UIKit
 
-protocol CalculatorViewProtocol: class {
-    var titleText: String { get set }
-}
-
-class CalculatorViewController: UIViewController, CalculatorViewProtocol {
+class CalculatorViewController: UIViewController {
     
     var titleText: String = "0"
-
     var presenter = CalculatorPresenter()
     
     private let VstackView = UIStackView()
@@ -27,10 +22,8 @@ class CalculatorViewController: UIViewController, CalculatorViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        setupBackground()
+        self.view.setupBackground()
         
-        self.view.backgroundColor = .systemPink
         presenter.view = self
         self.view.addSubview(VstackView)
         layoutBigStackView()
@@ -40,21 +33,7 @@ class CalculatorViewController: UIViewController, CalculatorViewProtocol {
     
     // MARK: - LayoutFuncs
     
-    func setupBackground() {
-        view.backgroundColor = .white
-        let layer0 = CAGradientLayer()
-        layer0.colors = [
-          UIColor(red: 0.859, green: 0.278, blue: 0.71, alpha: 1).cgColor,
-          UIColor(red: 0.62, green: 0.325, blue: 0.765, alpha: 1).cgColor
-        ]
-        layer0.locations = [0, 1]
-        layer0.startPoint = CGPoint(x: 0.25, y: 0.5)
-        layer0.endPoint = CGPoint(x: 0.75, y: 0.5)
-        layer0.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: -0.02, b: 0.78, c: -0.78, d: 0, tx: 0.99, ty: -0.14))
-        layer0.frame = view.bounds
-        layer0.position = view.center
-        view.layer.addSublayer(layer0)
-    }
+ 
     
     func layoutLabel() {
         label.font = UIFont(name: "Rubik-Bold", size: 40)
@@ -80,7 +59,7 @@ class CalculatorViewController: UIViewController, CalculatorViewProtocol {
         VstackView.translatesAutoresizingMaskIntoConstraints = false
         VstackView.heightAnchor.constraint(equalToConstant: height).isActive = true
         VstackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        VstackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        VstackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         
         setupBigStackView()
     }

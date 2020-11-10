@@ -1,9 +1,8 @@
 //
-//  IntroView.swift
-//  HolyWurst
+//  TableCellViewController.swift
+//  ZaTrade
 //
-//  Created by Martin Lasek on 23.06.19.
-//  Copyright © 2019 Martin Lasek. All rights reserved.
+//  Created by Сергей Зайцев on 09.11.2020.
 //
 
 import UIKit
@@ -21,7 +20,7 @@ final class IntroView: UIView {
   
   let welcomeText = UILabel()
   let actionText = UILabel()
-  let redCircleIV = UIImageView(image: UIImage(named: "circle"))
+  let redCircleIV = UIImageView(image: UIImage(named: "ZA_1"))
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -46,15 +45,16 @@ final class IntroView: UIView {
   
   private func setupTitleContainer() {
     addSubview(titleContainer)
+    titleContainer.isHidden = true
     
     titleContainer.translatesAutoresizingMaskIntoConstraints = false
-    let top = titleContainer.topAnchor.constraint(equalTo: topAnchor)
+    let top = titleContainer.topAnchor.constraint(equalTo: topAnchor, constant: 50)
     let leading = titleContainer.leadingAnchor.constraint(equalTo: leadingAnchor)
     let trailing = titleContainer.trailingAnchor.constraint(equalTo: trailingAnchor)
     let height = titleContainer.heightAnchor.constraint(equalToConstant: 125)
     NSLayoutConstraint.activate([top, leading, trailing, height])
     
-    titleContainer.backgroundColor = .newRed
+    titleContainer.backgroundColor = .purple
     
     titleContainer.addSubview(title)
     
@@ -65,11 +65,11 @@ final class IntroView: UIView {
     
     let attributes: [NSAttributedString.Key : Any] = [
       NSAttributedString.Key.foregroundColor: UIColor.white,
-      NSAttributedString.Key.strokeColor: UIColor.black,
+      NSAttributedString.Key.strokeColor: UIColor.white,
       NSAttributedString.Key.strokeWidth: -5.0,
-      NSAttributedString.Key.font: UIFont.systemFont(ofSize: 65, weight: .heavy)
+      NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 30)
     ]
-    title.attributedText = NSAttributedString(string: "HolyWurst", attributes: attributes)
+    title.attributedText = NSAttributedString(string: "ZaTrade your hotdog", attributes: attributes)
   }
   
   private func setupSubtitleContainer() {
@@ -82,7 +82,7 @@ final class IntroView: UIView {
     let height = subtitleContainer.heightAnchor.constraint(equalToConstant: 50)
     NSLayoutConstraint.activate([top, leading, trailing, height])
     
-    subtitleContainer.backgroundColor = .white
+    subtitleContainer.backgroundColor = .systemBlue
     
     subtitleContainer.addSubview(subtitle)
     
@@ -91,9 +91,9 @@ final class IntroView: UIView {
     let centerY = subtitle.centerYAnchor.constraint(equalTo: subtitleContainer.centerYAnchor)
     NSLayoutConstraint.activate([centerX, centerY])
     
-    subtitle.text = "\"The Shazam for Food\""
-    subtitle.font = .systemFont(ofSize: 25, weight: .heavy)
-    subtitle.textColor = .newRed
+    subtitle.text = "\"The cooler ZaTrade\""
+    subtitle.font = UIFont.italicSystemFont(ofSize: 25)
+    subtitle.textColor = .white
   }
   
   private func setupStackView() {
@@ -106,9 +106,9 @@ final class IntroView: UIView {
     let trailing = stackView.trailingAnchor.constraint(equalTo: trailingAnchor)
     NSLayoutConstraint.activate([top, leading, bottom, trailing])
     
-    let imageOne = UIImageView(image: UIImage(named: "food_burger"))
-    let imageTwo = UIImageView(image: UIImage(named: "food_sea"))
-    let imageThree = UIImageView(image: UIImage(named: "food_pasta"))
+    let imageOne = UIImageView(image: UIImage(named: "LaunchScreen_gradient.png"))
+    let imageTwo = UIImageView(image: UIImage(named: "LaunchScreen_gradient.png"))
+    let imageThree = UIImageView(image: UIImage(named: "LaunchScreen_gradient.png"))
     
     imageOne.contentMode = .scaleAspectFill
     imageTwo.contentMode = .scaleAspectFill
@@ -137,8 +137,8 @@ final class IntroView: UIView {
     let trailing = overlay.trailingAnchor.constraint(equalTo: stackView.trailingAnchor)
     NSLayoutConstraint.activate([top, leading, bottom, trailing])
     
-    overlay.backgroundColor = .black
-    overlay.layer.opacity = 0.6
+    overlay.backgroundColor = .white
+    overlay.layer.opacity = 0
   }
   
   private func setupWelcomeText() {
@@ -151,9 +151,9 @@ final class IntroView: UIView {
     
     let attributes: [NSAttributedString.Key : Any] = [
       NSAttributedString.Key.foregroundColor: UIColor.white,
-      NSAttributedString.Key.strokeColor: UIColor.black,
+      NSAttributedString.Key.strokeColor: UIColor.white,
       NSAttributedString.Key.strokeWidth: -5.0,
-      NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40, weight: .heavy)
+      NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 40)
     ]
     welcomeText.attributedText = NSAttributedString(string: "Let's Get Started", attributes: attributes)
   }
@@ -168,11 +168,11 @@ final class IntroView: UIView {
     
     let attributes: [NSAttributedString.Key : Any] = [
       NSAttributedString.Key.foregroundColor: UIColor.white,
-      NSAttributedString.Key.strokeColor: UIColor.black,
+      NSAttributedString.Key.strokeColor: UIColor.white,
       NSAttributedString.Key.strokeWidth: -5.0,
-      NSAttributedString.Key.font: UIFont.systemFont(ofSize: 35, weight: .heavy)
+      NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35)
     ]
-    actionText.attributedText = NSAttributedString(string: "Touch to HolyWurst", attributes: attributes)
+    actionText.attributedText = NSAttributedString(string: "Touch to ZaTrade", attributes: attributes)
     actionText.isHidden = true
   }
   

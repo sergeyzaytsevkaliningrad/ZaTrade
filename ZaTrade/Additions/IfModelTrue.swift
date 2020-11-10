@@ -1,14 +1,14 @@
 //
-//  HotdogView.swift
-//  HolyWurst
+//  TableCellViewController.swift
+//  ZaTrade
 //
-//  Created by Martin Lasek on 23.06.19.
-//  Copyright © 2019 Martin Lasek. All rights reserved.
+//  Created by Сергей Зайцев on 09.11.2020.
 //
+
 
 import UIKit
 
-final class HotdogView: UIView {
+final class IfModelTrue: UIView {
   let container = UIView()
   let circle = UIView()
   let title = UILabel()

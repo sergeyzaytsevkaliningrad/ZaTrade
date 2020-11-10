@@ -1,14 +1,14 @@
 //
-//  HotdogView.swift
-//  HolyWurst
+//  TableCellViewController.swift
+//  ZaTrade
 //
-//  Created by Martin Lasek on 23.06.19.
-//  Copyright © 2019 Martin Lasek. All rights reserved.
+//  Created by Сергей Зайцев on 09.11.2020.
 //
+
 
 import UIKit
 
-final class NotHotdogView: UIView {
+final class IfModelFalse: UIView {
   let container = UIView()
   let circle = UIView()
   let title = UILabel()
@@ -26,7 +26,7 @@ final class NotHotdogView: UIView {
   
   private func setupView() {
     setupContainer()
-    setupCircle()
+  //  setupCircle()
     setupTitle()
   }
   
@@ -40,7 +40,7 @@ final class NotHotdogView: UIView {
     let trailing = container.trailingAnchor.constraint(equalTo: trailingAnchor)
     NSLayoutConstraint.activate([top, leading, bottom, trailing])
     
-    container.backgroundColor = .newRed
+    container.backgroundColor = .systemBlue
   }
   
   private func setupCircle() {
@@ -53,10 +53,10 @@ final class NotHotdogView: UIView {
     let width = circle.widthAnchor.constraint(equalToConstant: 100)
     NSLayoutConstraint.activate([centerX, top, height, width])
     
-    circle.backgroundColor = .newRed
+    circle.backgroundColor = .systemPink
     circle.layer.cornerRadius = 50
     
-    let image = UIImage(named: "not_hotdog")
+    let image = UIImage(named: "ZA_1")
     let imageView = UIImageView(image: image)
     imageView.contentMode = .scaleAspectFit
     
@@ -81,8 +81,8 @@ final class NotHotdogView: UIView {
       NSAttributedString.Key.foregroundColor: UIColor.white,
       NSAttributedString.Key.strokeColor: UIColor.black,
       NSAttributedString.Key.strokeWidth: -5.0,
-      NSAttributedString.Key.font: UIFont.systemFont(ofSize: 50, weight: .heavy)
+      
     ]
-    title.attributedText = NSAttributedString(string: "Not hotdog", attributes: attributes)
+    title.attributedText = NSAttributedString(string: "Za", attributes: attributes)
   }
 }

@@ -18,8 +18,6 @@ final class WelcomeViewController: UIViewController {
         
         self.presenter.viewController = self
         
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [pinkColor, purpleColor, purpleLightColor]
         gradientLayer.locations = [0, 0.42, 0.91]
@@ -43,6 +41,10 @@ final class WelcomeViewController: UIViewController {
         subviews.forEach({ self.view.addSubview($0) })
         
         self.setupConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func setupConstraints() {

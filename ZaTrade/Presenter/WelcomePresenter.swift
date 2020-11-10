@@ -5,6 +5,7 @@ class WelcomePresenter {
     
     @objc func openProductTable() {
         let destination = ItemTable()
+        self.viewController?.navigationController?.setNavigationBarHidden(false, animated: true)
         self.viewController?.navigationController!.pushViewController(destination, animated: true)
     }
 }

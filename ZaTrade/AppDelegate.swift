@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let viewController = WelcomeViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.setNavigationBarHidden(true, animated: false)
         
         let window = UIWindow()
         window.rootViewController = navigationController

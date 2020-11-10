@@ -24,6 +24,7 @@ class ItemTable: UIViewController {
 //
        
      //   setupRedCircle()
+        self.title = "Список товаров"
         
         setupBackground()
         

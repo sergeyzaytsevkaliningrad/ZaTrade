@@ -1,9 +1,8 @@
 //
-//  LoadingView.swift
-//  HolyWurst
+//  TableCellViewController.swift
+//  ZaTrade
 //
-//  Created by Martin Lasek on 24.06.19.
-//  Copyright © 2019 Martin Lasek. All rights reserved.
+//  Created by Сергей Зайцев on 09.11.2020.
 //
 
 import UIKit

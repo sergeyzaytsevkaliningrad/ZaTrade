@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ItemTable: UIViewController{
+class ItemTable: UIViewController {
 
     let tableView = UITableView()
     let itemList = ["MacBook","Trump","IPhone","Nothing","6","7","8"]

@@ -45,15 +45,16 @@ final class IntroView: UIView {
   
   private func setupTitleContainer() {
     addSubview(titleContainer)
+    titleContainer.isHidden = true
     
     titleContainer.translatesAutoresizingMaskIntoConstraints = false
-    let top = titleContainer.topAnchor.constraint(equalTo: topAnchor)
+    let top = titleContainer.topAnchor.constraint(equalTo: topAnchor, constant: 50)
     let leading = titleContainer.leadingAnchor.constraint(equalTo: leadingAnchor)
     let trailing = titleContainer.trailingAnchor.constraint(equalTo: trailingAnchor)
     let height = titleContainer.heightAnchor.constraint(equalToConstant: 125)
     NSLayoutConstraint.activate([top, leading, trailing, height])
     
-    titleContainer.backgroundColor = .systemPink
+    titleContainer.backgroundColor = .purple
     
     titleContainer.addSubview(title)
     
@@ -64,9 +65,9 @@ final class IntroView: UIView {
     
     let attributes: [NSAttributedString.Key : Any] = [
       NSAttributedString.Key.foregroundColor: UIColor.white,
-      NSAttributedString.Key.strokeColor: UIColor.black,
+      NSAttributedString.Key.strokeColor: UIColor.white,
       NSAttributedString.Key.strokeWidth: -5.0,
-      NSAttributedString.Key.font: UIFont.systemFont(ofSize: 65, weight: .light)
+      NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 30)
     ]
     title.attributedText = NSAttributedString(string: "ZaTrade your hotdog", attributes: attributes)
   }

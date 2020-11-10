@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ItemTable: UIViewController{
+class ItemTable: UIViewController {
 
     let tableView = UITableView()
     var safeArea: UILayoutGuide!

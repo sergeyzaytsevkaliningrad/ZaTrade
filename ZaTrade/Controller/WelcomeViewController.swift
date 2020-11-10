@@ -2,6 +2,8 @@ import UIKit
 
 final class WelcomeViewController: UIViewController {
     
+    var presenter = WelcomePresenter()
+    
     let pinkColor = UIColor(red: 0.851, green: 0.122, blue: 0.663, alpha: 1).cgColor
     let purpleColor = UIColor(red: 0.851, green: 0.122, blue: 0.663, alpha: 1).cgColor
     let purpleLightColor = UIColor(red: 0.549, green: 0.184, blue: 0.733, alpha: 1).cgColor
@@ -13,6 +15,8 @@ final class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.presenter.viewController = self
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
@@ -28,6 +32,7 @@ final class WelcomeViewController: UIViewController {
         
         // setup elements
         self.letsGoButton.setTitle("Поехали!", for: .normal)
+        self.letsGoButton.addGestureRecognizer(UITapGestureRecognizer(target: self.presenter, action: #selector(self.presenter.openProductTable)))
         // self.chooseCountry.setTitle("Выберите вашу страну", for: .normal)
         self.taxFreeInfo.setTitle("Что такое Tax Free?", for: .normal)
         

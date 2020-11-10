@@ -13,8 +13,6 @@
 		55065A20255872CD00D2EDEC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A1B255872CC00D2EDEC /* LoadingView.swift */; };
 		55065A21255872CD00D2EDEC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A1C255872CD00D2EDEC /* IntroView.swift */; };
 		55065A22255872CD00D2EDEC /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A1D255872CD00D2EDEC /* ModalView.swift */; };
-		55065A23255872CD00D2EDEC /* NotHotdogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A1E255872CD00D2EDEC /* NotHotdogView.swift */; };
-		55065A24255872CD00D2EDEC /* HotdogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A1F255872CD00D2EDEC /* HotdogView.swift */; };
 		55065A2D255872EE00D2EDEC /* InfoCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A27255872EE00D2EDEC /* InfoCountryViewController.swift */; };
 		55065A2E255872EE00D2EDEC /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A28255872EE00D2EDEC /* DashboardVC.swift */; };
 		55065A2F255872EE00D2EDEC /* ShowProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A29255872EE00D2EDEC /* ShowProductViewController.swift */; };
@@ -45,6 +43,14 @@
 		55065A8125587A5700D2EDEC /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A372558731700D2EDEC /* Rubik-Bold.ttf */; };
 		55065A8225587A5700D2EDEC /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A352558731700D2EDEC /* Rubik-Light.ttf */; };
 		55065A8325587A5700D2EDEC /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A362558731700D2EDEC /* Rubik-Medium.ttf */; };
+		55A3FF29255AB83C00D034F4 /* IfModelFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF27255AB83C00D034F4 /* IfModelFalse.swift */; };
+		55A3FF2A255AB83C00D034F4 /* IfModelTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF28255AB83C00D034F4 /* IfModelTrue.swift */; };
+		55A3FF2D255AB86A00D034F4 /* TableCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF2C255AB86A00D034F4 /* TableCellViewController.swift */; };
+		55A3FF30255AB87200D034F4 /* ConverterViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF2F255AB87200D034F4 /* ConverterViewViewController.swift */; };
+		55A3FF33255AB89100D034F4 /* ConverterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */; };
+		55A3FF36255AB8A400D034F4 /* ConvertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF35255AB8A400D034F4 /* ConvertButton.swift */; };
+		55A3FF39255AB8B000D034F4 /* SwapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF38255AB8B000D034F4 /* SwapButton.swift */; };
+		55A3FF3C255AB8BA00D034F4 /* UIView+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF3B255AB8B900D034F4 /* UIView+Background.swift */; };
 		55C596272559B48000B380B6 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C596262559B48000B380B6 /* WelcomePresenter.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +61,6 @@
 		55065A1B255872CC00D2EDEC /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		55065A1C255872CD00D2EDEC /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		55065A1D255872CD00D2EDEC /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
-		55065A1E255872CD00D2EDEC /* NotHotdogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotHotdogView.swift; sourceTree = "<group>"; };
-		55065A1F255872CD00D2EDEC /* HotdogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotdogView.swift; sourceTree = "<group>"; };
 		55065A27255872EE00D2EDEC /* InfoCountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCountryViewController.swift; sourceTree = "<group>"; };
 		55065A28255872EE00D2EDEC /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		55065A29255872EE00D2EDEC /* ShowProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +93,14 @@
 		55065A76255876F100D2EDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55065A7C255878B800D2EDEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5539322D253734A900D59D05 /* ZaTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZaTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55A3FF27255AB83C00D034F4 /* IfModelFalse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IfModelFalse.swift; sourceTree = "<group>"; };
+		55A3FF28255AB83C00D034F4 /* IfModelTrue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IfModelTrue.swift; sourceTree = "<group>"; };
+		55A3FF2C255AB86A00D034F4 /* TableCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellViewController.swift; sourceTree = "<group>"; };
+		55A3FF2F255AB87200D034F4 /* ConverterViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterViewViewController.swift; sourceTree = "<group>"; };
+		55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterPresenter.swift; sourceTree = "<group>"; };
+		55A3FF35255AB8A400D034F4 /* ConvertButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertButton.swift; sourceTree = "<group>"; };
+		55A3FF38255AB8B000D034F4 /* SwapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwapButton.swift; sourceTree = "<group>"; };
+		55A3FF3B255AB8B900D034F4 /* UIView+Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Background.swift"; sourceTree = "<group>"; };
 		55C596262559B48000B380B6 /* WelcomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,11 +118,11 @@
 		55065A0E2558728000D2EDEC /* Additions */ = {
 			isa = PBXGroup;
 			children = (
-				55065A1F255872CD00D2EDEC /* HotdogView.swift */,
+				55A3FF27255AB83C00D034F4 /* IfModelFalse.swift */,
+				55A3FF28255AB83C00D034F4 /* IfModelTrue.swift */,
 				55065A1C255872CD00D2EDEC /* IntroView.swift */,
 				55065A1B255872CC00D2EDEC /* LoadingView.swift */,
 				55065A1D255872CD00D2EDEC /* ModalView.swift */,
-				55065A1E255872CD00D2EDEC /* NotHotdogView.swift */,
 				55065A72255875F100D2EDEC /* UIVIew.swift */,
 			);
 			path = Additions;
@@ -119,13 +131,15 @@
 		55065A26255872DD00D2EDEC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				55065A682558754A00D2EDEC /* WelcomeViewController.swift */,
 				55065A2B255872EE00D2EDEC /* AddProductViewController.swift */,
 				55065A2C255872EE00D2EDEC /* CalculatorViewController.swift */,
+				55A3FF2F255AB87200D034F4 /* ConverterViewViewController.swift */,
 				55065A28255872EE00D2EDEC /* DashboardVC.swift */,
 				55065A27255872EE00D2EDEC /* InfoCountryViewController.swift */,
 				55065A29255872EE00D2EDEC /* ShowProductViewController.swift */,
+				55A3FF2C255AB86A00D034F4 /* TableCellViewController.swift */,
 				55065A2A255872EE00D2EDEC /* TableViewController.swift */,
+				55065A682558754A00D2EDEC /* WelcomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -164,6 +178,7 @@
 			children = (
 				55065A482558737300D2EDEC /* AddProductPresenter.swift */,
 				55065A492558737300D2EDEC /* CalculatorPresenter.swift */,
+				55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */,
 				55065A472558737300D2EDEC /* GeneralInfoPresenter.swift */,
 				55065A4B2558737400D2EDEC /* InfoCountryPresenter.swift */,
 				55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */,
@@ -176,13 +191,16 @@
 			isa = PBXGroup;
 			children = (
 				55065A6E255875B400D2EDEC /* Buttons.swift */,
+				55A3FF35255AB8A400D034F4 /* ConvertButton.swift */,
 				55065A592558738B00D2EDEC /* CustomButtonPlus.swift */,
 				55065A552558738A00D2EDEC /* CustomSwich.swift */,
 				55065A542558738A00D2EDEC /* CustomView.swift */,
 				55065A532558738A00D2EDEC /* LetsGoButton.swift */,
+				55A3FF38255AB8B000D034F4 /* SwapButton.swift */,
 				55065A562558738A00D2EDEC /* TableAPI.swift */,
 				55065A582558738A00D2EDEC /* UIColor+NewRed.swift */,
 				55065A572558738A00D2EDEC /* UIView+anchors.swift */,
+				55A3FF3B255AB8B900D034F4 /* UIView+Background.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -299,22 +317,27 @@
 				55065A432558735800D2EDEC /* CalculatorModel.swift in Sources */,
 				55065A602558738B00D2EDEC /* CustomButtonPlus.swift in Sources */,
 				55065A2D255872EE00D2EDEC /* InfoCountryViewController.swift in Sources */,
+				55A3FF2D255AB86A00D034F4 /* TableCellViewController.swift in Sources */,
 				55065A422558735800D2EDEC /* InfoCountryModel.swift in Sources */,
 				55065A5A2558738B00D2EDEC /* LetsGoButton.swift in Sources */,
+				55A3FF2A255AB83C00D034F4 /* IfModelTrue.swift in Sources */,
 				55065A31255872EE00D2EDEC /* AddProductViewController.swift in Sources */,
-				55065A23255872CD00D2EDEC /* NotHotdogView.swift in Sources */,
 				55065A4E2558737400D2EDEC /* CalculatorPresenter.swift in Sources */,
 				55065A692558754A00D2EDEC /* WelcomeViewController.swift in Sources */,
 				55065A5D2558738B00D2EDEC /* TableAPI.swift in Sources */,
 				55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */,
+				55A3FF39255AB8B000D034F4 /* SwapButton.swift in Sources */,
 				55065A442558735800D2EDEC /* ShowProductModel.swift in Sources */,
+				55A3FF30255AB87200D034F4 /* ConverterViewViewController.swift in Sources */,
 				55065A5F2558738B00D2EDEC /* UIColor+NewRed.swift in Sources */,
 				55065A3A2558733400D2EDEC /* HotdogClassifier.mlmodel in Sources */,
+				55A3FF29255AB83C00D034F4 /* IfModelFalse.swift in Sources */,
 				55065A4C2558737400D2EDEC /* GeneralInfoPresenter.swift in Sources */,
 				55065A502558737400D2EDEC /* InfoCountryPresenter.swift in Sources */,
 				55065A5C2558738B00D2EDEC /* CustomSwich.swift in Sources */,
+				55A3FF3C255AB8BA00D034F4 /* UIView+Background.swift in Sources */,
+				55A3FF36255AB8A400D034F4 /* ConvertButton.swift in Sources */,
 				55065A412558735800D2EDEC /* AddProductModel.swift in Sources */,
-				55065A24255872CD00D2EDEC /* HotdogView.swift in Sources */,
 				55065A2E255872EE00D2EDEC /* DashboardVC.swift in Sources */,
 				55065A21255872CD00D2EDEC /* IntroView.swift in Sources */,
 				55065A30255872EE00D2EDEC /* TableViewController.swift in Sources */,
@@ -326,6 +349,7 @@
 				55065A20255872CD00D2EDEC /* LoadingView.swift in Sources */,
 				55065A5B2558738B00D2EDEC /* CustomView.swift in Sources */,
 				55065A32255872EF00D2EDEC /* CalculatorViewController.swift in Sources */,
+				55A3FF33255AB89100D034F4 /* ConverterPresenter.swift in Sources */,
 				55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */,
 				55065A22255872CD00D2EDEC /* ModalView.swift in Sources */,
 				55065A2F255872EE00D2EDEC /* ShowProductViewController.swift in Sources */,

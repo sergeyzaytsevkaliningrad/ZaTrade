@@ -1,10 +1,3 @@
-//
-//  ConvertButton.swift
-//  ZaTrade
-//
-//  Created by Константин Емельянов on 09.11.2020.
-//
-
 import UIKit
 
 class ConvertButton: UIButton {

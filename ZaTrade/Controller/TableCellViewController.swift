@@ -1,10 +1,3 @@
-//
-//  TableCellViewController.swift
-//  ZaTrade
-//
-//  Created by Сергей Зайцев on 09.11.2020.
-//
-
 import UIKit
 
 class ItemTableCell: UITableViewCell {

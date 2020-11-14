@@ -1,10 +1,3 @@
-//
-//  ShowProductViewController.swift
-//  ZaTrade
-//
-//  Created by Анастасия  on 08.11.2020.
-//
-
 import UIKit
 
 

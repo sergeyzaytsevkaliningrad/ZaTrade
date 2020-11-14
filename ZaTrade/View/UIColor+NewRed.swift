@@ -1,11 +1,3 @@
-//
-//  UIColor+NewRed.swift
-//  HolyWurst
-//
-//  Created by Martin Lasek on 23.06.19.
-//  Copyright © 2019 Martin Lasek. All rights reserved.
-//
-
 import UIKit
 
 //just new colors

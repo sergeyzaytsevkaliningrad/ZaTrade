@@ -1,10 +1,3 @@
-//
-//  TableViewController.swift
-//  ZaTrade
-//
-//  Created by Сергей Зайцев on 07.11.2020.
-//
-
 import UIKit
 
 

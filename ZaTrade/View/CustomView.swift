@@ -1,10 +1,3 @@
-//
-//  CustomView.swift
-//  ZaTrade
-//
-//  Created by Константин Емельянов on 16.10.2020.
-//
-
 import UIKit
 
 final class CustomView : UIView {

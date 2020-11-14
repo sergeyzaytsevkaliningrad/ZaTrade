@@ -1,12 +1,3 @@
-
-
-//
-//  InfoCountryViewController.swift
-//  ZaTrade
-//
-//  Created by Анастасия  on 17.10.2020.
-//
-
 import UIKit
 import MapKit
 

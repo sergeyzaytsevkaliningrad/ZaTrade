@@ -1,10 +1,3 @@
-//
-//  UIView+anchors.swift
-//  ZaTrade
-//
-//  Created by Сергей Зайцев on 06.11.2020.
-//
-
 import UIKit
 
 

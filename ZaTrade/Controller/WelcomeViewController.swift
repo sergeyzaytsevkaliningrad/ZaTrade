@@ -1,12 +1,8 @@
 import UIKit
 
-final class WelcomeViewController: UIViewController {
+final class WelcomeViewController: BaseViewController {
     
     var presenter = WelcomePresenter()
-    
-    let pinkColor = UIColor(red: 0.851, green: 0.122, blue: 0.663, alpha: 1).cgColor
-    let purpleColor = UIColor(red: 0.851, green: 0.122, blue: 0.663, alpha: 1).cgColor
-    let purpleLightColor = UIColor(red: 0.549, green: 0.184, blue: 0.733, alpha: 1).cgColor
     
     let mainImageView = UIImageView(image: UIImage(named: "za_label"))
     let chooseCountry = ChooseCountryButton() // modal with UIPickerView
@@ -18,14 +14,6 @@ final class WelcomeViewController: UIViewController {
         self.title = "Главная"
         
         self.presenter.viewController = self
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [pinkColor, purpleColor, purpleLightColor]
-        gradientLayer.locations = [0, 0.42, 0.91]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-        gradientLayer.frame = self.view.bounds
-        self.view.layer.addSublayer(gradientLayer)
         
         let subviews = [self.mainImageView, self.letsGoButton, self.chooseCountry, self.taxFreeInfo]
         

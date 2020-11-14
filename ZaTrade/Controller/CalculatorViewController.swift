@@ -22,6 +22,7 @@ class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.setupBackground()
         
         presenter.view = self

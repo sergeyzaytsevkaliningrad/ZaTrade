@@ -32,6 +32,7 @@ final class InfoCountryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.presenter.view = self
         setupBackground()
         view.addSubview(cView)

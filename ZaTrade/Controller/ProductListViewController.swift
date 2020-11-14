@@ -8,23 +8,15 @@
 import UIKit
 
 
-class ItemTable: UIViewController {
+class ProductListViewController: UIViewController {
 
     let tableView = UITableView()
     let itemList = ["MacBook","Trump","IPhone","Nothing","6","7","8"]
     let itemListLable = ["Sold","Vote","12 mini","Well still nothig"]
     var safeArea: UILayoutGuide!
 
-    override func viewDidLoad(){
-        
-        //Sets background image
-//        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-//            backgroundImage.image = UIImage(named: "Background.png")
-//            self.view.insertSubview(backgroundImage, at: 0)
-//
-       
-     //   setupRedCircle()
-        self.title = "Список товаров"
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         setupBackground()
         
@@ -60,7 +52,7 @@ class ItemTable: UIViewController {
 
 }
 
-extension ItemTable: UITableViewDataSource {
+extension ProductListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemList.count
     }

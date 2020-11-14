@@ -15,6 +15,7 @@ final class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Главная"
         
         self.presenter.viewController = self
         
@@ -30,8 +31,7 @@ final class WelcomeViewController: UIViewController {
         
         // setup elements
         self.letsGoButton.setTitle("Поехали!", for: .normal)
-        self.letsGoButton.addGestureRecognizer(UITapGestureRecognizer(target: self.presenter, action: #selector(self.presenter.openProductTable)))
-        // self.chooseCountry.setTitle("Выберите вашу страну", for: .normal)
+        self.letsGoButton.addGestureRecognizer(UITapGestureRecognizer(target: self.presenter, action: #selector(self.presenter.openTabBarController)))
         self.taxFreeInfo.setTitle("Что такое Tax Free?", for: .normal)
         
         // enable constraints
@@ -46,8 +46,12 @@ final class WelcomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+        
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         self.mainImageView.centerX()
         self.mainImageView.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive = true
                 

@@ -22,7 +22,6 @@
 		55065A3A2558733400D2EDEC /* HotdogClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55065A392558733400D2EDEC /* HotdogClassifier.mlmodel */; };
 		55065A412558735800D2EDEC /* AddProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3D2558735800D2EDEC /* AddProductModel.swift */; };
 		55065A422558735800D2EDEC /* InfoCountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3E2558735800D2EDEC /* InfoCountryModel.swift */; };
-		55065A432558735800D2EDEC /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3F2558735800D2EDEC /* CalculatorModel.swift */; };
 		55065A442558735800D2EDEC /* ShowProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A402558735800D2EDEC /* ShowProductModel.swift */; };
 		55065A4C2558737400D2EDEC /* GeneralInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A472558737300D2EDEC /* GeneralInfoPresenter.swift */; };
 		55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A482558737300D2EDEC /* AddProductPresenter.swift */; };
@@ -52,7 +51,6 @@
 		55A3FF33255AB89100D034F4 /* ConverterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */; };
 		55A3FF36255AB8A400D034F4 /* ConvertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF35255AB8A400D034F4 /* ConvertButton.swift */; };
 		55A3FF39255AB8B000D034F4 /* SwapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF38255AB8B000D034F4 /* SwapButton.swift */; };
-		55A3FF3C255AB8BA00D034F4 /* UIView+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF3B255AB8B900D034F4 /* UIView+Background.swift */; };
 		55C596272559B48000B380B6 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C596262559B48000B380B6 /* WelcomePresenter.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +73,6 @@
 		55065A392558733400D2EDEC /* HotdogClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HotdogClassifier.mlmodel; sourceTree = "<group>"; };
 		55065A3D2558735800D2EDEC /* AddProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductModel.swift; sourceTree = "<group>"; };
 		55065A3E2558735800D2EDEC /* InfoCountryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCountryModel.swift; sourceTree = "<group>"; };
-		55065A3F2558735800D2EDEC /* CalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 		55065A402558735800D2EDEC /* ShowProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductModel.swift; sourceTree = "<group>"; };
 		55065A472558737300D2EDEC /* GeneralInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralInfoPresenter.swift; sourceTree = "<group>"; };
 		55065A482558737300D2EDEC /* AddProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductPresenter.swift; sourceTree = "<group>"; };
@@ -104,7 +101,6 @@
 		55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterPresenter.swift; sourceTree = "<group>"; };
 		55A3FF35255AB8A400D034F4 /* ConvertButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertButton.swift; sourceTree = "<group>"; };
 		55A3FF38255AB8B000D034F4 /* SwapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwapButton.swift; sourceTree = "<group>"; };
-		55A3FF3B255AB8B900D034F4 /* UIView+Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Background.swift"; sourceTree = "<group>"; };
 		55C596262559B48000B380B6 /* WelcomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				55065A3D2558735800D2EDEC /* AddProductModel.swift */,
-				55065A3F2558735800D2EDEC /* CalculatorModel.swift */,
 				55065A3E2558735800D2EDEC /* InfoCountryModel.swift */,
 				55065A402558735800D2EDEC /* ShowProductModel.swift */,
 			);
@@ -206,7 +201,6 @@
 				55065A562558738A00D2EDEC /* TableAPI.swift */,
 				55065A582558738A00D2EDEC /* UIColor+NewRed.swift */,
 				55065A572558738A00D2EDEC /* UIView+anchors.swift */,
-				55A3FF3B255AB8B900D034F4 /* UIView+Background.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,7 +314,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				550659E42558703400D2EDEC /* AppDelegate.swift in Sources */,
-				55065A432558735800D2EDEC /* CalculatorModel.swift in Sources */,
 				55065A602558738B00D2EDEC /* CustomButtonPlus.swift in Sources */,
 				55065A2D255872EE00D2EDEC /* InfoCountryViewController.swift in Sources */,
 				55A3FF2D255AB86A00D034F4 /* TableCellViewController.swift in Sources */,
@@ -342,7 +335,6 @@
 				55065A4C2558737400D2EDEC /* GeneralInfoPresenter.swift in Sources */,
 				55065A502558737400D2EDEC /* InfoCountryPresenter.swift in Sources */,
 				55065A5C2558738B00D2EDEC /* CustomSwich.swift in Sources */,
-				55A3FF3C255AB8BA00D034F4 /* UIView+Background.swift in Sources */,
 				55A3FF36255AB8A400D034F4 /* ConvertButton.swift in Sources */,
 				55065A412558735800D2EDEC /* AddProductModel.swift in Sources */,
 				5523F6B1255FEF2E001B919B /* TabBarController.swift in Sources */,

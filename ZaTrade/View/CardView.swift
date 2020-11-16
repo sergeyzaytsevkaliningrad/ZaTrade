@@ -1,23 +1,23 @@
 import UIKit
 
-final class CustomView : UIView {
+
+final class CardView: UIView {
     
-    init() {
-        super.init(frame: .zero)
-        setupUI()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setupUI()
+        fatalError("init(coder:) has not been implemented")
+    }
+            
+    override func layoutSubviews() {
+        setupShadows()
     }
     
-    func setupUI() {
-        clear()
-        self.backgroundColor = .white        
-    }
-    
-    private func steupShadows() {
+    private func setupShadows() {
         let shadowPath0 = UIBezierPath(roundedRect: self.bounds, cornerRadius: 28)
         layer.shadowPath = shadowPath0.cgPath
         layer.shadowColor = UIColor(red: 0.859, green: 0.278, blue: 0.71, alpha: 0.66).cgColor
@@ -27,13 +27,5 @@ final class CustomView : UIView {
         self.layer.cornerRadius = 28
     }
     
-    private func clear() {
-        for view in self.subviews {
-            view.removeFromSuperview()
-        }
-    }
-    
-    override func layoutSubviews() {
-        steupShadows()
-    }
 }
+

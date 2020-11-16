@@ -1,6 +1,6 @@
 import UIKit
 
-class ConverterViewController: UIViewController {
+class ConverterViewController: BaseViewController {
     
     private let textfield = UITextField()
     private let resultLabel = UILabel()
@@ -20,7 +20,6 @@ class ConverterViewController: UIViewController {
         super.viewDidLoad()
     
         self.presenter.view = self
-        self.view.setupBackground()
         
         self.view.addSubview(textfield)
         self.layoutTextField()

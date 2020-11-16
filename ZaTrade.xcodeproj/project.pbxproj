@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5506468625611AAF00C7C603 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5506468525611AAF00C7C603 /* CardView.swift */; };
 		550659E22558703400D2EDEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 550659D12558703300D2EDEC /* Assets.xcassets */; };
 		550659E42558703400D2EDEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550659D32558703300D2EDEC /* AppDelegate.swift */; };
 		550659ED2558703400D2EDEC /* ZaTrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 550659DC2558703400D2EDEC /* ZaTrade.xcdatamodeld */; };
@@ -29,7 +30,6 @@
 		55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */; };
 		55065A502558737400D2EDEC /* InfoCountryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A4B2558737400D2EDEC /* InfoCountryPresenter.swift */; };
 		55065A5A2558738B00D2EDEC /* LetsGoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A532558738A00D2EDEC /* LetsGoButton.swift */; };
-		55065A5B2558738B00D2EDEC /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A542558738A00D2EDEC /* CustomView.swift */; };
 		55065A5C2558738B00D2EDEC /* CustomSwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A552558738A00D2EDEC /* CustomSwich.swift */; };
 		55065A5D2558738B00D2EDEC /* TableAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A562558738A00D2EDEC /* TableAPI.swift */; };
 		55065A5E2558738B00D2EDEC /* UIView+anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A572558738A00D2EDEC /* UIView+anchors.swift */; };
@@ -55,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5506468525611AAF00C7C603 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		550659D12558703300D2EDEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		550659D32558703300D2EDEC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		550659DD2558703400D2EDEC /* ZaTrade.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZaTrade.xcdatamodel; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductPresenter.swift; sourceTree = "<group>"; };
 		55065A4B2558737400D2EDEC /* InfoCountryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCountryPresenter.swift; sourceTree = "<group>"; };
 		55065A532558738A00D2EDEC /* LetsGoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsGoButton.swift; sourceTree = "<group>"; };
-		55065A542558738A00D2EDEC /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		55065A552558738A00D2EDEC /* CustomSwich.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwich.swift; sourceTree = "<group>"; };
 		55065A562558738A00D2EDEC /* TableAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAPI.swift; sourceTree = "<group>"; };
 		55065A572558738A00D2EDEC /* UIView+anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+anchors.swift"; sourceTree = "<group>"; };
@@ -123,7 +123,6 @@
 				55065A1C255872CD00D2EDEC /* IntroView.swift */,
 				55065A1B255872CC00D2EDEC /* LoadingView.swift */,
 				55065A1D255872CD00D2EDEC /* ModalView.swift */,
-				55065A72255875F100D2EDEC /* UIVIew.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -195,12 +194,13 @@
 				55A3FF35255AB8A400D034F4 /* ConvertButton.swift */,
 				55065A592558738B00D2EDEC /* CustomButtonPlus.swift */,
 				55065A552558738A00D2EDEC /* CustomSwich.swift */,
-				55065A542558738A00D2EDEC /* CustomView.swift */,
 				55065A532558738A00D2EDEC /* LetsGoButton.swift */,
 				55A3FF38255AB8B000D034F4 /* SwapButton.swift */,
 				55065A562558738A00D2EDEC /* TableAPI.swift */,
 				55065A582558738A00D2EDEC /* UIColor+NewRed.swift */,
+				55065A72255875F100D2EDEC /* UIVIew.swift */,
 				55065A572558738A00D2EDEC /* UIView+anchors.swift */,
+				5506468525611AAF00C7C603 /* CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,6 +327,7 @@
 				55065A5D2558738B00D2EDEC /* TableAPI.swift in Sources */,
 				55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */,
 				55A3FF39255AB8B000D034F4 /* SwapButton.swift in Sources */,
+				5506468625611AAF00C7C603 /* CardView.swift in Sources */,
 				55065A442558735800D2EDEC /* ShowProductModel.swift in Sources */,
 				55A3FF30255AB87200D034F4 /* ConverterViewViewController.swift in Sources */,
 				55065A5F2558738B00D2EDEC /* UIColor+NewRed.swift in Sources */,
@@ -347,7 +348,6 @@
 				550659ED2558703400D2EDEC /* ZaTrade.xcdatamodeld in Sources */,
 				55065A5E2558738B00D2EDEC /* UIView+anchors.swift in Sources */,
 				55065A20255872CD00D2EDEC /* LoadingView.swift in Sources */,
-				55065A5B2558738B00D2EDEC /* CustomView.swift in Sources */,
 				55065A32255872EF00D2EDEC /* CalculatorViewController.swift in Sources */,
 				55A3FF33255AB89100D034F4 /* ConverterPresenter.swift in Sources */,
 				55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */,

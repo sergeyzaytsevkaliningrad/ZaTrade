@@ -1,6 +1,6 @@
 import UIKit
 
-class CalculatorViewController: UIViewController {
+class CalculatorViewController: BaseViewController {
     
     var titleText: String = "0"
     var presenter = CalculatorPresenter()
@@ -16,7 +16,6 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.setupBackground()
         
         presenter.view = self
         self.view.addSubview(VstackView)

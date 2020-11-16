@@ -5,7 +5,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addGradientLayer()
+        self.addGradientLayer()
     }
     
     private func addGradientLayer() {
@@ -22,4 +22,25 @@ class BaseViewController: UIViewController {
         self.view.layer.addSublayer(gradientLayer)
     }
     
+}
+
+
+class CardViewController: BaseViewController {
+    
+    let cardView = CardView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.cardView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.cardView)
+        [
+            self.cardView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            self.cardView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -15),
+            self.cardView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+            self.cardView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10),
+        ].forEach( {$0.isActive = true } )
+        
+    }
+        
 }

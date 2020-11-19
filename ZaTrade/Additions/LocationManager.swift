@@ -21,7 +21,7 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
         }
     }
     
-    func fetchCityAndCountry(from location: CLLocation, completion: @escaping ( _ country:  String?, _ error: Error?) -> ()) {
+    private func fetchCityAndCountry(from location: CLLocation, completion: @escaping ( _ country:  String?, _ error: Error?) -> ()) {
         CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
             completion(placemarks?.first?.country, error)
         }

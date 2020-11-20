@@ -55,6 +55,7 @@
 		55A3FF3C255AB8BA00D034F4 /* UIView+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF3B255AB8B900D034F4 /* UIView+Background.swift */; };
 		55C596272559B48000B380B6 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C596262559B48000B380B6 /* WelcomePresenter.swift */; };
 		F4922B4C256738B00007ACE1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4922B4B256738B00007ACE1 /* Currency.swift */; };
+		F4922B482567327E0007ACE1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4922B472567327E0007ACE1 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		55A3FF3B255AB8B900D034F4 /* UIView+Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Background.swift"; sourceTree = "<group>"; };
 		55C596262559B48000B380B6 /* WelcomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		F4922B4B256738B00007ACE1 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		F4922B472567327E0007ACE1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				55065A1D255872CD00D2EDEC /* ModalView.swift */,
 				F4922B4B256738B00007ACE1 /* Currency.swift */,
 				55065A72255875F100D2EDEC /* UIVIew.swift */,
+				F4922B472567327E0007ACE1 /* LocationManager.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				550659E42558703400D2EDEC /* AppDelegate.swift in Sources */,
 				55065A432558735800D2EDEC /* CalculatorModel.swift in Sources */,
 				55065A602558738B00D2EDEC /* CustomButtonPlus.swift in Sources */,
+				F4922B482567327E0007ACE1 /* LocationManager.swift in Sources */,
 				55065A2D255872EE00D2EDEC /* InfoCountryViewController.swift in Sources */,
 				55A3FF2D255AB86A00D034F4 /* TableCellViewController.swift in Sources */,
 				559760D0255FFD770018EFAA /* BaseViewController.swift in Sources */,

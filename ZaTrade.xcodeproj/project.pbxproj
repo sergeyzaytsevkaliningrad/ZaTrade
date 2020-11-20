@@ -54,6 +54,7 @@
 		55A3FF39255AB8B000D034F4 /* SwapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF38255AB8B000D034F4 /* SwapButton.swift */; };
 		55A3FF3C255AB8BA00D034F4 /* UIView+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF3B255AB8B900D034F4 /* UIView+Background.swift */; };
 		55C596272559B48000B380B6 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C596262559B48000B380B6 /* WelcomePresenter.swift */; };
+		F4922B4C256738B00007ACE1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4922B4B256738B00007ACE1 /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		55A3FF38255AB8B000D034F4 /* SwapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwapButton.swift; sourceTree = "<group>"; };
 		55A3FF3B255AB8B900D034F4 /* UIView+Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Background.swift"; sourceTree = "<group>"; };
 		55C596262559B48000B380B6 /* WelcomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		F4922B4B256738B00007ACE1 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				55065A1C255872CD00D2EDEC /* IntroView.swift */,
 				55065A1B255872CC00D2EDEC /* LoadingView.swift */,
 				55065A1D255872CD00D2EDEC /* ModalView.swift */,
+				F4922B4B256738B00007ACE1 /* Currency.swift */,
 				55065A72255875F100D2EDEC /* UIVIew.swift */,
 			);
 			path = Additions;
@@ -333,6 +336,7 @@
 				55065A692558754A00D2EDEC /* WelcomeViewController.swift in Sources */,
 				55065A5D2558738B00D2EDEC /* TableAPI.swift in Sources */,
 				55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */,
+				F4922B4C256738B00007ACE1 /* Currency.swift in Sources */,
 				55A3FF39255AB8B000D034F4 /* SwapButton.swift in Sources */,
 				55065A442558735800D2EDEC /* ShowProductModel.swift in Sources */,
 				55A3FF30255AB87200D034F4 /* ConverterViewViewController.swift in Sources */,

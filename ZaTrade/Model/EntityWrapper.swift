@@ -90,10 +90,6 @@ class EntityWrapper<Entity: NSManagedObject> {
         return result
     }
     
-    static func filter() -> [EntityWrapper<Entity>] {
-        return []
-    }
-    
 }
 
 extension EntityWrapper: CustomStringConvertible {

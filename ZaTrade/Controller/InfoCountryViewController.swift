@@ -1,20 +1,9 @@
-
-
-//
-//  InfoCountryViewController.swift
-//  ZaTrade
-//
-//  Created by Анастасия  on 17.10.2020.
-//
-
 import UIKit
 import MapKit
 
-final class InfoCountryViewController: UIViewController {
+final class InfoCountryViewController: CardViewController {
     
     var presenter = InfoCountryPresenter()
-    
-    private let cView = CustomView()
     
     private let scrollView = UIScrollView()
     private let contentView = UIStackView()
@@ -34,15 +23,13 @@ final class InfoCountryViewController: UIViewController {
         super.viewDidLoad()
         
         self.presenter.view = self
-        setupBackground()
-        view.addSubview(cView)
 
         self.setup()
     }
     
     private func setup() {
-        
-        cView.addSubview(scrollView)
+        self.cardView.layoutSubviews()
+        cardView.addSubview(scrollView)
         setupScrollView()
         
         scrollView.addSubview(contentView)
@@ -64,7 +51,6 @@ final class InfoCountryViewController: UIViewController {
     
     func setupConstraints() {
         [
-            self.cView,
             self.scrollView,
             self.contentView,
             self.mainLabel,
@@ -80,68 +66,52 @@ final class InfoCountryViewController: UIViewController {
             self.mapView
             
         ].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        
         [
-            self.cView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 18),
-            self.cView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -22),
-            self.cView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 28),
-            self.cView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -12),
-
-//            self.mainLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 12),
             self.mainLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 25),
             self.mainLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
 
-//            self.generalInfoLabel.topAnchor.constraint(equalTo: self.mainLabel.bottomAnchor, constant: 17),
             self.generalInfoLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 36),
             self.generalInfoLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -36),
 
-//            self.registerTaxFreeLabel.topAnchor.constraint(equalTo: self.generalInfoLabel.bottomAnchor, constant: 27),
             self.registerTaxFreeLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 25),
 
-//            self.firstStepLabel.topAnchor.constraint(equalTo: self.registerTaxFreeLabel.bottomAnchor, constant: 18),
             self.firstStepLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 36),
             self.firstStepLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -228),
 
-//            self.firstStepInfoLabel.topAnchor.constraint(equalTo: self.firstStepLabel.bottomAnchor, constant: 4),
             self.firstStepInfoLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 37),
             self.firstStepInfoLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -35),
 
-//            self.secondStepLabel.topAnchor.constraint(equalTo: self.firstStepInfoLabel.bottomAnchor, constant: 22),
             self.secondStepLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 36),
             self.secondStepLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -228),
 
-//            self.secondStepInfoLabel.topAnchor.constraint(equalTo: self.secondStepLabel.bottomAnchor, constant: 4),
             self.secondStepInfoLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 37),
             self.secondStepInfoLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -35),
 
-//            self.thirdStepLabel.topAnchor.constraint(equalTo: self.secondStepInfoLabel.bottomAnchor, constant: 22),
             self.thirdStepLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 36),
             self.thirdStepLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -228),
 
-//            self.thirdStepInfoLabel.topAnchor.constraint(equalTo: self.thirdStepLabel.bottomAnchor, constant: 4),
             self.thirdStepInfoLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 37),
             self.thirdStepInfoLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -35),
 
-//            self.returnMoney.topAnchor.constraint(equalTo: self.thirdStepInfoLabel.bottomAnchor, constant: 22),
             self.returnMoney.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 36),
             self.returnMoney.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -36),
 
-//            self.mapView.topAnchor.constraint(equalTo: self.returnMoney.bottomAnchor, constant: 11),
             self.mapView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 25),
             self.mapView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -25),
             self.mapView.heightAnchor.constraint(equalToConstant: 366)
 
         ].forEach {$0.isActive = true}
-        
     }
     
     func setupScrollView() {
         scrollView.layer.cornerRadius = 28
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsHorizontalScrollIndicator = false
-        self.scrollView.topAnchor.constraint(equalTo: cView.topAnchor).isActive = true
-        self.scrollView.bottomAnchor.constraint(equalTo: cView.bottomAnchor).isActive = true
-        self.scrollView.leadingAnchor.constraint(equalTo: self.cView.leadingAnchor).isActive = true
-        self.scrollView.trailingAnchor.constraint(equalTo: self.cView.trailingAnchor).isActive = true
+        self.scrollView.topAnchor.constraint(equalTo: self.cardView.topAnchor).isActive = true
+        self.scrollView.bottomAnchor.constraint(equalTo: self.cardView.bottomAnchor).isActive = true
+        self.scrollView.leadingAnchor.constraint(equalTo: self.cardView.leadingAnchor).isActive = true
+        self.scrollView.trailingAnchor.constraint(equalTo: self.cardView.trailingAnchor).isActive = true
     }
     
     func setupContentView() {
@@ -149,11 +119,9 @@ final class InfoCountryViewController: UIViewController {
         self.contentView.spacing = 12
         self.contentView.axis = .vertical
         self.contentView.alignment = .firstBaseline
-//        self.contentView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true;
         self.contentView.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 28).isActive = true;
-//        self.contentView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true;
         self.contentView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: -28).isActive = true;
-        self.contentView.widthAnchor.constraint(equalTo: self.cView.widthAnchor).isActive = true;
+        self.contentView.widthAnchor.constraint(equalTo: self.cardView.widthAnchor).isActive = true;
     }
     
     func setupMainLabel() {
@@ -262,23 +230,6 @@ final class InfoCountryViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         setupConstraints()
     }
-    
-    
-    func setupBackground() {
-        view.backgroundColor = .white
-        let layer0 = CAGradientLayer()
-        layer0.colors = [
-            UIColor(red: 0.859, green: 0.278, blue: 0.71, alpha: 1).cgColor,
-            UIColor(red: 0.62, green: 0.325, blue: 0.765, alpha: 1).cgColor ]
-        layer0.locations = [0, 1]
-        layer0.startPoint = CGPoint(x: 0.25, y: 0.5)
-        layer0.endPoint = CGPoint(x: 0.75, y: 0.5)
-        layer0.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: -0.02, b: 0.78, c: -0.78, d: 0, tx: 0.99, ty: -0.14))
-        layer0.frame = view.bounds
-        layer0.position = view.center
-        view.layer.addSublayer(layer0)
-    }
-    
     
 }
 

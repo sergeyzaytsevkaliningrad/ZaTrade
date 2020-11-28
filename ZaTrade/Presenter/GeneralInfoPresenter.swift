@@ -1,10 +1,3 @@
-//
-//  GeneralInfoPresenter.swift
-//  ZaTrade
-//
-//  Created by Анастасия  on 04.11.2020.
-//
-
 import Foundation
 
 

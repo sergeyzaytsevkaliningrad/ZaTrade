@@ -1,10 +1,3 @@
-//
-//  AddProductPresenter.swift
-//  ZaTrade
-//
-//  Created by Анастасия  on 07.11.2020.
-//
-
 import Foundation
 
 final class AddProductPresenter {

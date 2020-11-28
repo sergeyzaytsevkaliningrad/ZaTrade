@@ -1,11 +1,3 @@
-//
-//  TableCellViewController.swift
-//  ZaTrade
-//
-//  Created by Сергей Зайцев on 09.11.2020.
-//
-
-
 import UIKit
 
 final class IfModelTrue: UIView {
@@ -40,7 +32,7 @@ final class IfModelTrue: UIView {
     let trailing = container.trailingAnchor.constraint(equalTo: trailingAnchor)
     NSLayoutConstraint.activate([top, leading, bottom, trailing])
     
-    container.backgroundColor = .newGreen
+    container.backgroundColor = UIColor(red: 101/255, green: 196/255, blue: 0/255, alpha: 1)
   }
   
   private func setupCircle() {
@@ -53,7 +45,7 @@ final class IfModelTrue: UIView {
     let width = circle.widthAnchor.constraint(equalToConstant: 100)
     NSLayoutConstraint.activate([centerX, bottom, height, width])
     
-    circle.backgroundColor = .newGreen
+    circle.backgroundColor = UIColor(red: 101/255, green: 196/255, blue: 0/255, alpha: 1)
     circle.layer.cornerRadius = 50
     
     let image = UIImage(named: "hotdog")

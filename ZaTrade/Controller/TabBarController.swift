@@ -22,7 +22,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         infoCountryViewController.title = "Информация"
         infoCountryViewController.tabBarItem = UITabBarItem(title: infoCountryViewController.title, image: nil, selectedImage: nil)
         
-        self.viewControllers = [productListViewController, calculatorViewController, converterViewController, infoCountryViewController, CardViewController()]
+        self.viewControllers = [productListViewController, calculatorViewController, converterViewController, infoCountryViewController]
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {

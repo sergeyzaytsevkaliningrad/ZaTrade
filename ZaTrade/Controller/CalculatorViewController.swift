@@ -16,7 +16,6 @@ class CalculatorViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         presenter.view = self
         self.view.addSubview(VstackView)
         layoutBigStackView()
@@ -25,9 +24,6 @@ class CalculatorViewController: BaseViewController {
     }
     
     // MARK: - LayoutFuncs
-    
- 
-    
     func layoutLabel() {
         label.font = UIFont(name: "Rubik-Bold", size: 40)
         label.textColor = .white

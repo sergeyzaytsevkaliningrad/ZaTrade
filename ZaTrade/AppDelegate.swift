@@ -6,8 +6,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let viewController = WelcomeViewController()
@@ -20,7 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = window
         window.makeKeyAndVisible()
-
+        
+        let userDefaults = UserDefaults.standard
+        let userDefaultsKey = "DataInitialized"
+        userDefaults.register(defaults: [userDefaultsKey: false])
+        
+        if !userDefaults.bool(forKey: userDefaultsKey) {
+            let initializer = DataInitializer()
+            initializer.initializeAll()
+            userDefaults.set(true, forKey: userDefaultsKey)
+        }
+        
         return true
     }
 
@@ -52,21 +60,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
-
-    // MARK: - Core Data Saving support
-
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-
+    
 }

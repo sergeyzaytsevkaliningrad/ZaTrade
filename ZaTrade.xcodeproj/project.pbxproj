@@ -318,7 +318,6 @@
 				55065A5D2558738B00D2EDEC /* TableAPI.swift in Sources */,
 				55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */,
 				55325E94256A517600079D04 /* EntityWrapper.swift in Sources */,
-				55A3FF39255AB8B000D034F4 /* SwapButton.swift in Sources */,
 				55402777256EDADB0008492F /* DataInitializer.swift in Sources */,
 				5506468625611AAF00C7C603 /* CardView.swift in Sources */,
 				55A3FF30255AB87200D034F4 /* ConverterViewViewController.swift in Sources */,
@@ -484,7 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ZaTrade/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,7 +506,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ZaTrade/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

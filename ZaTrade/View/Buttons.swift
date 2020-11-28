@@ -1,33 +1,34 @@
 import UIKit
 
-final class ChooseCountryButton: UIView {
+final class ChooseCountryButton: UIButton {
     
     private let lightGray = UIColor(red: 0.004, green: 0.004, blue: 0.004, alpha: 0.32).cgColor
     private let lightGrayClicked = UIColor(red: 0.004, green: 0.004, blue: 0.004, alpha: 0.5).cgColor
     private let garkGray = UIColor(red: 0.008, green: 0.008, blue: 0.008, alpha: 0.32).cgColor
     private let garkGrayClicked = UIColor(red: 0.008, green: 0.008, blue: 0.008, alpha: 0.5).cgColor
+    private let textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
     
     private let flagView = UIView(frame: .zero)
-    private let countryFlag =  UILabel(frame: .zero)
-    private let countryTitle = UILabel(frame: .zero)
-    
+    let countryFlag =  UILabel(frame: .zero)
+    let countryTitle = UILabel(frame: .zero)
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         // setup elements
+        self.titleLabel?.isHidden = true
         self.layer.backgroundColor = self.lightGray
         self.layer.cornerRadius = 7
         
         flagView.layer.backgroundColor = self.garkGray
         flagView.layer.cornerRadius = 9
         
-        countryFlag.text = "?"
-        countryFlag.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+        countryFlag.textAlignment = .center
+        countryFlag.textColor = textColor
         countryFlag.font = UIFont(name: "Sansation-Regular", size: 30)
         
-        countryTitle.text = "countryTitle"
         countryTitle.textAlignment = .center
-        countryTitle.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+        countryTitle.textColor = textColor
         countryTitle.font = UIFont(name: "Rubik-Regular", size: 17)
         
         // enable constraints
@@ -49,10 +50,10 @@ final class ChooseCountryButton: UIView {
             flagView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             flagView.topAnchor.constraint(equalTo: self.topAnchor),
             
-            countryFlag.widthAnchor.constraint(equalToConstant: 12),
-            countryFlag.heightAnchor.constraint(equalToConstant: 23),
-            countryFlag.centerXAnchor.constraint(equalTo: flagView.centerXAnchor, constant: 1),
-            countryFlag.centerYAnchor.constraint(equalTo: flagView.centerYAnchor),
+            countryFlag.leadingAnchor.constraint(equalTo: flagView.leadingAnchor),
+            countryFlag.trailingAnchor.constraint(equalTo: flagView.trailingAnchor),
+            countryFlag.topAnchor.constraint(equalTo: flagView.topAnchor),
+            countryFlag.bottomAnchor.constraint(equalTo: flagView.bottomAnchor),
             
             countryTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             countryTitle.leadingAnchor.constraint(equalTo: flagView.trailingAnchor),
@@ -65,28 +66,33 @@ final class ChooseCountryButton: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.layer.backgroundColor = self.lightGrayClicked
-        flagView.layer.backgroundColor = self.garkGrayClicked
+    override var isHighlighted: Bool {
+        didSet {
+            if isHighlighted {
+                self.layer.backgroundColor = self.lightGrayClicked
+                flagView.layer.backgroundColor = self.garkGrayClicked
+            } else {
+                cancelTracking(with: nil)
+                self.layer.backgroundColor = self.lightGray
+                flagView.layer.backgroundColor = self.garkGray
+            }
+        }
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.layer.backgroundColor = self.lightGray
-        flagView.layer.backgroundColor = self.garkGray
-    }
-    
+
 }
 
 
 final class UnderlineButton: UIButton {
     
-    private let white = UIColor(red: 1, green: 1, blue: 1, alpha: 0.78)
+    private let white = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
     private let whiteClicked = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.78)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         // setup elements
+        self.setTitleColor(white, for: .normal)
+        self.setTitleColor(whiteClicked, for: .highlighted)
         self.titleLabel?.textColor = white
         self.titleLabel?.font = UIFont(name: "Rubik-Light", size: 14)
     }
@@ -99,15 +105,7 @@ final class UnderlineButton: UIButton {
         super.setTitle(title, for: state)
         self.titleLabel?.attributedText = NSMutableAttributedString(string: self.titleLabel?.text ?? "", attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.titleLabel?.textColor = whiteClicked
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.titleLabel?.textColor = white
-    }
-    
+            
 }
 
 
@@ -216,10 +214,8 @@ final class LetsGoButton: UIButton {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
+        fatalError("init(coder:) has not been implemented")
     }
-    
     
     private func setup() {
         backgroundColor = color
@@ -231,7 +227,6 @@ final class LetsGoButton: UIButton {
     }
     
     override func layoutSubviews() {
-        
         label.frame.size = self.frame.size
         label.textColor = .white
         label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)

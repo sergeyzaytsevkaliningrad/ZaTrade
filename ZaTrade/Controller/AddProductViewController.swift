@@ -1,7 +1,7 @@
 import UIKit
 
 
-final class AddProductViewController: UIViewController, UITextFieldDelegate {
+final class AddProductViewController: CardViewController {
     
     var presenter = AddProductPresenter()
     
@@ -22,7 +22,6 @@ final class AddProductViewController: UIViewController, UITextFieldDelegate {
         self.nameTextField.delegate = self
         self.priceTextField.delegate = self
         self.descriptionProductTextField.delegate = self
-        self.setupBackground()
         self.setup()
     }
     
@@ -50,8 +49,8 @@ final class AddProductViewController: UIViewController, UITextFieldDelegate {
             self.typeTaxSwitch,
             self.addProduct
         ].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        
         [
-
             self.name.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 46),
             self.name.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
             
@@ -87,22 +86,7 @@ final class AddProductViewController: UIViewController, UITextFieldDelegate {
         ].forEach {$0.isActive = true}
         
     }
-    
-    func setupBackground() {
-        view.backgroundColor = .white
-        let layer0 = CAGradientLayer()
-        layer0.colors = [
-            UIColor(red: 0.859, green: 0.278, blue: 0.71, alpha: 1).cgColor,
-            UIColor(red: 0.62, green: 0.325, blue: 0.765, alpha: 1).cgColor ]
-        layer0.locations = [0, 1]
-        layer0.startPoint = CGPoint(x: 0.25, y: 0.5)
-        layer0.endPoint = CGPoint(x: 0.75, y: 0.5)
-        layer0.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: -0.02, b: 0.78, c: -0.78, d: 0, tx: 0.99, ty: -0.14))
-        layer0.frame = view.bounds
-        layer0.position = view.center
-        view.layer.addSublayer(layer0)
-    }
-    
+        
     func setupNameLabel() {
         view.addSubview(self.name)
         name.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -181,7 +165,9 @@ final class AddProductViewController: UIViewController, UITextFieldDelegate {
         }
     
 }
-extension UIViewController {
+
+
+extension UIViewController: UITextFieldDelegate {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false

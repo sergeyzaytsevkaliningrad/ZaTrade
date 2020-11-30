@@ -1,7 +1,7 @@
 import Foundation
 
 
-class AddProductModel {
+class ProductModel {
     
     var ProductName : String = ""
     var ProductPrice: Double
@@ -14,5 +14,4 @@ init(ProductName : String, ProductPrice: Double, ProductDescription: String, Pro
     self.ProductDescription = ProductDescription
     self.ProductTypeTax = ProductTypeTax
     }
-    
 }

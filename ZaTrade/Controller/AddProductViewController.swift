@@ -3,7 +3,19 @@ import UIKit
 
 final class AddProductViewController: CardViewController {
     
-    var presenter = AddProductPresenter()
+    
+    var isEditingView: Bool = false
+    
+    let presenter = AddProductPresenter()
+
+    init(isEditingView: Bool) {
+        super.init(nibName: nil, bundle: nil)
+        self.isEditingView = isEditingView
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private let name = UILabel()
     private let nameTextField = UITextField()
@@ -17,8 +29,11 @@ final class AddProductViewController: CardViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
         self.presenter.view = self
+        self.presenter.isEditing = self.isEditingView
+        if isEditingView {
+        }
+        self.hideKeyboardWhenTappedAround()
         self.nameTextField.delegate = self
         self.priceTextField.delegate = self
         self.descriptionProductTextField.delegate = self
@@ -35,6 +50,7 @@ final class AddProductViewController: CardViewController {
         setupTypeTaxLabel()
         setupTypeTaxSwitch()
         setupAddProductButton()
+        
     }
     
     func setupConstraints() {
@@ -100,6 +116,7 @@ final class AddProductViewController: CardViewController {
         nameTextField.backgroundColor = .white
         nameTextField.textAlignment = .left
         nameTextField.placeholder = "Наименование товара"
+        nameTextField.text = presenter.showModel().ProductName
     }
     
     func setupPriceLabel(){
@@ -147,7 +164,7 @@ final class AddProductViewController: CardViewController {
     
     func setupAddProductButton() {
         view.addSubview(self.addProduct)
-        addProduct.setTitle("Добавить товар", for: .normal)
+        addProduct.text  = isEditingView ? "Сохранить" : "Добавить товар"
         addProduct.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
     
@@ -164,6 +181,20 @@ final class AddProductViewController: CardViewController {
             return true
         }
     
+    func makeRedDescriptionProductText() {
+        self.descriptionProductTextField.layer.borderWidth = 1
+        self.descriptionProductTextField.layer.borderColor = UIColor.red.cgColor
+    }
+    
+    func makeRedPriceText() {
+        self.priceTextField.layer.borderWidth = 1
+        self.priceTextField.layer.borderColor = UIColor.red.cgColor
+    }
+    
+    func makeRedNameText() {
+        self.nameTextField.layer.borderWidth = 1
+        self.nameTextField.layer.borderColor = UIColor.red.cgColor
+    }
 }
 
 

@@ -204,9 +204,9 @@ final class CustomButtonPlus: UIButton {
 
 final class LetsGoButton: UIButton {
     
-    let label = UILabel()
     private var color = UIColor(red: 0.859, green: 0.278, blue: 0.71, alpha: 1)
     private let layer0 = CALayer()
+    var text = "Поехали!"
 
     init() {
         super.init(frame: .zero)
@@ -227,13 +227,13 @@ final class LetsGoButton: UIButton {
     }
     
     override func layoutSubviews() {
-        label.frame.size = self.frame.size
-        label.textColor = .white
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        label.font = UIFont(name: "Rubik-Bold", size: 27)
-        label.textAlignment = .center
-        label.text = "Поехали!"
-        self.addSubview(label)
+        
+        self.setTitle(self.text, for: .normal)
+        self.titleLabel?.frame.size = self.frame.size
+        self.titleLabel?.textColor = .white
+        self.titleLabel?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        self.titleLabel?.font = UIFont(name: "Rubik-Bold", size: 27)
+        self.titleLabel?.textAlignment = .center
     }
     
     override var isHighlighted: Bool {
@@ -249,12 +249,12 @@ final class LetsGoButton: UIButton {
 
     func touchDown() {
         layer.backgroundColor = color.withAlphaComponent(0.5).cgColor
-        label.textColor = UIColor.white.withAlphaComponent(0.5)
+        titleLabel?.textColor = UIColor.white.withAlphaComponent(0.5)
     }
 
     func touchUp() {
         layer.backgroundColor = color.withAlphaComponent(1).cgColor
-        label.textColor = UIColor.white.withAlphaComponent(1)
+        titleLabel?.textColor = UIColor.white.withAlphaComponent(1)
     }
 }
 

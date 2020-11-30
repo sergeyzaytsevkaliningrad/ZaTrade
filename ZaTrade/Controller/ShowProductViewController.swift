@@ -3,7 +3,7 @@ import UIKit
 
 final class ShowProductViewController: CardViewController {
     
-    var presenter = ShowProductPresenter()
+    lazy var presenter = ShowProductPresenter()
     
     private let name = UILabel()
     private let nameLabel = UILabel()
@@ -12,6 +12,7 @@ final class ShowProductViewController: CardViewController {
     private let descriptionProduct = UILabel()
     private let descriptionProductLabel = UILabel()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.view = self
@@ -19,6 +20,7 @@ final class ShowProductViewController: CardViewController {
     }
     
     private func setup() {
+        setupEditButton()
         setupNameLabel()
         setupNameInfoLabel()
         setupPriceLabel()
@@ -26,6 +28,15 @@ final class ShowProductViewController: CardViewController {
         setupDescriptionProductLabel()
         setupDescriptionProductInfoLabel()
     }
+    
+    
+    func setupEditButton() {
+        self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "pencil.circle.fill"), style: .plain, target: self.presenter, action: #selector(self.presenter.showEdit)),
+            UIBarButtonItem(image: UIImage(systemName: "trash.circle.fill"), style: .plain, target: self.presenter, action: nil)
+        ]
+    }
+    
     
     func setupConstraints() {
         [

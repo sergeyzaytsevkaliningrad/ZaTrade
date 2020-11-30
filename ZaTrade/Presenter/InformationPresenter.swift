@@ -1,8 +1,8 @@
 import Foundation
 
 
-final class InfoCountryPresenter {
-    var view: InfoCountryViewController?
+final class InformationPresenter {
+    var view: InformationViewController?
     let model = InfoCountryModel(
                 title1: "Общая информация", generalInfo: "Практически во всех крупных магазинах Финляндии действует система безналоговой торговли для туристов.  Во всех странах Европейского Союза в стоимость товара входит налог на добавочную стоимость (НДС), который, согласно законодательству стран ЕС, у Вас есть право вернуть при выезде из страны.",
                 title2: "Как правильно оформить Tax Free?",

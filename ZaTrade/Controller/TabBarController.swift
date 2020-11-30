@@ -19,7 +19,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         converterViewController.title = "Конвертер валют"
         converterViewController.tabBarItem = UITabBarItem(title: converterViewController.title, image: UIImage(systemName: "arrow.2.circlepath.circle"), selectedImage: nil)
         
-        let infoCountryViewController = InfoCountryViewController()
+        let infoCountryViewController = InformationViewController()
         infoCountryViewController.title = "Информация"
         infoCountryViewController.tabBarItem = UITabBarItem(title: infoCountryViewController.title, image: UIImage(systemName: "info.circle"), selectedImage: nil)
         

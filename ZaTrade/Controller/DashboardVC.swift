@@ -1,11 +1,3 @@
-//
-//  DashboardVC.swift
-//  HolyWurst
-//
-//  Created by Martin Lasek on 23.06.19.
-//  Copyright © 2019 Martin Lasek. All rights reserved.
-//
-
 import UIKit
 import CoreML
 import Vision

@@ -1,13 +1,6 @@
-//
-//  CalculatorViewController.swift
-//  ZaTrade
-//
-//  Created by Константин Емельянов on 30.10.2020.
-//
-
 import UIKit
 
-class CalculatorViewController: UIViewController {
+class CalculatorViewController: BaseViewController {
     
     var titleText: String = "0"
     var presenter = CalculatorPresenter()
@@ -23,8 +16,6 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.setupBackground()
-        
         presenter.view = self
         self.view.addSubview(VstackView)
         layoutBigStackView()
@@ -33,9 +24,6 @@ class CalculatorViewController: UIViewController {
     }
     
     // MARK: - LayoutFuncs
-    
- 
-    
     func layoutLabel() {
         label.font = UIFont(name: "Rubik-Bold", size: 40)
         label.textColor = .white

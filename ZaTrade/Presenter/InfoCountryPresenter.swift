@@ -1,10 +1,3 @@
-//
-//  InfoCountryPresenter.swift
-//  ZaTrade
-//
-//  Created by Анастасия  on 17.10.2020.
-//
-
 import Foundation
 
 

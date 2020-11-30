@@ -1,0 +1,21 @@
+{
+    "Currency": [
+        {"name": "RUB", "code": "RUB", "sign": "₽"},
+        {"name": "USD", "code": "USD", "sign": "$"},
+        {"name": "EUR", "code": "EUR", "sign": "€"},
+        {"name": "GBP", "code": "GBP", "sign": "£"},
+        {"name": "CNY", "code": "CNY", "sign": "¥"},
+    ],
+    "Country": [
+        {"name": "Россия", "flag": "🇷🇺", "currency": "RUB"},
+        {"name": "Финляндия", "flag": "🇫🇮", "currency": "EUR"},
+        {"name": "Польша", "flag": "🇵🇱", "currency": "EUR"},
+        {"name": "Испания", "flag": "🇪🇸", "currency": "EUR"},
+        {"name": "Великобритания", "flag": "🇬🇧", "currency": "GBP"},
+        {"name": "Китай", "flag": "🇨🇳", "currency": "CNY"},
+    ],
+    "Tax": [
+    ],
+    "Information": [
+    ],
+}

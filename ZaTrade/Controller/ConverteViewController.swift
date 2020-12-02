@@ -17,22 +17,14 @@ class ConverterViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.presenter.view = self
-        
+
         self.layoutTextField()
-        
-        self.view.addSubview(swapButton)
         self.layoutSwapButton()
-        
         self.layoutResultLabel()
-        
         self.layoutCurrentPicker()
-        
         self.layoutToPicker()
         
-        //        self.view.addSubview(convertButton)
-        //        self.layoutConvertButton()
     }
     
     func layoutTextField() {
@@ -63,9 +55,8 @@ class ConverterViewController: BaseViewController {
     }
     
     func layoutSwapButton() {
+        self.view.addSubview(swapButton)
         swapButton.addTarget(self, action: #selector(self.swap), for: .touchUpInside)
-        
-       
     }
     
     func layoutCurrentPicker() {
@@ -85,16 +76,6 @@ class ConverterViewController: BaseViewController {
         toPicker.delegate = self
         toPicker.selectRow(self.presenter.convertCurrencyIndex ?? -1, inComponent: 0, animated: true)
     }
-    
-    //    func layoutConvertButton() {
-    //        convertButton.addTarget(self, action: #selector(self.convert), for: .touchUpInside)
-    //        
-    //        convertButton.translatesAutoresizingMaskIntoConstraints = false
-    //        convertButton.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 20).isActive = true
-    //        convertButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
-    //        convertButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
-    //        convertButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-    //    }
     
     @objc func swap(sender: SwapButton) {
         presenter.swap(sender: sender)

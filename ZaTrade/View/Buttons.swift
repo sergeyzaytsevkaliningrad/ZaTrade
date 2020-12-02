@@ -260,6 +260,7 @@ final class LetsGoButton: UIButton {
 
 
 final class SwapButton: UIButton {
+    
     init() {
         super.init(frame: .zero)
         setupUI()
@@ -272,8 +273,7 @@ final class SwapButton: UIButton {
     
     func setupUI() {
         self.frame.size = CGSize(width: 40, height: 40)
-        self.setTitle("🔄", for: .normal)
-        self.titleLabel?.frame = self.bounds
+        self.setImage(UIImage(systemName: "arrow.2.circlepath.circle"), for: .normal)
         self.backgroundColor = .white
         self.layer.cornerRadius = 10
     }

@@ -46,10 +46,10 @@
 		55A3FF29255AB83C00D034F4 /* IfModelFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF27255AB83C00D034F4 /* IfModelFalse.swift */; };
 		55A3FF2A255AB83C00D034F4 /* IfModelTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF28255AB83C00D034F4 /* IfModelTrue.swift */; };
 		55A3FF2D255AB86A00D034F4 /* TableCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF2C255AB86A00D034F4 /* TableCellViewController.swift */; };
-		55A3FF30255AB87200D034F4 /* ConverterViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF2F255AB87200D034F4 /* ConverterViewViewController.swift */; };
+		55A3FF30255AB87200D034F4 /* ConverteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF2F255AB87200D034F4 /* ConverteViewController.swift */; };
 		55A3FF33255AB89100D034F4 /* ConverterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */; };
 		55C596272559B48000B380B6 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C596262559B48000B380B6 /* WelcomePresenter.swift */; };
-		F4922B4C256738B00007ACE1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4922B4B256738B00007ACE1 /* Currency.swift */; };
+		F40930902577FCC20009AE46 /* CourseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F409308F2577FCC20009AE46 /* CourseLoader.swift */; };
 		F4922B482567327E0007ACE1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4922B472567327E0007ACE1 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,10 +95,10 @@
 		55A3FF27255AB83C00D034F4 /* IfModelFalse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IfModelFalse.swift; sourceTree = "<group>"; };
 		55A3FF28255AB83C00D034F4 /* IfModelTrue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IfModelTrue.swift; sourceTree = "<group>"; };
 		55A3FF2C255AB86A00D034F4 /* TableCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellViewController.swift; sourceTree = "<group>"; };
-		55A3FF2F255AB87200D034F4 /* ConverterViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterViewViewController.swift; sourceTree = "<group>"; };
+		55A3FF2F255AB87200D034F4 /* ConverteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverteViewController.swift; sourceTree = "<group>"; };
 		55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterPresenter.swift; sourceTree = "<group>"; };
 		55C596262559B48000B380B6 /* WelcomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
-		F4922B4B256738B00007ACE1 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		F409308F2577FCC20009AE46 /* CourseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLoader.swift; sourceTree = "<group>"; };
 		F4922B472567327E0007ACE1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,8 +121,7 @@
 				55065A1C255872CD00D2EDEC /* IntroView.swift */,
 				55065A1B255872CC00D2EDEC /* LoadingView.swift */,
 				55065A1D255872CD00D2EDEC /* ModalView.swift */,
-				F4922B4B256738B00007ACE1 /* Currency.swift */,
-				55065A72255875F100D2EDEC /* UIVIew.swift */,
+				F409308F2577FCC20009AE46 /* CourseLoader.swift */,
 				F4922B472567327E0007ACE1 /* LocationManager.swift */,
 			);
 			path = Additions;
@@ -134,7 +133,7 @@
 				55065A2B255872EE00D2EDEC /* AddProductViewController.swift */,
 				559760CF255FFD770018EFAA /* BaseViewController.swift */,
 				55065A2C255872EE00D2EDEC /* CalculatorViewController.swift */,
-				55A3FF2F255AB87200D034F4 /* ConverterViewViewController.swift */,
+				55A3FF2F255AB87200D034F4 /* ConverteViewController.swift */,
 				55065A28255872EE00D2EDEC /* DashboardVC.swift */,
 				55065A27255872EE00D2EDEC /* InfoCountryViewController.swift */,
 				55065A2A255872EE00D2EDEC /* ProductListViewController.swift */,
@@ -314,9 +313,8 @@
 			files = (
 				55325E91256A512200079D04 /* ShowProductModel.swift in Sources */,
 				550659E42558703400D2EDEC /* AppDelegate.swift in Sources */,
-				55065A432558735800D2EDEC /* CalculatorModel.swift in Sources */,
-				55065A602558738B00D2EDEC /* CustomButtonPlus.swift in Sources */,
 				F4922B482567327E0007ACE1 /* LocationManager.swift in Sources */,
+				F40930902577FCC20009AE46 /* CourseLoader.swift in Sources */,
 				55065A2D255872EE00D2EDEC /* InfoCountryViewController.swift in Sources */,
 				55A3FF2D255AB86A00D034F4 /* TableCellViewController.swift in Sources */,
 				559760D0255FFD770018EFAA /* BaseViewController.swift in Sources */,
@@ -330,7 +328,7 @@
 				55325E94256A517600079D04 /* EntityWrapper.swift in Sources */,
 				55402777256EDADB0008492F /* DataInitializer.swift in Sources */,
 				5506468625611AAF00C7C603 /* CardView.swift in Sources */,
-				55A3FF30255AB87200D034F4 /* ConverterViewViewController.swift in Sources */,
+				55A3FF30255AB87200D034F4 /* ConverteViewController.swift in Sources */,
 				55065A3A2558733400D2EDEC /* HotdogClassifier.mlmodel in Sources */,
 				55A3FF29255AB83C00D034F4 /* IfModelFalse.swift in Sources */,
 				55065A4C2558737400D2EDEC /* GeneralInfoPresenter.swift in Sources */,

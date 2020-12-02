@@ -50,7 +50,7 @@
 		55A3FF33255AB89100D034F4 /* ConverterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */; };
 		55C596272559B48000B380B6 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C596262559B48000B380B6 /* WelcomePresenter.swift */; };
 		F40930902577FCC20009AE46 /* CourseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F409308F2577FCC20009AE46 /* CourseLoader.swift */; };
-		F4922B482567327E0007ACE1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4922B472567327E0007ACE1 /* LocationManager.swift */; };
+		F4093093257829910009AE46 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4093092257829910009AE46 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,7 +99,7 @@
 		55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterPresenter.swift; sourceTree = "<group>"; };
 		55C596262559B48000B380B6 /* WelcomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		F409308F2577FCC20009AE46 /* CourseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLoader.swift; sourceTree = "<group>"; };
-		F4922B472567327E0007ACE1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F4093092257829910009AE46 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +121,8 @@
 				55065A1C255872CD00D2EDEC /* IntroView.swift */,
 				55065A1B255872CC00D2EDEC /* LoadingView.swift */,
 				55065A1D255872CD00D2EDEC /* ModalView.swift */,
+				F4093092257829910009AE46 /* LocationManager.swift */,
 				F409308F2577FCC20009AE46 /* CourseLoader.swift */,
-				F4922B472567327E0007ACE1 /* LocationManager.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -313,7 +313,6 @@
 			files = (
 				55325E91256A512200079D04 /* ShowProductModel.swift in Sources */,
 				550659E42558703400D2EDEC /* AppDelegate.swift in Sources */,
-				F4922B482567327E0007ACE1 /* LocationManager.swift in Sources */,
 				F40930902577FCC20009AE46 /* CourseLoader.swift in Sources */,
 				55065A2D255872EE00D2EDEC /* InfoCountryViewController.swift in Sources */,
 				55A3FF2D255AB86A00D034F4 /* TableCellViewController.swift in Sources */,
@@ -348,6 +347,7 @@
 				55A3FF33255AB89100D034F4 /* ConverterPresenter.swift in Sources */,
 				55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */,
 				55065A22255872CD00D2EDEC /* ModalView.swift in Sources */,
+				F4093093257829910009AE46 /* LocationManager.swift in Sources */,
 				55065A2F255872EE00D2EDEC /* ShowProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

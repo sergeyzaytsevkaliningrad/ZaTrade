@@ -7,7 +7,7 @@ class ConverterViewController: BaseViewController {
     let swapButton = SwapButton()
     let curentPicker = UIPickerView()
     let toPicker = UIPickerView()
-    let convertButton = ConvertButton()
+    let clearButton = UIButton(frame: .zero)
     
     var input: String?
     
@@ -24,10 +24,20 @@ class ConverterViewController: BaseViewController {
         self.layoutResultLabel()
         self.layoutCurrentPicker()
         self.layoutToPicker()
+        self.layoutClearButton()
         
     }
     
-    func layoutTextField() {
+    private func layoutClearButton() {
+        self.view.addSubview(clearButton)
+        clearButton.setTitle("Очистить", for: .normal)
+        clearButton.backgroundColor = .white
+        clearButton.layer.cornerRadius = 6
+        clearButton.setTitleColor(.black, for: .normal)
+        clearButton.addTarget(self, action: #selector(self.clear), for: .touchUpInside)
+    }
+    
+    private func layoutTextField() {
         self.view.addSubview(textfield)
         textfield.delegate = self
         textfield.placeholder = "Введите сумму"
@@ -38,7 +48,7 @@ class ConverterViewController: BaseViewController {
         textfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
-    func layoutResultLabel() {
+    private func layoutResultLabel() {
         self.view.addSubview(resultLabel)
         resultLabel.text = ""
         resultLabel.textAlignment = .natural
@@ -48,18 +58,24 @@ class ConverterViewController: BaseViewController {
         resultLabel.layer.backgroundColor = UIColor.white.cgColor
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
+    @objc private func textFieldDidChange(_ textField: UITextField) {
         let text: String? = textField.text
         self.input = text
         self.presenter.convert()
     }
     
-    func layoutSwapButton() {
+    @objc private func clear() {
+        self.input = ""
+        self.textfield.text = ""
+        self.presenter.convert()
+    }
+    
+    private func layoutSwapButton() {
         self.view.addSubview(swapButton)
         swapButton.addTarget(self, action: #selector(self.swap), for: .touchUpInside)
     }
     
-    func layoutCurrentPicker() {
+    private func layoutCurrentPicker() {
         self.view.addSubview(self.curentPicker)
         curentPicker.backgroundColor = .white
         curentPicker.layer.cornerRadius = 10
@@ -68,7 +84,7 @@ class ConverterViewController: BaseViewController {
         curentPicker.selectRow(self.presenter.currentCurrencyIndex ?? -1, inComponent: 0, animated: true)
     }
     
-    func layoutToPicker() {
+    private func layoutToPicker() {
         self.view.addSubview(self.toPicker)
         toPicker.backgroundColor = .white
         toPicker.layer.cornerRadius = 10
@@ -77,7 +93,7 @@ class ConverterViewController: BaseViewController {
         toPicker.selectRow(self.presenter.convertCurrencyIndex ?? -1, inComponent: 0, animated: true)
     }
     
-    @objc func swap(sender: SwapButton) {
+    @objc private func swap(sender: SwapButton) {
         presenter.swap(sender: sender)
     }
     
@@ -86,13 +102,14 @@ class ConverterViewController: BaseViewController {
     }
     
     
-    func setupConstraints() {
+    private func setupConstraints() {
         [
             toPicker,
             curentPicker,
             resultLabel,
             textfield,
             swapButton,
+            clearButton,
             
         ].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -123,6 +140,11 @@ class ConverterViewController: BaseViewController {
             swapButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20),
             swapButton.widthAnchor.constraint(equalTo: toPicker.widthAnchor),
             swapButton.heightAnchor.constraint(equalTo: toPicker.heightAnchor),
+            
+            clearButton.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 20),
+            clearButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+            clearButton.widthAnchor.constraint(equalTo: resultLabel.widthAnchor),
+            clearButton.heightAnchor.constraint(equalTo: resultLabel.heightAnchor),
             
         ].forEach {
             $0.isActive = true

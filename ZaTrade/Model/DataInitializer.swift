@@ -80,7 +80,7 @@ class DataInitializer {
             
             tax.entity?.name = name
             tax.entity?.rate = rate
-            tax.entity?.country = EntityWrapper<Country>.getByName(country).entity
+            tax.entity?.country = EntityWrapper<Country>.getByField(field: "code", value: country).entity
             tax.save()
         }
         
@@ -102,7 +102,7 @@ class DataInitializer {
             
             information.entity!.tag = tag
             information.entity!.info = info
-            information.entity!.country = EntityWrapper<Country>.getByName(country).entity
+            information.entity!.country = EntityWrapper<Country>.getByField(field: "code", value: country).entity
             information.save()
         }
         

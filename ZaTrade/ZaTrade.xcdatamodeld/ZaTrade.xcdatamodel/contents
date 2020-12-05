@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
-        <attribute name="flag" attributeType="String"/>
+        <attribute name="code" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="tag" attributeType="String"/>
         <relationship name="currency" maxCount="1" deletionRule="Deny" destinationEntity="Currency"/>
     </entity>
     <entity name="Currency" representedClassName="Currency" syncable="YES" codeGenerationType="class">
@@ -30,7 +31,7 @@
         <relationship name="country" maxCount="1" deletionRule="Nullify" destinationEntity="Country"/>
     </entity>
     <elements>
-        <element name="Country" positionX="-419.375" positionY="-181.609375" width="128" height="88"/>
+        <element name="Country" positionX="-419.375" positionY="-181.609375" width="128" height="103"/>
         <element name="Currency" positionX="-55.65625" positionY="-186.0859375" width="128" height="88"/>
         <element name="Information" positionX="-0.859375" positionY="45" width="128.859375" height="88"/>
         <element name="Product" positionX="-231.20703125" positionY="7.69921875" width="128" height="148"/>

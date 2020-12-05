@@ -49,6 +49,7 @@ class DataInitializer {
         for country_data in countries_data {
             let name = country_data["name"] as! String
             let flag = country_data["flag"] as! String
+            let code = country_data["code"] as! String
             let currency = country_data["currency"] as! String
             
             var country = EntityWrapper<Country>.getByName(name)
@@ -58,6 +59,7 @@ class DataInitializer {
             
             country.entity!.name = name
             country.entity!.flag = flag
+            country.entity!.code = code
             country.entity!.currency = EntityWrapper<Currency>.getByName(currency).entity
             country.save()
         }

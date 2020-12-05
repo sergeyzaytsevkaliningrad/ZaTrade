@@ -2,8 +2,8 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
         <attribute name="code" attributeType="String"/>
+        <attribute name="flag" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
-        <attribute name="tag" attributeType="String"/>
         <relationship name="currency" maxCount="1" deletionRule="Deny" destinationEntity="Currency"/>
     </entity>
     <entity name="Currency" representedClassName="Currency" syncable="YES" codeGenerationType="class">

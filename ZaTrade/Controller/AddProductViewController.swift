@@ -17,15 +17,15 @@ final class AddProductViewController: CardViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private let name = UILabel()
-    private let nameTextField = UITextField()
-    private let price = UILabel()
-    private let priceTextField = UITextField()
-    private let descriptionProduct = UILabel()
-    private let descriptionProductTextField = UITextField()
-    private let typeTax = UILabel()
-    private let typeTaxSwitch = CustomSwich()
-    private let addProduct = LetsGoButton()
+    let name = UILabel()
+    let nameTextField = UITextField()
+    let price = UILabel()
+    let priceTextField = UITextField()
+    let descriptionProduct = UILabel()
+    let descriptionProductTextField = UITextField()
+    let typeTax = UILabel()
+    let typeTaxSwitch = CustomSwich()
+    let addProduct = LetsGoButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,6 +117,8 @@ final class AddProductViewController: CardViewController {
         nameTextField.textAlignment = .left
         nameTextField.placeholder = "Наименование товара"
         nameTextField.text = presenter.showModel().ProductName
+        nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+
     }
     
     func setupPriceLabel(){
@@ -133,6 +135,12 @@ final class AddProductViewController: CardViewController {
         priceTextField.textAlignment = .left
         priceTextField.keyboardType = .numberPad
         priceTextField.placeholder = "Цена товара"
+        if let text = presenter.showModel().ProductPrice {
+            priceTextField.text = "\(text)"
+        } else {
+            priceTextField.text = ""
+        }
+        priceTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     func setupDescriptionProductLabel(){
@@ -148,6 +156,9 @@ final class AddProductViewController: CardViewController {
         descriptionProductTextField.backgroundColor = .white
         descriptionProductTextField.textAlignment = .left
         descriptionProductTextField.placeholder = "Описание товара"
+        descriptionProductTextField.text = presenter.showModel().ProductDescription
+        descriptionProductTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+
     }
     
     func setupTypeTaxLabel() {
@@ -159,13 +170,15 @@ final class AddProductViewController: CardViewController {
     
     func setupTypeTaxSwitch() {
         view.addSubview(self.typeTaxSwitch)
+        typeTaxSwitch.isOn = presenter.showModel().ProductTypeTax
         
     }
     
     func setupAddProductButton() {
         view.addSubview(self.addProduct)
+        addProduct.isEnabled = false
         addProduct.text  = isEditingView ? "Сохранить" : "Добавить товар"
-        addProduct.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        addProduct.addTarget(self.presenter, action: #selector(self.presenter.saveButtonAction), for: .touchUpInside)
     }
     
     @objc func buttonAction(sender: UIButton!) {
@@ -179,28 +192,17 @@ final class AddProductViewController: CardViewController {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder() // dismiss keyboard
             return true
-        }
-    
-    func makeRedDescriptionProductText() {
-        self.descriptionProductTextField.layer.borderWidth = 1
-        self.descriptionProductTextField.layer.borderColor = UIColor.red.cgColor
     }
     
-    func makeRedPriceText() {
-        self.priceTextField.layer.borderWidth = 1
-        self.priceTextField.layer.borderColor = UIColor.red.cgColor
-    }
-    
-    func makeRedNameText() {
-        self.nameTextField.layer.borderWidth = 1
-        self.nameTextField.layer.borderColor = UIColor.red.cgColor
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        self.presenter.checkTextfields()
     }
 }
 
 
-extension UIViewController: UITextFieldDelegate {
+extension AddProductViewController: UITextFieldDelegate {
     func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }

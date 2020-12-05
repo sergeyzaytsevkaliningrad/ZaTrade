@@ -236,6 +236,21 @@ final class LetsGoButton: UIButton {
         self.titleLabel?.textAlignment = .center
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            setEnabled(isEnable: isEnabled)
+        }
+    }
+    
+    private func setEnabled(isEnable: Bool) {
+        if isEnable {
+            layer.backgroundColor = color.withAlphaComponent(1).cgColor
+        } else {
+            cancelTracking(with: nil)
+            layer.backgroundColor = color.withAlphaComponent(0.5).cgColor
+        }
+    }
+    
     override var isHighlighted: Bool {
         didSet {
             if isHighlighted {

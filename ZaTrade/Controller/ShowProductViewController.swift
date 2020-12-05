@@ -108,7 +108,11 @@ final class ShowProductViewController: CardViewController {
         priceLabel.font = UIFont(name: "Rubik-Light", size: 18)
         priceLabel.numberOfLines = 0
         priceLabel.lineBreakMode = .byWordWrapping
-        priceLabel.text = String(presenter.model.ProductPrice)
+        if let text = presenter.model.ProductPrice {
+            priceLabel.text = "\(text)"
+        } else {
+            priceLabel.text = ""
+        }
     }
     
     func setupDescriptionProductLabel(){

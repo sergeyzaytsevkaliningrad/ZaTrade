@@ -8,9 +8,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let viewController = WelcomeViewController()
+        let viewController = ShowProductViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.setNavigationBarHidden(true, animated: false)
+        navigationController.setNavigationBarHidden(false, animated: false)
         
         let window = UIWindow()
         window.rootViewController = navigationController

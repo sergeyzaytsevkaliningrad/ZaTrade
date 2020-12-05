@@ -1,10 +1,12 @@
 import UIKit
 import WebKit
 
-final class InformationViewController: CardViewController {
+final class InformationViewController: CardViewController, WKUIDelegate {
     
     var presenter = InformationPresenter()
-//
+    var webView = WKWebView()
+    var chooseItem = UIBarButtonItem()
+    
 //    private let scrollView = UIScrollView()
 //    private let contentView = UIStackView()
 //    private let mainLabel = UILabel()
@@ -19,7 +21,13 @@ final class InformationViewController: CardViewController {
 //    private let returnMoney = UILabel()
 //    private var mapView = MKMapView()
     
-    private let webView = WKWebView()
+    
+//    override func loadView() {
+//        let webConfiguration = WKWebViewConfiguration()
+//        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+//        webView.uiDelegate = self
+//        view = webView
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +41,11 @@ final class InformationViewController: CardViewController {
         
         
         self.view.addSubview(webView)
-        
-        
+        self.layoutNavigationItem()
         self.cardView.layoutSubviews()
+        
+        
+        
 //        cardView.addSubview(scrollView)
 //        setupScrollView()
 //
@@ -56,6 +66,42 @@ final class InformationViewController: CardViewController {
 //
     }
 //
+
+    private func LoadDatacontent() {
+        let htmlCode = "" //(достать данные из бд)
+        webView.loadHTMLString(htmlCode, baseURL: nil)
+        
+    }
+    
+    private func layoutNavigationItem() {
+        chooseItem = UIBarButtonItem(title: "Выбор статьи", style: .plain, target: self, action: #selector(ChooseItem))
+        self.navigationItem.rightBarButtonItem = chooseItem
+    }
+    
+    @objc func ChooseItem() {
+//        let alert = UIAlertController(title: "Выберите страну", message: nil, preferredStyle: .alert)
+//        alert.isModalInPopover = true
+//
+//        let pickerView = UIPickerView()
+//        pickerView.dataSource = self
+//        pickerView.delegate = self
+//        pickerView.selectRow(self.presenter.currentArticleIndex ?? -1, inComponent: 0, animated: false)
+//
+//        alert.view.addSubview(pickerView)
+//        pickerView.translatesAutoresizingMaskIntoConstraints = false
+//        pickerView.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor).isActive = true
+//        pickerView.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor).isActive = true
+//        pickerView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 60).isActive = true
+//        pickerView.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -44).isActive = true
+//
+//
+//        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+//        alert.addAction(UIAlertAction(title: "Выбрать", style: .default, handler: { (action: UIAlertAction) in
+//            self.presenter.currentArticleIndex = pickerView.selectedRow(inComponent: 0)
+//        }))
+//
+//        self.present(alert, animated: true)
+    }
 //    func setupConstraints() {
 //        [
 //            self.scrollView,
@@ -240,3 +286,23 @@ final class InformationViewController: CardViewController {
     
 }
 
+extension InformationViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+        
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.presenter.articles.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let article = self.presenter.articles[row].entity!
+        return "\(article.tag!)"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+              self.presenter.currentArticleIndex = row
+      }
+    
+}

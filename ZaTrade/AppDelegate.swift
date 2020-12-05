@@ -18,16 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = window
         window.makeKeyAndVisible()
-        
-        let userDefaults = UserDefaults.standard
-        let userDefaultsKey = "DataInitialized"
-        userDefaults.register(defaults: [userDefaultsKey: false])
-        
-        if !userDefaults.bool(forKey: userDefaultsKey) {
-            let initializer = DataInitializer()
-            initializer.initializeAll()
-            userDefaults.set(true, forKey: userDefaultsKey)
-        }
+                
+        let initializer = DataInitializer()
+        initializer.initializeAll()
         
         return true
     }

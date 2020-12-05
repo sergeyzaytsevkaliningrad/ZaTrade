@@ -6,6 +6,7 @@
         {"name": "GBP", "code": "GBP", "sign": "£"},
         {"name": "CNY", "code": "CNY", "sign": "¥"},
     ],
+    
     "Country": [
         {"name": "Россия", "flag": "🇷🇺", "currency": "RUB"},
         {"name": "Финляндия", "flag": "🇫🇮", "currency": "EUR"},
@@ -14,8 +15,11 @@
         {"name": "Великобритания", "flag": "🇬🇧", "currency": "GBP"},
         {"name": "Китай", "flag": "🇨🇳", "currency": "CNY"},
     ],
+    
     "Tax": [
     ],
+    
     "Information": [
     ],
+    
 }

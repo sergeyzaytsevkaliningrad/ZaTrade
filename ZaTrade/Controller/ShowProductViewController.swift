@@ -39,7 +39,7 @@ final class ShowProductViewController: CardViewController {
         
         [
 
-            self.name.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 46),
+            self.name.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 1),
             self.name.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
             
             self.nameLabel.topAnchor.constraint(equalTo: self.name.bottomAnchor, constant: 10),

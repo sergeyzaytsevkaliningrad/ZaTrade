@@ -2,9 +2,9 @@ import UIKit
 
 class ItemTableCell: UITableViewCell {
     
-    let redCircleIV = UIImageView(image: UIImage(named: "Background"))
-    let imageIV = UIImageView()
-    let nameLable = UILabel()
+    let redCircleIV   = UIImageView(image: UIImage(named: "Background"))
+    let imageIV       = UIImageView()
+    let nameLable     = UILabel()
     let itemListLable = UILabel()
     var safeArea: UILayoutGuide!
     

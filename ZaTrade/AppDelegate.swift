@@ -8,12 +8,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let viewController = ShowProductViewController()
+        let viewController = AddProductViewController(isEditingView: false)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.setNavigationBarHidden(false, animated: false)
         
         let window = UIWindow()
-        window.rootViewController = navigationController
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
         self.window = window

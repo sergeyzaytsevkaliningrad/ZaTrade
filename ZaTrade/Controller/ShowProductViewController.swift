@@ -13,6 +13,18 @@ final class ShowProductViewController: CardViewController {
     private let descriptionProductLabel = UILabel()
     
     
+    init(name: String, price: Double, discription: String, typeTax: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.presenter.model.ProductDescription = discription
+        self.presenter.model.ProductName = name
+        self.presenter.model.ProductPrice = price
+        self.presenter.model.ProductTypeTax = typeTax
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.view = self
@@ -33,7 +45,7 @@ final class ShowProductViewController: CardViewController {
     func setupEditButton() {
         self.navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "pencil.circle.fill"), style: .plain, target: self.presenter, action: #selector(self.presenter.showEdit)),
-            UIBarButtonItem(image: UIImage(systemName: "trash.circle.fill"), style: .plain, target: self.presenter, action: nil)
+            UIBarButtonItem(image: UIImage(systemName: "trash.circle.fill"), style: .plain, target: self.presenter, action: #selector(self.presenter.delete))
         ]
     }
     

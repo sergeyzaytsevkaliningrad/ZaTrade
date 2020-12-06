@@ -170,7 +170,7 @@ final class AddProductViewController: CardViewController {
     
     func setupTypeTaxSwitch() {
         view.addSubview(self.typeTaxSwitch)
-        typeTaxSwitch.isOn = presenter.showModel().ProductTypeTax
+        typeTaxSwitch.isOn = true
         
     }
     
@@ -181,16 +181,12 @@ final class AddProductViewController: CardViewController {
         addProduct.addTarget(self.presenter, action: #selector(self.presenter.saveButtonAction), for: .touchUpInside)
     }
     
-    @objc func buttonAction(sender: UIButton!) {
-        presenter.addProductFunc(name: nameTextField.text, price: priceTextField.text, descr: descriptionProductTextField.text, typeTax: typeTaxSwitch.isOn )
-    }
-    
     override func viewDidLayoutSubviews() {
         setupConstraints()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder() // dismiss keyboard
+            textField.resignFirstResponder()
             return true
     }
     

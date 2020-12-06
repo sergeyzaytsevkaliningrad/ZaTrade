@@ -45,13 +45,12 @@ class ProductViewCell: UICollectionViewCell {
         cardView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
                 
         let subviews = [countryFlagLabel, productNameLabel, originalPriceLabel, rublePriceLabel]
-        subviews.forEach({ $0.translatesAutoresizingMaskIntoConstraints = false })
-        subviews.forEach({ cardView.addSubview($0) })
+        subviews.forEach({ $0.translatesAutoresizingMaskIntoConstraints = false; cardView.addSubview($0) })
         
         [
             productNameLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 10),
             productNameLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 15),
-            productNameLabel.trailingAnchor.constraint(equalTo: countryFlagLabel.leadingAnchor, constant: 10),
+            productNameLabel.trailingAnchor.constraint(equalTo: countryFlagLabel.leadingAnchor, constant: -10),
             
             countryFlagLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 10),
             countryFlagLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -15),

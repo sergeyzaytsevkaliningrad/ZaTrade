@@ -39,8 +39,6 @@ class DataInitializer {
             currency.entity!.sign = sign
             currency.save()
         }
-        
-        print(EntityWrapper<Currency>.all())
     }
 
     private func initializeCountry() {
@@ -63,8 +61,6 @@ class DataInitializer {
             country.entity!.currency = EntityWrapper<Currency>.getByName(currency).entity
             country.save()
         }
-        
-        print(EntityWrapper<Country>.all())
     }
         
     private func initializeTax() {
@@ -85,8 +81,6 @@ class DataInitializer {
             tax.entity?.country = EntityWrapper<Country>.getByField(field: "code", value: country).entity
             tax.save()
         }
-        
-        print(EntityWrapper<Tax>.all())
     }
     
     private func initializeInformation() {
@@ -107,8 +101,6 @@ class DataInitializer {
             information.entity!.country = EntityWrapper<Country>.getByField(field: "code", value: country).entity
             information.save()
         }
-        
-        print(EntityWrapper<Information>.all())
     }
 
 }

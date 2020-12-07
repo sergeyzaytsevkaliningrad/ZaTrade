@@ -15,10 +15,10 @@ class DataInitializer {
     }
     
     func initializeAll() {
-        self.initializeCurrency()
-        self.initializeCountry()
-        self.initializeTax()
-        self.initializeInformation()
+     //   self.initializeCurrency()
+     //   self.initializeCountry()
+    //    self.initializeTax()
+     //   self.initializeInformation()
     }
         
     private func initializeCurrency() {

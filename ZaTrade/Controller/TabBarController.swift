@@ -22,14 +22,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let infoCountryViewController = InformationViewController()
         infoCountryViewController.title = "Информация"
         infoCountryViewController.tabBarItem = UITabBarItem(title: infoCountryViewController.title, image: UIImage(systemName: "info.circle"), selectedImage: nil)
-        
-        let add = AddProductViewController(isEditingView: false)
-        add.title = "Добавление товара"
-        add.tabBarItem = UITabBarItem(title: add.title, image: UIImage(systemName: "plus"), selectedImage: nil)
-        
-        
-
-        self.viewControllers = [productListViewController, calculatorViewController, converterViewController, infoCountryViewController,add]
+      
+        self.viewControllers = [productListViewController, calculatorViewController, converterViewController, infoCountryViewController]
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {

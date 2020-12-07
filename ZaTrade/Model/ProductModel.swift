@@ -6,8 +6,8 @@ class ProductModel {
     var ProductName : String
     var ProductPrice: Double?
     var ProductDescription: String
-    var ProductTypeTax: String
-    var ProductContry: String
+    var ProductTypeTax: String?
+    var ProductContry: String?
     var DateChanged: Date
     var DateAdded: Date
     

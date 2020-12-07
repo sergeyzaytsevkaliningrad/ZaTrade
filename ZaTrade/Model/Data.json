@@ -58,6 +58,7 @@
     ],
     
     "Product":[
-       
+        {"extra":"Some information about laptop", "name": "MacBook Pro 13", "price": 120000 , "country": "Россия", "tax": "RUS: Стандартная"},
+        {"extra":"Some information about laptop", "name": "MacBook Air", "price": 100000 , "country": "Польша", "tax": "POL: Стандартная"}
     ]
 }

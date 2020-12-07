@@ -50,7 +50,6 @@ final class AddProductViewController: CardViewController {
         setupTypeTaxLabel()
         setupTypeTaxSwitch()
         setupAddProductButton()
-        
     }
     
     func setupConstraints() {

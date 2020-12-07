@@ -12,13 +12,10 @@ final class ShowProductViewController: CardViewController {
     private let descriptionProduct = UILabel()
     private let descriptionProductLabel = UILabel()
     
-    
-    init(name: String, price: Double, description: String, typeTax: String) {
+    init(nameProduct: String) {
         super.init(nibName: nil, bundle: nil)
-        self.presenter.model.ProductDescription = description
-        self.presenter.model.ProductName = name
-        self.presenter.model.ProductPrice = price
-        self.presenter.model.ProductTypeTax = typeTax
+        presenter.name = nameProduct
+        presenter.loadData()
     }
     
     required init?(coder: NSCoder) {

@@ -53,7 +53,7 @@ final class ConverterPresenter {
     }
     
     func loadCourses()  {
-        courseLoader.createRequest(completionBlock: {data in 
+        courseLoader.loadArray(completionBlock: {data in 
             self.courses.removeAll()
             for element in data {
                 self.courses.append(element)

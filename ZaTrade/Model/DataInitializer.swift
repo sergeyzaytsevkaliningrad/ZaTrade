@@ -40,7 +40,7 @@ class DataInitializer {
             currency.save()
         }
         
-        print(EntityWrapper<Currency>.all())
+//        print(EntityWrapper<Currency>.all())
     }
 
     private func initializeCountry() {
@@ -64,7 +64,7 @@ class DataInitializer {
             country.save()
         }
         
-        print(EntityWrapper<Country>.all())
+//        print(EntityWrapper<Country>.all())
     }
         
     private func initializeTax() {
@@ -86,7 +86,7 @@ class DataInitializer {
             tax.save()
         }
         
-        print(EntityWrapper<Tax>.all())
+//        print(EntityWrapper<Tax>.all())
     }
     
     private func initializeInformation() {
@@ -108,7 +108,7 @@ class DataInitializer {
             information.save()
         }
         
-        print(EntityWrapper<Information>.all())
+//        print(EntityWrapper<Information>.all())
     }
 
 }

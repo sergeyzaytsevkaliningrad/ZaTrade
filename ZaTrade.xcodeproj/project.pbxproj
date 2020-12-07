@@ -51,6 +51,7 @@
 		55C596272559B48000B380B6 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C596262559B48000B380B6 /* WelcomePresenter.swift */; };
 		F40930902577FCC20009AE46 /* CourseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F409308F2577FCC20009AE46 /* CourseLoader.swift */; };
 		F4093093257829910009AE46 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4093092257829910009AE46 /* LocationManager.swift */; };
+		F417F872257EE4000024ED21 /* BeautifulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F871257EE4000024ED21 /* BeautifulView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		55C596262559B48000B380B6 /* WelcomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		F409308F2577FCC20009AE46 /* CourseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLoader.swift; sourceTree = "<group>"; };
 		F4093092257829910009AE46 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F417F871257EE4000024ED21 /* BeautifulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautifulView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				5506468525611AAF00C7C603 /* CardView.swift */,
+				F417F871257EE4000024ED21 /* BeautifulView.swift */,
 				55065A6E255875B400D2EDEC /* Buttons.swift */,
 				55065A552558738A00D2EDEC /* Controls.swift */,
 				55065A562558738A00D2EDEC /* TableAPI.swift */,
@@ -343,6 +346,7 @@
 				550659ED2558703400D2EDEC /* ZaTrade.xcdatamodeld in Sources */,
 				55065A5E2558738B00D2EDEC /* UIViewAnchors.swift in Sources */,
 				55065A20255872CD00D2EDEC /* LoadingView.swift in Sources */,
+				F417F872257EE4000024ED21 /* BeautifulView.swift in Sources */,
 				55065A32255872EF00D2EDEC /* TaxeFreeCalculateController.swift in Sources */,
 				55A3FF33255AB89100D034F4 /* ConverterPresenter.swift in Sources */,
 				55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */,

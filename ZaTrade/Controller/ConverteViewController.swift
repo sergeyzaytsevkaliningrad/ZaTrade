@@ -8,7 +8,6 @@ class ConverterViewController: BaseViewController {
     let curentPicker = UIPickerView()
     let toPicker = UIPickerView()
     let clearButton = UIButton(frame: .zero)
-    
     var input: String?
     
     private var presenter = ConverterPresenter()

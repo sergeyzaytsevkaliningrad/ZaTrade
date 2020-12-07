@@ -9,9 +9,7 @@ final class InformationPresenter {
         didSet {
             if currentArticleIndex != nil {
                 self.view?.chooseItem.title = articles[currentArticleIndex!].entity?.tag
-//                print(" huy \(articles[currentArticleIndex!].entity?.tag)")
-                let htmlCode = articles[currentArticleIndex!].entity?.info ?? "no info"
-//                print(" pizda \(articles[currentArticleIndex!].entity?.info)")
+                let htmlCode = articles[currentArticleIndex!].entity?.info ?? "No information"
                 self.view?.webView.loadHTMLString(htmlCode, baseURL: nil)
             }
         }

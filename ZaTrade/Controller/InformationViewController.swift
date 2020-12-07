@@ -24,7 +24,7 @@ final class InformationViewController: CardViewController, WKUIDelegate {
     }
     
     private func layoutNavigationItem() {
-        chooseItem = UIBarButtonItem(title: "Выбор статьи", style: .plain, target: self.presenter, action: #selector(self.presenter.choose))
+        self.chooseItem = UIBarButtonItem(title: "Выбор статьи", style: .plain, target: self.presenter, action: #selector(self.presenter.choose))
         self.navigationItem.rightBarButtonItem = chooseItem
     }
     
@@ -49,10 +49,9 @@ final class InformationViewController: CardViewController, WKUIDelegate {
         alert.addAction(UIAlertAction(title: "Выбрать", style: .default, handler: { (action: UIAlertAction) in
             self.presenter.currentArticleIndex = pickerView.selectedRow(inComponent: 0)
         }))
-        
         self.present(alert, animated: true)
     }
-    
+
     private func setupConstraints() {
         self.webView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -81,10 +80,4 @@ extension InformationViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         let article = self.presenter.articles[row].entity!
         return "\(article.tag!)"
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        self.presenter.currentArticleIndex = row
-    }
-    
 }

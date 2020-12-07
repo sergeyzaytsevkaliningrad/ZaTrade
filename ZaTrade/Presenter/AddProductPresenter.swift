@@ -37,28 +37,24 @@ final class AddProductPresenter {
         }
     }
 
-    
     @objc func saveButtonAction() {
         self.view?.navigationController?.popViewController(animated: true)
         self.view?.dismiss(animated: true) {
             if self.isEditing {
                 let product = EntityWrapper<Product>.getByName(self.model.ProductName)
-                product.entity?.name = self.model.ProductName
-                product.entity?.extra = self.model.ProductDescription
-                product.entity?.price = self.model.ProductPrice!
+                product.entity?.name = self.showModel().ProductName
+                product.entity?.extra = self.showModel().ProductDescription
+                product.entity?.price = self.showModel().ProductPrice!
                 product.entity?.date_changed = Date()
-//                product.entity?.tax =
-//                product.entity?.country =
                 product.save()
                 print("dismissed Edit view")
             } else {
                 let product = EntityWrapper<Product>.createNew()
-                product.entity?.extra = self.model.ProductDescription
-                product.entity?.name = self.model.ProductName
-                product.entity?.price = self.model.ProductPrice!
-//                product.entity?.tax =
-//                product.entity?.country =
+                product.entity?.extra = self.showModel().ProductDescription
+                product.entity?.name = self.showModel().ProductName
+                product.entity?.price = self.showModel().ProductPrice!
                 product.entity?.date_added = Date()
+                product.entity?.date_changed = Date()
                 product.save()
                 print("dismissed Add view")
             }

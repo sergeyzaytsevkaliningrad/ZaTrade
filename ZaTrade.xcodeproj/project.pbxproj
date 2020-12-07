@@ -23,7 +23,6 @@
 		55065A3A2558733400D2EDEC /* HotdogClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55065A392558733400D2EDEC /* HotdogClassifier.mlmodel */; };
 		55065A412558735800D2EDEC /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3D2558735800D2EDEC /* ProductModel.swift */; };
 		55065A422558735800D2EDEC /* InformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3E2558735800D2EDEC /* InformationModel.swift */; };
-		55065A4C2558737400D2EDEC /* GeneralInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A472558737300D2EDEC /* GeneralInfoPresenter.swift */; };
 		55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A482558737300D2EDEC /* AddProductPresenter.swift */; };
 		55065A4E2558737400D2EDEC /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A492558737300D2EDEC /* CalculatorPresenter.swift */; };
 		55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */; };
@@ -70,7 +69,6 @@
 		55065A392558733400D2EDEC /* HotdogClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HotdogClassifier.mlmodel; sourceTree = "<group>"; };
 		55065A3D2558735800D2EDEC /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		55065A3E2558735800D2EDEC /* InformationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationModel.swift; sourceTree = "<group>"; };
-		55065A472558737300D2EDEC /* GeneralInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralInfoPresenter.swift; sourceTree = "<group>"; };
 		55065A482558737300D2EDEC /* AddProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductPresenter.swift; sourceTree = "<group>"; };
 		55065A492558737300D2EDEC /* CalculatorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
 		55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductPresenter.swift; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 				55065A482558737300D2EDEC /* AddProductPresenter.swift */,
 				55065A492558737300D2EDEC /* CalculatorPresenter.swift */,
 				55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */,
-				55065A472558737300D2EDEC /* GeneralInfoPresenter.swift */,
 				55065A4B2558737400D2EDEC /* InformationPresenter.swift */,
 				55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */,
 				55C596262559B48000B380B6 /* WelcomePresenter.swift */,
@@ -319,7 +316,6 @@
 				55A3FF30255AB87200D034F4 /* ConverterViewViewController.swift in Sources */,
 				55065A3A2558733400D2EDEC /* HotdogClassifier.mlmodel in Sources */,
 				55A3FF29255AB83C00D034F4 /* IfModelFalse.swift in Sources */,
-				55065A4C2558737400D2EDEC /* GeneralInfoPresenter.swift in Sources */,
 				55065A502558737400D2EDEC /* InformationPresenter.swift in Sources */,
 				55065A5C2558738B00D2EDEC /* Controls.swift in Sources */,
 				55065A412558735800D2EDEC /* ProductModel.swift in Sources */,

@@ -1,5 +1,6 @@
 import Foundation
 
+
 class ProductListPresenter {
     weak var controller: ProductListViewController?
     
@@ -21,6 +22,10 @@ class ProductListPresenter {
         popover.delegate = controller!
         
         controller?.present(vc, animated: true)
+    }
+    
+    func showProduct(_ index: Int) {
+        
     }
     
 }

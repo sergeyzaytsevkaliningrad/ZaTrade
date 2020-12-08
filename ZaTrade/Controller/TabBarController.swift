@@ -15,7 +15,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         calculatorViewController.title = "Вычисление TaxFree"
         calculatorViewController.tabBarItem = UITabBarItem(title: calculatorViewController.title, image: UIImage(systemName: "t.circle"), selectedImage: nil)
         
-        let converterViewController = CameraViewController()
+        let converterViewController = ConverterViewController()
         converterViewController.title = "Конвертер валют"
         converterViewController.tabBarItem = UITabBarItem(title: converterViewController.title, image: UIImage(systemName: "arrow.2.circlepath.circle"), selectedImage: nil)
         

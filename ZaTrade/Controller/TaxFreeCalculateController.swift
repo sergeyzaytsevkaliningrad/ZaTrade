@@ -54,7 +54,7 @@ class TaxFreeCalculateController: CardViewController {
     
     private func layoutToCountButton() {
         self.view.addSubview(toCountButton)
-        self.toCountButton.setTitle("Рассчитать", for: .normal)
+        self.toCountButton.text = "Рассчитать"
         self.toCountButton.addTarget(self.presenter, action: #selector(self.presenter.count), for: .touchUpInside)
     }
     

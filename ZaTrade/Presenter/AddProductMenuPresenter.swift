@@ -6,7 +6,8 @@ class AddProductMenuPresenter {
     
     @objc func addUsingCamera() {
         viewController?.dismiss(animated: false, completion: nil)
-        print("addUsingCamera")
+        let vc = CameraViewController()
+        viewController?.mainNavigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func addUsingInput() {

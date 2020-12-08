@@ -16,8 +16,6 @@ class WelcomePresenter {
     
     init() {
         self.counties = EntityWrapper<Country>.all(sortKey: "name", ascending: true)
-        let lm = LocationManager()
-        print(lm.country())
     }
     
     @objc func openTabBarController() {

@@ -8,7 +8,7 @@ final class ShowProductPresenter {
         
     @objc func showEdit() {
         let vc = AddProductViewController(isEditingView: true)
-        // vc.presenter.model = self.model
+        // TODO: доделать
         self.viewController!.navigationController?.pushViewController(vc, animated: true)
     }
     

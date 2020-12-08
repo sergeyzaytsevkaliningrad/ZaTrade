@@ -29,12 +29,12 @@ class DataInitializer {
             let name = currency_data["name"] as! String
             let code = currency_data["code"] as! String
             let sign = currency_data["sign"] as! String
-            
+
             var currency = EntityWrapper<Currency>.getByName(name)
             if (currency.isEmpty) {
                 currency = EntityWrapper<Currency>.createNew()
             }
-            
+
             currency.entity!.name = name
             currency.entity!.code = code
             currency.entity!.sign = sign
@@ -57,7 +57,7 @@ class DataInitializer {
             if (country.isEmpty) {
                 country = EntityWrapper<Country>.createNew()
             }
-            
+
             country.entity!.name = name
             country.entity!.flag = flag
             country.entity!.code = code
@@ -70,46 +70,46 @@ class DataInitializer {
         
     private func initializeTax() {
         let taxes_data = self.entities_data["Tax"] as! [[String: Any]]
-        
+
         for tax_data in taxes_data {
             let name = tax_data["name"] as! String
             let rate = tax_data["rate"] as! Int64
             let country = tax_data["country"] as! String
-            
+
             var tax = EntityWrapper<Tax>.getByName(name)
             if (tax.isEmpty) {
                 tax = EntityWrapper<Tax>.createNew()
             }
-            
+
             tax.entity?.name = name
             tax.entity?.rate = rate
             tax.entity?.country = EntityWrapper<Country>.getByField(field: "code", value: country).entity
             tax.save()
         }
-        
+
 //        print(EntityWrapper<Tax>.all())
     }
     
     private func initializeInformation() {
         let informations_data = self.entities_data["Information"] as! [[String: Any]]
-        
+
         for information_data in informations_data {
             let info = information_data["info"] as! String
             let tag = information_data["tag"] as! String
             let country = information_data["country"] as! String
-            
+
             var information = EntityWrapper<Information>.getByField(field: "tag", value: tag)
             if (information.isEmpty) {
                 information = EntityWrapper<Information>.createNew()
             }
-            
+
             information.entity!.tag = tag
             information.entity!.info = info
             information.entity!.country = EntityWrapper<Country>.getByField(field: "code", value: country).entity
             information.save()
         }
     }
-        
+
     private func initializeProduct() {
             let products_data = self.entities_data["Product"] as! [[String: Any]]
 

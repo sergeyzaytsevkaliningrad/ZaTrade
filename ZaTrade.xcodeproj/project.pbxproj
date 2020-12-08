@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12061C43257AD59900AA7CD9 /* NumberClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 12061C42257AD59900AA7CD9 /* NumberClassifier.mlmodel */; };
+		12061C47257AD75D00AA7CD9 /* PriceRecognizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 12061C46257AD75D00AA7CD9 /* PriceRecognizer.mlmodel */; };
+		12061C4B257AF07900AA7CD9 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12061C4A257AF07900AA7CD9 /* CameraViewController.swift */; };
+		12061CA7257D250100AA7CD9 /* IfPriceFound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12061CA6257D250100AA7CD9 /* IfPriceFound.swift */; };
+		12061CAA257D251B00AA7CD9 /* IfPriceNotFound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12061CA9257D251B00AA7CD9 /* IfPriceNotFound.swift */; };
+		12061CAD257D331000AA7CD9 /* UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12061CAC257D331000AA7CD9 /* UIActivityIndicatorView.swift */; };
 		5506468625611AAF00C7C603 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5506468525611AAF00C7C603 /* CardView.swift */; };
 		550659E22558703400D2EDEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 550659D12558703300D2EDEC /* Assets.xcassets */; };
 		550659E42558703400D2EDEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550659D32558703300D2EDEC /* AppDelegate.swift */; };
@@ -56,6 +62,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12061C42257AD59900AA7CD9 /* NumberClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NumberClassifier.mlmodel; sourceTree = "<group>"; };
+		12061C46257AD75D00AA7CD9 /* PriceRecognizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PriceRecognizer.mlmodel; sourceTree = "<group>"; };
+		12061C4A257AF07900AA7CD9 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		12061CA6257D250100AA7CD9 /* IfPriceFound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfPriceFound.swift; sourceTree = "<group>"; };
+		12061CA9257D251B00AA7CD9 /* IfPriceNotFound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfPriceNotFound.swift; sourceTree = "<group>"; };
+		12061CAC257D331000AA7CD9 /* UIActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorView.swift; sourceTree = "<group>"; };
 		5506468525611AAF00C7C603 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		550659D12558703300D2EDEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		550659D32558703300D2EDEC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,7 +157,12 @@
 				55065A29255872EE00D2EDEC /* ShowProductViewController.swift */,
 				5523F6B0255FEF2E001B919B /* TabBarController.swift */,
 				55065A2C255872EE00D2EDEC /* TaxFreeCalculateController.swift */,
+				55A3FF2C255AB86A00D034F4 /* TableCellViewController.swift */,
 				55065A682558754A00D2EDEC /* WelcomeViewController.swift */,
+				12061C4A257AF07900AA7CD9 /* CameraViewController.swift */,
+				12061CA6257D250100AA7CD9 /* IfPriceFound.swift */,
+				12061CA9257D251B00AA7CD9 /* IfPriceNotFound.swift */,
+				12061CAC257D331000AA7CD9 /* UIActivityIndicatorView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,6 +180,8 @@
 		55065A382558731E00D2EDEC /* ML */ = {
 			isa = PBXGroup;
 			children = (
+				12061C46257AD75D00AA7CD9 /* PriceRecognizer.mlmodel */,
+				12061C42257AD59900AA7CD9 /* NumberClassifier.mlmodel */,
 				55065A392558733400D2EDEC /* HotdogClassifier.mlmodel */,
 			);
 			path = ML;
@@ -340,21 +359,26 @@
 				55065A5D2558738B00D2EDEC /* TableAPI.swift in Sources */,
 				55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */,
 				55325E94256A517600079D04 /* EntityWrapper.swift in Sources */,
-				550A3DC4257CDEE7005D861D /* ProductViewCell.swift in Sources */,
+				12061CAD257D331000AA7CD9 /* UIActivityIndicatorView.swift in Sources */,
 				55402777256EDADB0008492F /* DataInitializer.swift in Sources */,
+				12061C43257AD59900AA7CD9 /* NumberClassifier.mlmodel in Sources */,
+				12061C4B257AF07900AA7CD9 /* CameraViewController.swift in Sources */,
 				5506468625611AAF00C7C603 /* CardView.swift in Sources */,
 				55065A3A2558733400D2EDEC /* HotdogClassifier.mlmodel in Sources */,
+				12061CA7257D250100AA7CD9 /* IfPriceFound.swift in Sources */,
 				55A3FF29255AB83C00D034F4 /* IfModelFalse.swift in Sources */,
 				55065A502558737400D2EDEC /* InformationPresenter.swift in Sources */,
 				55065A5C2558738B00D2EDEC /* Controls.swift in Sources */,
 				55065A412558735800D2EDEC /* ProductModel.swift in Sources */,
 				5523F6B1255FEF2E001B919B /* TabBarController.swift in Sources */,
+				12061CAA257D251B00AA7CD9 /* IfPriceNotFound.swift in Sources */,
 				5580346A257F5FCA004448ED /* ProductListPresenter.swift in Sources */,
 				55065A2E255872EE00D2EDEC /* DashboardVC.swift in Sources */,
 				55065A21255872CD00D2EDEC /* IntroView.swift in Sources */,
 				55065A30255872EE00D2EDEC /* ProductListViewController.swift in Sources */,
 				55C596272559B48000B380B6 /* WelcomePresenter.swift in Sources */,
 				55065A6F255875B400D2EDEC /* Buttons.swift in Sources */,
+				12061C47257AD75D00AA7CD9 /* PriceRecognizer.mlmodel in Sources */,
 				550659ED2558703400D2EDEC /* ZaTrade.xcdatamodeld in Sources */,
 				55065A5E2558738B00D2EDEC /* UIViewAnchors.swift in Sources */,
 				55065A20255872CD00D2EDEC /* LoadingView.swift in Sources */,
@@ -530,7 +554,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3A9536C2AF;
+				DEVELOPMENT_TEAM = 3S3TW83623;
 				INFOPLIST_FILE = ZaTrade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

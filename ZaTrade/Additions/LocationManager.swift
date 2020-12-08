@@ -1,9 +1,3 @@
-//
-//  LocationManager.swift
-//  ZaTrade
-//
-//  Created by Константин Емельянов on 20.11.2020.
-//
 import MapKit
 import CoreLocation
 

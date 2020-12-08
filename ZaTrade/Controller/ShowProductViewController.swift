@@ -3,7 +3,7 @@ import UIKit
 
 final class ShowProductViewController: CardViewController {
     
-    var presenter = ShowProductPresenter()
+    lazy var presenter = ShowProductPresenter()
     
     private let name = UILabel()
     private let nameLabel = UILabel()
@@ -12,6 +12,16 @@ final class ShowProductViewController: CardViewController {
     private let descriptionProduct = UILabel()
     private let descriptionProductLabel = UILabel()
     
+    init(nameProduct: String) {
+        super.init(nibName: nil, bundle: nil)
+        presenter.name = nameProduct
+        presenter.loadData()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.view = self
@@ -19,6 +29,7 @@ final class ShowProductViewController: CardViewController {
     }
     
     private func setup() {
+        setupEditButton()
         setupNameLabel()
         setupNameInfoLabel()
         setupPriceLabel()
@@ -26,6 +37,15 @@ final class ShowProductViewController: CardViewController {
         setupDescriptionProductLabel()
         setupDescriptionProductInfoLabel()
     }
+    
+    
+    func setupEditButton() {
+        self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "pencil.circle.fill"), style: .plain, target: self.presenter, action: #selector(self.presenter.showEdit)),
+            UIBarButtonItem(image: UIImage(systemName: "trash.circle.fill"), style: .plain, target: self.presenter, action: #selector(self.presenter.delete))
+        ]
+    }
+    
     
     func setupConstraints() {
         [
@@ -97,7 +117,11 @@ final class ShowProductViewController: CardViewController {
         priceLabel.font = UIFont(name: "Rubik-Light", size: 18)
         priceLabel.numberOfLines = 0
         priceLabel.lineBreakMode = .byWordWrapping
-        priceLabel.text = String(presenter.model.ProductPrice)
+        if let text = presenter.model.ProductPrice {
+            priceLabel.text = "\(text)"
+        } else {
+            priceLabel.text = ""
+        }
     }
     
     func setupDescriptionProductLabel(){

@@ -1,10 +1,3 @@
-//
-//  Currency.swift
-//  ZaTrade
-//
-//  Created by Константин Емельянов on 20.11.2020.
-//
-
 import Foundation
 
 class CourseLoader {

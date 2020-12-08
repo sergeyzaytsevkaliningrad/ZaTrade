@@ -19,6 +19,7 @@ class DataInitializer {
         self.initializeCountry()
         self.initializeTax()
         self.initializeInformation()
+        self.initializeProduct()
     }
         
     private func initializeCurrency() {
@@ -39,6 +40,8 @@ class DataInitializer {
             currency.entity!.sign = sign
             currency.save()
         }
+        
+//        print(EntityWrapper<Currency>.all())
     }
 
     private func initializeCountry() {
@@ -61,6 +64,8 @@ class DataInitializer {
             country.entity!.currency = EntityWrapper<Currency>.getByName(currency).entity
             country.save()
         }
+        
+//        print(EntityWrapper<Country>.all())
     }
         
     private func initializeTax() {
@@ -81,6 +86,8 @@ class DataInitializer {
             tax.entity?.country = EntityWrapper<Country>.getByField(field: "code", value: country).entity
             tax.save()
         }
+        
+//        print(EntityWrapper<Tax>.all())
     }
     
     private func initializeInformation() {
@@ -101,6 +108,36 @@ class DataInitializer {
             information.entity!.country = EntityWrapper<Country>.getByField(field: "code", value: country).entity
             information.save()
         }
+    }
+        
+    private func initializeProduct() {
+            let products_data = self.entities_data["Product"] as! [[String: Any]]
+
+            for product_data in products_data {
+                let name = product_data["name"] as! String
+                let extra = product_data["extra"] as! String
+                let price = product_data["price"] as! Double
+                let date_added = product_data["date_added"] as! Date?
+                let date_changed = product_data["date_changed"] as! Date?
+                let tax = product_data["tax"] as! String?
+                let country = product_data["country"] as! String?
+
+                var information = EntityWrapper<Product>.getByField(field: "name", value: name)
+                if (information.isEmpty) {
+                    information = EntityWrapper<Product>.createNew()
+                }
+
+                information.entity!.name = name
+                information.entity!.extra = extra
+                information.entity!.price = price
+                information.entity!.date_added = date_added
+                information.entity!.date_changed = date_changed
+                information.entity!.tax = EntityWrapper<Tax>.getByField(field: "name", value: tax as Any).entity
+                information.entity!.country = EntityWrapper<Country>.getByField(field: "code", value: country as Any).entity
+
+                information.save()
+            }
+
     }
 
 }

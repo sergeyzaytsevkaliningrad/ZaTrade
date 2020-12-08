@@ -12,7 +12,7 @@ final class ProductListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.presenter.controller = self
+        self.presenter.viewController = self
         
         self.collectionView.layoutMargins = UIEdgeInsets(top: topBottomMargin, left: 10, bottom: topBottomMargin, right: 10)
         self.collectionView.delegate = self
@@ -34,26 +34,31 @@ final class ProductListViewController: BaseViewController {
         buttonPlus.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
         buttonPlus.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100).isActive = true
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.presenter.reloadData()
+    }
 
 }
 
 
 extension ProductListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return self.presenter.products.count
     }
         
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductViewCell
-        cell.productName = "123"
-        cell.countryFlag = "🇷🇺"
-        cell.originalPrice = "12 000 p"
-        cell.rublePrice = "12 000 p"
+        let product = self.presenter.products[indexPath.row]
+        cell.productName = product.entity!.name!
+        cell.countryFlag = product.entity!.country!.flag!
+        cell.originalPrice = "\(product.entity!.price) \(product.entity!.country!.currency!.sign!)"
+        cell.rublePrice = "? p" // TODO: сделать перевод
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        self.presenter.showProduct(indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

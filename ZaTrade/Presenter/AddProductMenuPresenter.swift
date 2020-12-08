@@ -2,16 +2,17 @@ import Foundation
 
 
 class AddProductMenuPresenter {
-    weak var controller: AddProductMenuViewController?
+    weak var viewController: AddProductMenuViewController?
     
     @objc func addUsingCamera() {
+        viewController?.dismiss(animated: false, completion: nil)
         print("addUsingCamera")
-        controller?.dismiss(animated: true, completion: nil)
     }
     
     @objc func addUsingInput() {
-        print("addUsingInput")
-        controller?.dismiss(animated: true, completion: nil)
+        viewController?.dismiss(animated: false, completion: nil)
+        let vc = AddProductViewController(isEditingView: false)
+        viewController?.mainNavigationController?.pushViewController(vc, animated: true)
     }
     
 }

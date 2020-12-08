@@ -3,6 +3,7 @@ import UIKit
 
 final class AddProductMenuViewController: UIViewController {
     let presenter = AddProductMenuPresenter()
+    weak var mainNavigationController: UINavigationController?
     
     private let addUsingCamera = UIButton(type: .system)
     private let addUsingInput = UIButton(type: .system)
@@ -10,7 +11,7 @@ final class AddProductMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.presenter.controller = self
+        self.presenter.viewController = self
         self.view.backgroundColor = .white
         
         addUsingInput.setTitle("Вручную", for: .normal)

@@ -203,11 +203,9 @@ final class LetsGoButton: UIButton {
     }
     
     override func layoutSubviews() {
-        
         self.setTitle(self.text, for: .normal)
         self.titleLabel?.frame.size = self.frame.size
         self.titleLabel?.textColor = .white
-        self.titleLabel?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         self.titleLabel?.font = UIFont(name: "Rubik-Bold", size: 27)
         self.titleLabel?.textAlignment = .center
     }

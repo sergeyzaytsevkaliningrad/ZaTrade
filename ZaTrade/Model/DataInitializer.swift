@@ -19,7 +19,7 @@ class DataInitializer {
         self.initializeCountry()
         self.initializeTax()
         self.initializeInformation()
-        self.initializeProduct()
+        // self.initializeProduct()
     }
         
     private func initializeCurrency() {

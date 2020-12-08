@@ -1,5 +1,5 @@
 import UIKit
-
+import CoreData
 
 final class ShowProductViewController: CardViewController {
     
@@ -12,19 +12,9 @@ final class ShowProductViewController: CardViewController {
     private let descriptionProduct = UILabel()
     private let descriptionProductLabel = UILabel()
     
-    init(nameProduct: String) {
-        super.init(nibName: nil, bundle: nil)
-        presenter.name = nameProduct
-        presenter.loadData()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.view = self
+        self.presenter.viewController = self
         self.setup()
     }
     
@@ -99,10 +89,10 @@ final class ShowProductViewController: CardViewController {
         nameLabel.font = UIFont(name: "Rubik-Light", size: 18)
         nameLabel.numberOfLines = 0
         nameLabel.lineBreakMode = .byWordWrapping
-        nameLabel.text = presenter.model.ProductName
+        nameLabel.text = presenter.product.entity?.name
     }
     
-    func setupPriceLabel(){
+    func setupPriceLabel() {
         view.addSubview(self.price)
         price.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         price.font = UIFont(name: "Rubik-Medium", size: 18)
@@ -117,11 +107,7 @@ final class ShowProductViewController: CardViewController {
         priceLabel.font = UIFont(name: "Rubik-Light", size: 18)
         priceLabel.numberOfLines = 0
         priceLabel.lineBreakMode = .byWordWrapping
-        if let text = presenter.model.ProductPrice {
-            priceLabel.text = "\(text)"
-        } else {
-            priceLabel.text = ""
-        }
+        priceLabel.text = "\(presenter.product.entity!.price) \(presenter.product.entity!.country!.currency!.sign!)"
     }
     
     func setupDescriptionProductLabel(){
@@ -139,7 +125,7 @@ final class ShowProductViewController: CardViewController {
         descriptionProductLabel.font = UIFont(name: "Rubik-Light", size: 18)
         descriptionProductLabel.numberOfLines = 0
         descriptionProductLabel.lineBreakMode = .byWordWrapping
-        descriptionProductLabel.text = presenter.model.ProductDescription
+        descriptionProductLabel.text = presenter.product.entity?.extra
     }
     
     override func viewDidLayoutSubviews() {

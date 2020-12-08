@@ -2,8 +2,6 @@ import UIKit
 
 
 final class AddProductViewController: CardViewController {
-    
-    
     var isEditingView: Bool = false
     
     let presenter = AddProductPresenter()

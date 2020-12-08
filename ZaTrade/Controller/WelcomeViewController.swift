@@ -18,7 +18,7 @@ final class WelcomeViewController: BaseViewController {
         let subviews = [self.mainImageView, self.letsGoButton, self.chooseCountry, self.taxFreeInfo]
         
         // setup elements
-        self.letsGoButton.setTitle("Поехали!", for: .normal)
+        self.letsGoButton.text = "Поехали!"
         self.letsGoButton.addTarget(self.presenter, action: #selector(self.presenter.openTabBarController), for: .touchUpInside)
         
         self.chooseCountry.countryFlag.text = "?"

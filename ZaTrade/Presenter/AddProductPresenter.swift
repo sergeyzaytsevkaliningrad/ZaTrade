@@ -42,29 +42,34 @@ final class AddProductPresenter {
         self.model.ProductDescription = self.view?.descriptionProductTextField.text ?? ""
         self.model.ProductPrice = Double((self.view?.priceTextField.text) ?? "")
         
-        self.view?.navigationController?.popViewController(animated: true)
-        self.view?.dismiss(animated: true) {
-            if self.isEditing {
-                let product = EntityWrapper<Product>.getByName(self.model.ProductName)
-                product.entity?.name = self.model.ProductName
-                product.entity?.extra = self.model.ProductDescription
-                product.entity?.price = self.model.ProductPrice ?? 0
-                product.entity?.date_changed = Date()
-                product.save()
-                print("dismissed Edit view")
-                print(EntityWrapper<Product>.all())
-            } else {
-                let product = EntityWrapper<Product>.createNew()
-                product.entity?.extra = self.model.ProductDescription
-                product.entity?.name = self.model.ProductName
-                product.entity?.price = self.model.ProductPrice ?? 0
-                product.entity?.date_added = Date()
-                product.entity?.date_changed = Date()
-                product.save()
-                print("dismissed Add view")
-                print(EntityWrapper<Product>.all())
-            }
-            
+        if self.isEditing {
+            let product = EntityWrapper<Product>.getByName(self.model.ProductName)
+            product.entity?.name = self.model.ProductName
+            product.entity?.extra = self.model.ProductDescription
+            product.entity?.price = self.model.ProductPrice ?? 0
+            product.entity?.date_changed = Date()
+            // TODO: изменить
+            product.entity?.country = EntityWrapper<Country>.getByField(field: "code", value: "RUS").entity
+            product.entity?.tax = EntityWrapper<Tax>.getByName("RUS: Стандартная").entity
+            product.save()
+            print("dismissed Edit view")
+            print(EntityWrapper<Product>.all())
+        } else {
+            let product = EntityWrapper<Product>.createNew()
+            product.entity?.extra = self.model.ProductDescription
+            product.entity?.name = self.model.ProductName
+            product.entity?.price = self.model.ProductPrice ?? 0
+            product.entity?.date_added = Date()
+            product.entity?.date_changed = Date()
+            // TODO: изменить
+            product.entity?.country = EntityWrapper<Country>.getByField(field: "code", value: "RUS").entity
+            product.entity?.tax = EntityWrapper<Tax>.getByName("RUS: Стандартная").entity
+            product.save()
+            print("dismissed Add view")
+            print(EntityWrapper<Product>.all())
         }
+        
+        self.view?.navigationController?.popViewController(animated: true)
+        self.view?.dismiss(animated: true)
     }
 }

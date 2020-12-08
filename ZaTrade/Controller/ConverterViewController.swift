@@ -1,6 +1,6 @@
 import UIKit
 
-class ConverterViewController: BaseViewController {
+class ConverterViewController: BaseViewController, UITextFieldDelegate {
     
     let textfield = UITextField()
     let resultLabel = UILabel()

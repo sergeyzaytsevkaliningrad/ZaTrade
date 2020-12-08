@@ -18,15 +18,15 @@ final class WelcomeViewController: BaseViewController {
         let subviews = [self.mainImageView, self.letsGoButton, self.chooseCountry, self.taxFreeInfo]
         
         // setup elements
-        self.letsGoButton.text = "Поехали!"
-        self.letsGoButton.addGestureRecognizer(UITapGestureRecognizer(target: self.presenter, action: #selector(self.presenter.openTabBarController)))
+        self.letsGoButton.setTitle("Поехали!", for: .normal)
+        self.letsGoButton.addTarget(self.presenter, action: #selector(self.presenter.openTabBarController), for: .touchUpInside)
         
         self.chooseCountry.countryFlag.text = "?"
         self.chooseCountry.countryTitle.text = "Выберите страну"
-        self.chooseCountry.addGestureRecognizer(UITapGestureRecognizer(target: self.presenter, action: #selector(self.presenter.openCountryPickleView)))
+        self.chooseCountry.addTarget(self.presenter, action: #selector(self.presenter.openCountryPickleView), for: .touchUpInside)
         
         self.taxFreeInfo.setTitle("Что такое Tax Free?", for: .normal)
-        self.taxFreeInfo.addGestureRecognizer(UITapGestureRecognizer(target: self.presenter, action: #selector(self.presenter.openTaxFreeInformation)))
+        self.taxFreeInfo.addTarget(self.presenter, action: #selector(self.presenter.openTaxFreeInformation), for: .touchUpInside)
         
         // enable constraints
         subviews.forEach({ $0.translatesAutoresizingMaskIntoConstraints = false })

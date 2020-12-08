@@ -19,12 +19,12 @@
 		55065A2F255872EE00D2EDEC /* ShowProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A29255872EE00D2EDEC /* ShowProductViewController.swift */; };
 		55065A30255872EE00D2EDEC /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2A255872EE00D2EDEC /* ProductListViewController.swift */; };
 		55065A31255872EE00D2EDEC /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2B255872EE00D2EDEC /* AddProductViewController.swift */; };
-		55065A32255872EF00D2EDEC /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2C255872EE00D2EDEC /* CalculatorViewController.swift */; };
+		55065A32255872EF00D2EDEC /* TaxFreeCalculateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2C255872EE00D2EDEC /* TaxFreeCalculateController.swift */; };
 		55065A3A2558733400D2EDEC /* HotdogClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55065A392558733400D2EDEC /* HotdogClassifier.mlmodel */; };
 		55065A412558735800D2EDEC /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3D2558735800D2EDEC /* ProductModel.swift */; };
 		55065A422558735800D2EDEC /* InformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3E2558735800D2EDEC /* InformationModel.swift */; };
 		55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A482558737300D2EDEC /* AddProductPresenter.swift */; };
-		55065A4E2558737400D2EDEC /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A492558737300D2EDEC /* CalculatorPresenter.swift */; };
+		55065A4E2558737400D2EDEC /* TaxFreeCalculatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A492558737300D2EDEC /* TaxFreeCalculatePresenter.swift */; };
 		55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */; };
 		55065A502558737400D2EDEC /* InformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A4B2558737400D2EDEC /* InformationPresenter.swift */; };
 		55065A5C2558738B00D2EDEC /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A552558738A00D2EDEC /* Controls.swift */; };
@@ -36,17 +36,22 @@
 		55065A8125587A5700D2EDEC /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A372558731700D2EDEC /* Rubik-Bold.ttf */; };
 		55065A8225587A5700D2EDEC /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A352558731700D2EDEC /* Rubik-Light.ttf */; };
 		55065A8325587A5700D2EDEC /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55065A362558731700D2EDEC /* Rubik-Medium.ttf */; };
+		550A3DC0257CC2F5005D861D /* ProductListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550A3DBF257CC2F5005D861D /* ProductListPresenter.swift */; };
+		550A3DC4257CDEE7005D861D /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550A3DC3257CDEE7005D861D /* ProductViewCell.swift */; };
+		550A3DCA257CF1CF005D861D /* AddProductMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550A3DC9257CF1CF005D861D /* AddProductMenuPresenter.swift */; };
 		5523F6B1255FEF2E001B919B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523F6B0255FEF2E001B919B /* TabBarController.swift */; };
 		55325E94256A517600079D04 /* EntityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55325E93256A517600079D04 /* EntityWrapper.swift */; };
 		55402777256EDADB0008492F /* DataInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55402776256EDADB0008492F /* DataInitializer.swift */; };
 		5540277C256EE3370008492F /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5540277B256EE3370008492F /* Data.json */; };
+		5580345F257F5E85004448ED /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580345E257F5E85004448ED /* ConverterViewController.swift */; };
 		559760D0255FFD770018EFAA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559760CF255FFD770018EFAA /* BaseViewController.swift */; };
 		55A3FF29255AB83C00D034F4 /* IfModelFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF27255AB83C00D034F4 /* IfModelFalse.swift */; };
 		55A3FF2A255AB83C00D034F4 /* IfModelTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF28255AB83C00D034F4 /* IfModelTrue.swift */; };
-		55A3FF2D255AB86A00D034F4 /* TableCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF2C255AB86A00D034F4 /* TableCellViewController.swift */; };
-		55A3FF30255AB87200D034F4 /* ConverterViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF2F255AB87200D034F4 /* ConverterViewViewController.swift */; };
 		55A3FF33255AB89100D034F4 /* ConverterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */; };
 		55C596272559B48000B380B6 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C596262559B48000B380B6 /* WelcomePresenter.swift */; };
+		F40930902577FCC20009AE46 /* CourseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F409308F2577FCC20009AE46 /* CourseLoader.swift */; };
+		F4093093257829910009AE46 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4093092257829910009AE46 /* LocationManager.swift */; };
+		F417F872257EE4000024ED21 /* BeautifulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F871257EE4000024ED21 /* BeautifulView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +67,7 @@
 		55065A29255872EE00D2EDEC /* ShowProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductViewController.swift; sourceTree = "<group>"; };
 		55065A2A255872EE00D2EDEC /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		55065A2B255872EE00D2EDEC /* AddProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
-		55065A2C255872EE00D2EDEC /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		55065A2C255872EE00D2EDEC /* TaxFreeCalculateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxFreeCalculateController.swift; sourceTree = "<group>"; };
 		55065A352558731700D2EDEC /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
 		55065A362558731700D2EDEC /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		55065A372558731700D2EDEC /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
@@ -70,7 +75,7 @@
 		55065A3D2558735800D2EDEC /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		55065A3E2558735800D2EDEC /* InformationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationModel.swift; sourceTree = "<group>"; };
 		55065A482558737300D2EDEC /* AddProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductPresenter.swift; sourceTree = "<group>"; };
-		55065A492558737300D2EDEC /* CalculatorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
+		55065A492558737300D2EDEC /* TaxFreeCalculatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxFreeCalculatePresenter.swift; sourceTree = "<group>"; };
 		55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductPresenter.swift; sourceTree = "<group>"; };
 		55065A4B2558737400D2EDEC /* InformationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPresenter.swift; sourceTree = "<group>"; };
 		55065A552558738A00D2EDEC /* Controls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
@@ -80,18 +85,24 @@
 		55065A6E255875B400D2EDEC /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		55065A76255876F100D2EDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55065A7C255878B800D2EDEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		550A3DBF257CC2F5005D861D /* ProductListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListPresenter.swift; sourceTree = "<group>"; };
+		550A3DC3257CDEE7005D861D /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
+		550A3DC6257CF19E005D861D /* AddProductMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductMenuViewController.swift; sourceTree = "<group>"; };
+		550A3DC9257CF1CF005D861D /* AddProductMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductMenuPresenter.swift; sourceTree = "<group>"; };
 		5523F6B0255FEF2E001B919B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		55325E93256A517600079D04 /* EntityWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityWrapper.swift; sourceTree = "<group>"; };
 		5539322D253734A900D59D05 /* ZaTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZaTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55402776256EDADB0008492F /* DataInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInitializer.swift; sourceTree = "<group>"; };
 		5540277B256EE3370008492F /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
+		5580345E257F5E85004448ED /* ConverterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 		559760CF255FFD770018EFAA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		55A3FF27255AB83C00D034F4 /* IfModelFalse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IfModelFalse.swift; sourceTree = "<group>"; };
 		55A3FF28255AB83C00D034F4 /* IfModelTrue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IfModelTrue.swift; sourceTree = "<group>"; };
-		55A3FF2C255AB86A00D034F4 /* TableCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellViewController.swift; sourceTree = "<group>"; };
-		55A3FF2F255AB87200D034F4 /* ConverterViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterViewViewController.swift; sourceTree = "<group>"; };
 		55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterPresenter.swift; sourceTree = "<group>"; };
 		55C596262559B48000B380B6 /* WelcomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		F409308F2577FCC20009AE46 /* CourseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLoader.swift; sourceTree = "<group>"; };
+		F4093092257829910009AE46 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F417F871257EE4000024ED21 /* BeautifulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautifulView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +124,8 @@
 				55065A1C255872CD00D2EDEC /* IntroView.swift */,
 				55065A1B255872CC00D2EDEC /* LoadingView.swift */,
 				55065A1D255872CD00D2EDEC /* ModalView.swift */,
+				F4093092257829910009AE46 /* LocationManager.swift */,
+				F409308F2577FCC20009AE46 /* CourseLoader.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -121,15 +134,15 @@
 			isa = PBXGroup;
 			children = (
 				55065A2B255872EE00D2EDEC /* AddProductViewController.swift */,
+				550A3DC6257CF19E005D861D /* AddProductMenuViewController.swift */,
 				559760CF255FFD770018EFAA /* BaseViewController.swift */,
-				55065A2C255872EE00D2EDEC /* CalculatorViewController.swift */,
-				55A3FF2F255AB87200D034F4 /* ConverterViewViewController.swift */,
+				5580345E257F5E85004448ED /* ConverterViewController.swift */,
 				55065A28255872EE00D2EDEC /* DashboardVC.swift */,
 				55065A27255872EE00D2EDEC /* InformationViewController.swift */,
 				55065A2A255872EE00D2EDEC /* ProductListViewController.swift */,
 				55065A29255872EE00D2EDEC /* ShowProductViewController.swift */,
 				5523F6B0255FEF2E001B919B /* TabBarController.swift */,
-				55A3FF2C255AB86A00D034F4 /* TableCellViewController.swift */,
+				55065A2C255872EE00D2EDEC /* TaxFreeCalculateController.swift */,
 				55065A682558754A00D2EDEC /* WelcomeViewController.swift */,
 			);
 			path = Controller;
@@ -169,10 +182,11 @@
 			isa = PBXGroup;
 			children = (
 				55065A482558737300D2EDEC /* AddProductPresenter.swift */,
-				55065A492558737300D2EDEC /* CalculatorPresenter.swift */,
+				550A3DC9257CF1CF005D861D /* AddProductMenuPresenter.swift */,
 				55A3FF32255AB89100D034F4 /* ConverterPresenter.swift */,
 				55065A4B2558737400D2EDEC /* InformationPresenter.swift */,
 				55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */,
+				55065A492558737300D2EDEC /* TaxFreeCalculatePresenter.swift */,
 				55C596262559B48000B380B6 /* WelcomePresenter.swift */,
 			);
 			path = Presenter;
@@ -182,10 +196,12 @@
 			isa = PBXGroup;
 			children = (
 				5506468525611AAF00C7C603 /* CardView.swift */,
+				F417F871257EE4000024ED21 /* BeautifulView.swift */,
 				55065A6E255875B400D2EDEC /* Buttons.swift */,
 				55065A552558738A00D2EDEC /* Controls.swift */,
 				55065A562558738A00D2EDEC /* TableAPI.swift */,
 				55065A572558738A00D2EDEC /* UIViewAnchors.swift */,
+				550A3DC3257CDEE7005D861D /* ProductViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,14 +322,14 @@
 				55065A422558735800D2EDEC /* InformationModel.swift in Sources */,
 				55A3FF2A255AB83C00D034F4 /* IfModelTrue.swift in Sources */,
 				55065A31255872EE00D2EDEC /* AddProductViewController.swift in Sources */,
-				55065A4E2558737400D2EDEC /* CalculatorPresenter.swift in Sources */,
+				55065A4E2558737400D2EDEC /* TaxFreeCalculatePresenter.swift in Sources */,
 				55065A692558754A00D2EDEC /* WelcomeViewController.swift in Sources */,
 				55065A5D2558738B00D2EDEC /* TableAPI.swift in Sources */,
 				55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */,
 				55325E94256A517600079D04 /* EntityWrapper.swift in Sources */,
+				550A3DC4257CDEE7005D861D /* ProductViewCell.swift in Sources */,
 				55402777256EDADB0008492F /* DataInitializer.swift in Sources */,
 				5506468625611AAF00C7C603 /* CardView.swift in Sources */,
-				55A3FF30255AB87200D034F4 /* ConverterViewViewController.swift in Sources */,
 				55065A3A2558733400D2EDEC /* HotdogClassifier.mlmodel in Sources */,
 				55A3FF29255AB83C00D034F4 /* IfModelFalse.swift in Sources */,
 				55065A502558737400D2EDEC /* InformationPresenter.swift in Sources */,
@@ -322,16 +338,20 @@
 				5523F6B1255FEF2E001B919B /* TabBarController.swift in Sources */,
 				55065A2E255872EE00D2EDEC /* DashboardVC.swift in Sources */,
 				55065A21255872CD00D2EDEC /* IntroView.swift in Sources */,
+				550A3DC0257CC2F5005D861D /* ProductListPresenter.swift in Sources */,
 				55065A30255872EE00D2EDEC /* ProductListViewController.swift in Sources */,
 				55C596272559B48000B380B6 /* WelcomePresenter.swift in Sources */,
 				55065A6F255875B400D2EDEC /* Buttons.swift in Sources */,
 				550659ED2558703400D2EDEC /* ZaTrade.xcdatamodeld in Sources */,
 				55065A5E2558738B00D2EDEC /* UIViewAnchors.swift in Sources */,
 				55065A20255872CD00D2EDEC /* LoadingView.swift in Sources */,
-				55065A32255872EF00D2EDEC /* CalculatorViewController.swift in Sources */,
+				F417F872257EE4000024ED21 /* BeautifulView.swift in Sources */,
+				55065A32255872EF00D2EDEC /* TaxFreeCalculateController.swift in Sources */,
+				5580345F257F5E85004448ED /* ConverterViewController.swift in Sources */,
 				55A3FF33255AB89100D034F4 /* ConverterPresenter.swift in Sources */,
 				55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */,
 				55065A22255872CD00D2EDEC /* ModalView.swift in Sources */,
+				F4093093257829910009AE46 /* LocationManager.swift in Sources */,
 				55065A2F255872EE00D2EDEC /* ShowProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,7 +493,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3A9536C2AF;
 				INFOPLIST_FILE = ZaTrade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,7 +516,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3A9536C2AF;
 				INFOPLIST_FILE = ZaTrade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -11,7 +11,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         productListViewController.tabBarItem = UITabBarItem(title: productListViewController.title, image: UIImage(systemName: "list.bullet.rectangle"), selectedImage: nil)
         self.navigationItem.title = productListViewController.title
         
-        let calculatorViewController = CalculatorViewController()
+        let calculatorViewController = TaxFreeCalculateController()
         calculatorViewController.title = "Вычисление TaxFree"
         calculatorViewController.tabBarItem = UITabBarItem(title: calculatorViewController.title, image: UIImage(systemName: "t.circle"), selectedImage: nil)
         

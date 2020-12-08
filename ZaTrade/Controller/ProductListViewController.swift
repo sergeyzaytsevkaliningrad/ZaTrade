@@ -1,58 +1,79 @@
 import UIKit
 
 
-class ProductListViewController: BaseViewController {
-
-    let tableView = UITableView()
-    let itemList = ["MacBook","Trump","IPhone","Nothing","6","7","8"]
-    let itemListLable = ["Sold","Vote","12 mini","Well still nothig"]
-    var safeArea: UILayoutGuide!
-
+final class ProductListViewController: BaseViewController {
+    private let topBottomMargin: CGFloat = 10
+    
+    var presenter = ProductListPresenter()
+    
+    var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    var buttonPlus = CustomButtonPlus()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        safeArea = view.layoutMarginsGuide
         
-        tableView.dataSource = self
+        self.presenter.viewController = self
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellid")
+        self.collectionView.layoutMargins = UIEdgeInsets(top: topBottomMargin, left: 10, bottom: topBottomMargin, right: 10)
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.register(ProductViewCell.self, forCellWithReuseIdentifier: "cell")
         
-        setupView()
+        self.view.addSubview(self.collectionView)
+        
+        self.collectionView.backgroundColor = UIColor(white: 1, alpha: 0)
+        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
+        self.collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        self.collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        self.collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        
+        buttonPlus.addTarget(self.presenter, action: #selector(self.presenter.showPopover), for: .touchUpInside)
+        self.view.addSubview(buttonPlus)
+        
+        buttonPlus.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
+        buttonPlus.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100).isActive = true
     }
     
-    // MARK: - Setup view
-    func setupView() {
-        //ALWAY
-        self.view.addSubview(tableView)
-       
-        tableView.register(ItemTableCell.self, forCellReuseIdentifier: "cellid")
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
-        tableView.layer.cornerRadius = 28
+    override func viewWillAppear(_ animated: Bool) {
+        self.presenter.reloadData()
     }
 
 }
 
 
-extension ProductListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemList.count
+extension ProductListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.presenter.products.count
     }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
-        let name = itemList[indexPath.row]
         
-       // ItemTableCell.itemListLable.nameLable.text = name
-        cell.textLabel?.text = name
-        cell.textLabel?.font = UIFont(name: "Rubik-Lighr", size: 20)
-        
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductViewCell
+        let product = self.presenter.products[indexPath.row]
+        cell.productName = product.entity!.name!
+        cell.countryFlag = product.entity!.country!.flag!
+        cell.originalPrice = "\(product.entity!.price) \(product.entity!.country!.currency!.sign!)"
+        cell.rublePrice = "? p" // TODO: сделать перевод
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.presenter.showProduct(indexPath.row)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.width - (collectionView.layoutMargins.left + collectionView.layoutMargins.right), height: 60)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: topBottomMargin, left: 0, bottom: topBottomMargin, right: 0)
+    }
+    
 }
 
+
+extension ProductListViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+}

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Country" representedClassName=".Country" syncable="YES" codeGenerationType="class">
+    <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
+        <attribute name="code" attributeType="String"/>
         <attribute name="flag" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <relationship name="currency" maxCount="1" deletionRule="Deny" destinationEntity="Currency"/>
@@ -21,18 +22,19 @@
         <attribute name="extra" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="country" maxCount="1" deletionRule="Deny" destinationEntity="Country"/>
-        <relationship name="tax" maxCount="1" deletionRule="Deny" destinationEntity="Tax"/>
+        <relationship name="country" maxCount="1" deletionRule="No Action" destinationEntity="Country"/>
+        <relationship name="tax" maxCount="1" deletionRule="No Action" destinationEntity="Tax"/>
     </entity>
     <entity name="Tax" representedClassName="Tax" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String"/>
         <attribute name="rate" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="country" maxCount="1" deletionRule="Nullify" destinationEntity="Country"/>
     </entity>
     <elements>
-        <element name="Country" positionX="-419.375" positionY="-181.609375" width="128" height="88"/>
+        <element name="Country" positionX="-419.375" positionY="-181.609375" width="128" height="103"/>
         <element name="Currency" positionX="-55.65625" positionY="-186.0859375" width="128" height="88"/>
         <element name="Information" positionX="-0.859375" positionY="45" width="128.859375" height="88"/>
         <element name="Product" positionX="-231.20703125" positionY="7.69921875" width="128" height="148"/>
-        <element name="Tax" positionX="-264.17578125" positionY="269.9921875" width="128" height="73"/>
+        <element name="Tax" positionX="-264.17578125" positionY="269.9921875" width="128" height="88"/>
     </elements>
 </model>

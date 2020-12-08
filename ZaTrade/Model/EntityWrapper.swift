@@ -9,6 +9,9 @@ class EntityWrapper<Entity: NSManagedObject> {
     }
     
     var entity: Entity?
+    var isEmpty: Bool {
+        return self.entity == nil
+    }
     
     init(_ entity: Entity? = nil) {
         self.entity = entity
@@ -20,7 +23,7 @@ class EntityWrapper<Entity: NSManagedObject> {
             do {
                 try context.save()
             } catch {
-                print(error.localizedDescription)
+                print(error, error.localizedDescription)
             }
         }
     }
@@ -31,7 +34,7 @@ class EntityWrapper<Entity: NSManagedObject> {
         do {
             try context.save()
         } catch {
-            print(error.localizedDescription)
+            print(error, error.localizedDescription)
         }
     }
     
@@ -41,15 +44,15 @@ class EntityWrapper<Entity: NSManagedObject> {
         return result
     }
         
-    static func getById(id: Int) -> EntityWrapper<Entity> {
-        return self.getByField(field: "id", value: id)
+    static func getById(_ id: NSManagedObjectID) -> EntityWrapper<Entity> {
+        return self.getByField(field: "self", value: id)
     }
     
-    static func getByName(name: String) -> EntityWrapper<Entity> {
+    static func getByName(_ name: String) -> EntityWrapper<Entity> {
         return self.getByField(field: "name", value: name)
     }
     
-    static private func getByField(field: String, value: Any) -> EntityWrapper<Entity> {
+    static func getByField(field: String, value: Any) -> EntityWrapper<Entity> {
         var result = EntityWrapper<Entity>()
         
         let request = Entity.fetchRequest()
@@ -58,7 +61,9 @@ class EntityWrapper<Entity: NSManagedObject> {
         
         do {
             let entities = try context.fetch(request)
-            result = EntityWrapper<Entity>(entities[0] as? Entity)
+            if (!entities.isEmpty) {
+                result.entity = entities[0] as? Entity
+            }
         } catch {
             print(error.localizedDescription)
         }
@@ -84,7 +89,7 @@ class EntityWrapper<Entity: NSManagedObject> {
                 result.append(EntityWrapper<Entity>(entity as? Entity))
             }
         } catch {
-            print(error.localizedDescription)
+            print(error, error.localizedDescription)
         }
 
         return result

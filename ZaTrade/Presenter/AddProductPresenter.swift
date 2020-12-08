@@ -2,18 +2,74 @@ import Foundation
 
 final class AddProductPresenter {
     var view: AddProductViewController?
-    let model = AddProductModel (ProductName: "", ProductPrice: 0, ProductDescription: "", ProductTypeTax: false)
+    var isEditing: Bool = true
+    var model = ProductModel(
+        ProductName: "",
+        ProductPrice: 0,
+        ProductDescription: "",
+        ProductTypeTax: "",
+        DateChanged: Date(),
+        DateAdded: Date(),
+        ProductContry: ""
+    )
 
-    func addProductFunc(name: String?, price: String?, descr: String?, typeTax: Bool) {
-        if let nametf = name {
-            self.model.ProductName = String(nametf)
+    func showModel() -> ProductModel {
+        if !isEditing {
+            model = ProductModel(
+                ProductName: "",
+                ProductPrice: 0,
+                ProductDescription: "",
+                ProductTypeTax: "",
+                DateChanged: Date(),
+                DateAdded: Date(),
+                ProductContry: ""
+            )
         }
-        if let pricetf = price {
-            self.model.ProductPrice = Double(pricetf)!
+        
+        return model
+    }
+    
+    func checkTextfields() {
+        if self.view?.descriptionProductTextField.text == "" || self.view?.nameTextField.text == "" || self.view?.priceTextField.text == "" {
+            self.view?.addProduct.isEnabled = false
+        } else {
+            self.view?.addProduct.isEnabled = true
         }
-        if let descrtf = descr {
-            self.model.ProductDescription = String(descrtf)
+    }
+
+    @objc func saveButtonAction() {
+        self.model.ProductName = self.view?.nameTextField.text ?? ""
+        self.model.ProductDescription = self.view?.descriptionProductTextField.text ?? ""
+        self.model.ProductPrice = Double((self.view?.priceTextField.text) ?? "")
+        
+        if self.isEditing {
+            let product = EntityWrapper<Product>.getByName(self.model.ProductName)
+            product.entity?.name = self.model.ProductName
+            product.entity?.extra = self.model.ProductDescription
+            product.entity?.price = self.model.ProductPrice ?? 0
+            product.entity?.date_changed = Date()
+            // TODO: изменить
+            product.entity?.country = EntityWrapper<Country>.getByField(field: "code", value: "RUS").entity
+            product.entity?.tax = EntityWrapper<Tax>.getByName("RUS: Стандартная").entity
+            product.save()
+            print("dismissed Edit view")
+            print(EntityWrapper<Product>.all())
+        } else {
+            let product = EntityWrapper<Product>.createNew()
+            product.entity?.extra = self.model.ProductDescription
+            product.entity?.name = self.model.ProductName
+            product.entity?.price = self.model.ProductPrice ?? 0
+            product.entity?.date_added = Date()
+            product.entity?.date_changed = Date()
+            // TODO: изменить
+            product.entity?.country = EntityWrapper<Country>.getByField(field: "code", value: "RUS").entity
+            product.entity?.tax = EntityWrapper<Tax>.getByName("RUS: Стандартная").entity
+            product.save()
+            print("dismissed Add view")
+            print(EntityWrapper<Product>.all())
         }
-        self.model.ProductTypeTax = typeTax
+        
+        self.view?.navigationController?.popViewController(animated: true)
+        self.view?.dismiss(animated: true)
     }
 }

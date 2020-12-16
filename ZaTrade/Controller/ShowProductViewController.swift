@@ -1,9 +1,9 @@
 import UIKit
-
+import CoreData
 
 final class ShowProductViewController: CardViewController {
     
-    var presenter = ShowProductPresenter()
+    lazy var presenter = ShowProductPresenter()
     
     private let name = UILabel()
     private let nameLabel = UILabel()
@@ -14,11 +14,12 @@ final class ShowProductViewController: CardViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.view = self
+        self.presenter.viewController = self
         self.setup()
     }
     
     private func setup() {
+        setupEditButton()
         setupNameLabel()
         setupNameInfoLabel()
         setupPriceLabel()
@@ -26,6 +27,15 @@ final class ShowProductViewController: CardViewController {
         setupDescriptionProductLabel()
         setupDescriptionProductInfoLabel()
     }
+    
+    
+    func setupEditButton() {
+        self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "pencil.circle.fill"), style: .plain, target: self.presenter, action: #selector(self.presenter.showEdit)),
+            UIBarButtonItem(image: UIImage(systemName: "trash.circle.fill"), style: .plain, target: self.presenter, action: #selector(self.presenter.delete))
+        ]
+    }
+    
     
     func setupConstraints() {
         [
@@ -39,7 +49,7 @@ final class ShowProductViewController: CardViewController {
         
         [
 
-            self.name.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 1),
+            self.name.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 46),
             self.name.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
             
             self.nameLabel.topAnchor.constraint(equalTo: self.name.bottomAnchor, constant: 10),
@@ -79,10 +89,10 @@ final class ShowProductViewController: CardViewController {
         nameLabel.font = UIFont(name: "Rubik-Light", size: 18)
         nameLabel.numberOfLines = 0
         nameLabel.lineBreakMode = .byWordWrapping
-        nameLabel.text = presenter.model.ProductName
+        nameLabel.text = presenter.product.entity?.name
     }
     
-    func setupPriceLabel(){
+    func setupPriceLabel() {
         view.addSubview(self.price)
         price.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         price.font = UIFont(name: "Rubik-Medium", size: 18)
@@ -97,7 +107,7 @@ final class ShowProductViewController: CardViewController {
         priceLabel.font = UIFont(name: "Rubik-Light", size: 18)
         priceLabel.numberOfLines = 0
         priceLabel.lineBreakMode = .byWordWrapping
-        priceLabel.text = String(presenter.model.ProductPrice)
+        priceLabel.text = "\(presenter.product.entity!.price) \(presenter.product.entity!.country!.currency!.sign!)"
     }
     
     func setupDescriptionProductLabel(){
@@ -115,7 +125,7 @@ final class ShowProductViewController: CardViewController {
         descriptionProductLabel.font = UIFont(name: "Rubik-Light", size: 18)
         descriptionProductLabel.numberOfLines = 0
         descriptionProductLabel.lineBreakMode = .byWordWrapping
-        descriptionProductLabel.text = presenter.model.ProductDescription
+        descriptionProductLabel.text = presenter.product.entity?.extra
     }
     
     override func viewDidLayoutSubviews() {

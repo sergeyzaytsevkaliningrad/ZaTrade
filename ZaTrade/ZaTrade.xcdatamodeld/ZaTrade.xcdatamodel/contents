@@ -22,8 +22,8 @@
         <attribute name="extra" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="country" maxCount="1" deletionRule="Deny" destinationEntity="Country"/>
-        <relationship name="tax" maxCount="1" deletionRule="Deny" destinationEntity="Tax"/>
+        <relationship name="country" maxCount="1" deletionRule="No Action" destinationEntity="Country"/>
+        <relationship name="tax" maxCount="1" deletionRule="No Action" destinationEntity="Tax"/>
     </entity>
     <entity name="Tax" representedClassName="Tax" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String"/>

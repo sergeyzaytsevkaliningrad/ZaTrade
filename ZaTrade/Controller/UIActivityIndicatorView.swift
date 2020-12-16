@@ -1,10 +1,3 @@
-//
-//  UIActivityIndicatorView.swift
-//  ZaTrade
-//
-//  Created by Сергей Зайцев on 06.12.2020.
-//
-
 import UIKit
 
 final class UIActivityIndicatorView: UIView {

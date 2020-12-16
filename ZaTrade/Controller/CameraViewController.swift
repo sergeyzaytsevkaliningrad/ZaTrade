@@ -1,9 +1,3 @@
-//
-//  CameraView.swift
-//  ZaTrade
-//
-//  Created by Сергей Зайцев on 05.12.2020.
-
 import UIKit
 import Vision
 import CoreML
@@ -14,7 +8,6 @@ final class CameraViewController: UIViewController {
     private let ifPriceFound = IfPriceFound()
     private let ifPriceNotFound = IfPriceNotFound()
     private let loadingView = UIActivityIndicatorView()
-    private let productList = ProductListViewController()
     
     private var imageView = UIImageView()
     

@@ -23,7 +23,7 @@ class EntityWrapper<Entity: NSManagedObject> {
             do {
                 try context.save()
             } catch {
-                print(error.localizedDescription)
+                print(error, error.localizedDescription)
             }
         }
     }
@@ -34,7 +34,7 @@ class EntityWrapper<Entity: NSManagedObject> {
         do {
             try context.save()
         } catch {
-            print(error.localizedDescription)
+            print(error, error.localizedDescription)
         }
     }
     
@@ -44,8 +44,8 @@ class EntityWrapper<Entity: NSManagedObject> {
         return result
     }
         
-    static func getById(_ id: Int) -> EntityWrapper<Entity> {
-        return self.getByField(field: "id", value: id)
+    static func getById(_ id: NSManagedObjectID) -> EntityWrapper<Entity> {
+        return self.getByField(field: "self", value: id)
     }
     
     static func getByName(_ name: String) -> EntityWrapper<Entity> {
@@ -89,7 +89,7 @@ class EntityWrapper<Entity: NSManagedObject> {
                 result.append(EntityWrapper<Entity>(entity as? Entity))
             }
         } catch {
-            print(error.localizedDescription)
+            print(error, error.localizedDescription)
         }
 
         return result

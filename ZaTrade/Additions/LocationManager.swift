@@ -1,9 +1,18 @@
 import MapKit
 import CoreLocation
 
-class LocationManager: CLLocationManager, CLLocationManagerDelegate {
+class LocationManageR: CLLocationManager, CLLocationManagerDelegate {
+    
+    //   let manager = LocationManageR()
+    //   let country = manager.country()  how to use location manager
     
     private var result : String = ""
+    
+    override init() {
+        super.init()
+        setupManager()
+        print("init")
+    }
     
     func setupManager() {
         self.requestAlwaysAuthorization()
@@ -31,7 +40,7 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
     }
     
     func country() -> String {
-        setupManager()
+        self.stopUpdatingLocation()
         return self.result
     }
 }

@@ -11,6 +11,7 @@ final class ConverterPresenter {
     var currentCurrencyIndex: Int? {
         didSet {
             if currentCurrencyIndex != nil {
+                self.view?.currentButton.setTitle(currencies[currentCurrencyIndex!].entity?.code, for: .normal)
                 convert()
             }
         }
@@ -19,6 +20,7 @@ final class ConverterPresenter {
     var convertCurrencyIndex: Int? {
         didSet {
             if convertCurrencyIndex != nil {
+                self.view?.toButton.setTitle(currencies[convertCurrencyIndex!].entity?.code, for: .normal)
                 convert()
             }
         }

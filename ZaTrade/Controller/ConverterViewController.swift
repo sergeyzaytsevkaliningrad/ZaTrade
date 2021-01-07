@@ -12,7 +12,7 @@ class ConverterViewController: BaseViewController, UITextFieldDelegate {
     let clearButton = UIButton(frame: .zero)
     var input: String?
     
-    private var presenter = ConverterPresenter()
+    let presenter = ConverterPresenter()
     
     private let screenSize = UIScreen.main.bounds
     

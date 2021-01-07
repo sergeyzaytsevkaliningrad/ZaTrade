@@ -4,18 +4,43 @@ final class TaxFreeCalculatePresenter {
     
     weak var view: TaxFreeCalculateController?
     let taxes: [EntityWrapper<Tax>]
+    var countries: [Country] = []
+    var currentTaxes: [Tax] = []
     let loader = CourseLoader()
     var currency: String = "RUB"
     var courses: [Course] = []
-    var currentTaxIndex: Int? {
+    
+    var currentCountryIndex: Int? = 0 {
         didSet {
-            self.view?.topCurrencyLabel.text = taxes[currentTaxIndex!].entity?.country?.currency?.sign
+            self.view?.chooseItem.title = countries[currentCountryIndex!].flag
+            self.view?.topCurrencyLabel.text = countries[currentCountryIndex!].currency?.sign
+            self.loadTaxes()
+            self.view?.taxType.reloadAllComponents()
         }
     }
     
+    var currentTaxIndex: Int?
+    
     init() {
         self.taxes = EntityWrapper<Tax>.all(sortKey: "name", ascending: true)
+        for tax in taxes {
+            let country = tax.entity?.country
+            if !countries.contains(country!) {
+                countries.append(country!)
+            }
+        }
+        self.loadTaxes()
         self.loadCourses()
+    }
+    
+    private func loadTaxes()  {
+        self.currentTaxes = []
+        for tax in taxes {
+            if tax.entity?.country == countries[currentCountryIndex!] {
+                self.currentTaxes.append(tax.entity!)
+            }
+        }
+        print(self.currentTaxes)
     }
     
     @objc func count() {
@@ -65,6 +90,9 @@ final class TaxFreeCalculatePresenter {
     
     func convertToTwo(_ n: Double) -> Double { Double(round(n * 100) / 100) }
     
+    @objc func tabItemAction() {
+        print("F")
+    }
     
 }
 

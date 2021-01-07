@@ -10,9 +10,10 @@ class TaxFreeCalculateController: CardViewController {
     let taxCount = UILabel()
     let resultUSD = UILabel()
     let resultRUB = UILabel()
+    var chooseItem = UIBarButtonItem()
     
     private let spacing: CGFloat = 15
-
+    
     var sign: String?
     // MARK: - ViewDidLoad
     
@@ -27,10 +28,20 @@ class TaxFreeCalculateController: CardViewController {
         self.layoutRUB()
         self.layoutUSD()
         self.layoutTaxCount()
+        self.layoutBarItem()
+        
     }
     
     // MARK: - LayoutFuncs
     
+    private func layoutBarItem() {
+        self.chooseItem = UIBarButtonItem(
+            title: presenter.countries.first?.flag,
+            style: .plain,
+            target: self,
+            action: #selector(self.tabItemAction)
+        )
+    }
     
     private func layoutRUB() {
         self.view.addSubview(self.resultRUB)
@@ -60,13 +71,14 @@ class TaxFreeCalculateController: CardViewController {
     
     private func layoutTaxType() {
         self.view.addSubview(taxType)
+        taxType.tag = 1
         taxType.delegate = self
         taxType.dataSource = self
         taxType.layer.cornerRadius = 6
         taxType.layer.borderWidth = 1
         taxType.layer.borderColor = UIColor.black.withAlphaComponent(0.3).cgColor
         taxType.selectRow(self.presenter.currentTaxIndex ?? -1, inComponent: 0, animated: true)
-
+        
     }
     
     private func layoutTopLabel() {
@@ -107,7 +119,7 @@ class TaxFreeCalculateController: CardViewController {
         }
         
         [
-        
+            
             self.textField.leadingAnchor.constraint(equalTo: self.cardView.leadingAnchor, constant: spacing),
             self.textField.topAnchor.constraint(equalTo: self.cardView.topAnchor, constant: spacing),
             self.textField.heightAnchor.constraint(equalToConstant: 60),
@@ -137,11 +149,11 @@ class TaxFreeCalculateController: CardViewController {
             resultRUB.leadingAnchor.constraint(equalTo: self.cardView.leadingAnchor, constant: spacing),
             resultRUB.trailingAnchor.constraint(equalTo: self.cardView.trailingAnchor, constant: -spacing),
             resultRUB.heightAnchor.constraint(equalTo: resultUSD.heightAnchor),
-
+            
             self.toCountButton.topAnchor.constraint(equalTo: self.resultRUB.bottomAnchor, constant: spacing),
             self.toCountButton.centerXAnchor.constraint(equalTo: self.cardView.centerXAnchor)
             
-        
+            
         ].forEach {
             $0.isActive = true
         }
@@ -150,6 +162,38 @@ class TaxFreeCalculateController: CardViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.parent?.navigationItem.rightBarButtonItem = self.chooseItem
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.parent?.navigationItem.rightBarButtonItem = nil
+    }
+    
+    @objc private func tabItemAction() {
+        let alert = UIAlertController(title: "Выберите страну", message: nil, preferredStyle: .alert)
+        alert.isModalInPopover = true
+        
+        let pickerView = UIPickerView()
+        pickerView.tag = 2
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.selectRow(self.presenter.currentCountryIndex ?? -1, inComponent: 0, animated: false)
+        
+        alert.view.addSubview(pickerView)
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        pickerView.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor).isActive = true
+        pickerView.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor).isActive = true
+        pickerView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 60).isActive = true
+        pickerView.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -44).isActive = true
+        
+        
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Выбрать", style: .default, handler: { (action: UIAlertAction) in
+            self.presenter.currentCountryIndex = pickerView.selectedRow(inComponent: 0)
+        }))
+        
+        self.present(alert, animated: true)
     }
     
 }
@@ -160,15 +204,29 @@ extension TaxFreeCalculateController: UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.presenter.taxes.count
+        if pickerView.tag == 1 {
+            return self.presenter.currentTaxes.count
+        } else {
+            return self.presenter.countries.count
+        }
+         
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let tax = self.presenter.taxes[row].entity!
-        return "\(tax.name!)"
+        if pickerView.tag == 1 {
+            let tax = self.presenter.currentTaxes[row]
+            return "\(tax.name!)"
+        } else {
+            let country = self.presenter.countries[row]
+            return "\(country.flag!) \(country.name!)"
+        }
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.presenter.currentTaxIndex = row
+        if pickerView.tag == 1 {
+            self.presenter.currentTaxIndex = row
+        } else {
+            self.presenter.currentCountryIndex = row
+        }
     }
 }

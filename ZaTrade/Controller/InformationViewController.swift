@@ -7,9 +7,16 @@ final class InformationViewController: CardViewController, WKUIDelegate {
     var webView = WKWebView()
     var chooseItem = UIBarButtonItem()
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.parent?.navigationItem.rightBarButtonItem = self.chooseItem
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.parent?.navigationItem.rightBarButtonItem = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.presenter.view = self
         self.presenter.currentArticleIndex = 0
         self.setup()
@@ -29,27 +36,22 @@ final class InformationViewController: CardViewController, WKUIDelegate {
     }
     
     func ChooseItem() {
-        let alert = UIAlertController(title: "Выбор статьи", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Выбор статьи", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
         alert.isModalInPopover = true
         
-        let pickerView = UIPickerView()
+        let pickerView = UIPickerView(frame: CGRect(x: 5, y: 20, width: 250, height: 200))
         pickerView.dataSource = self
         pickerView.delegate = self
         pickerView.selectRow(self.presenter.currentArticleIndex ?? -1, inComponent: 0, animated: false)
         
         alert.view.addSubview(pickerView)
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor).isActive = true
-        pickerView.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor).isActive = true
-        pickerView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 60).isActive = true
-        pickerView.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -44).isActive = true
-        
         
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Выбрать", style: .default, handler: { (action: UIAlertAction) in
             self.presenter.currentArticleIndex = pickerView.selectedRow(inComponent: 0)
         }))
-        self.present(alert, animated: true)
+//        self.present(alert, animated: true)
+        self.present(alert, animated: true, completion: nil)
     }
 
     private func setupConstraints() {

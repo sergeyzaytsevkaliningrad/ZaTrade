@@ -2,31 +2,32 @@ import Foundation
 
 final class AddProductPresenter {
     var view: AddProductViewController?
+    var showPrView: ShowProductPresenter?
     var isEditing: Bool = true
-    var model = ProductModel(
-        ProductName: "",
-        ProductPrice: 0,
-        ProductDescription: "",
-        ProductTypeTax: "",
-        DateChanged: Date(),
-        DateAdded: Date(),
-        ProductContry: ""
-    )
-
-    func showModel() -> ProductModel {
-        if !isEditing {
-            model = ProductModel(
-                ProductName: "",
-                ProductPrice: 0,
-                ProductDescription: "",
-                ProductTypeTax: "",
-                DateChanged: Date(),
-                DateAdded: Date(),
-                ProductContry: ""
-            )
+    var product = EntityWrapper<Product>()
+    var countries: [EntityWrapper<Country>] = []
+    var tax: [EntityWrapper<Tax>] = []
+    var selectedCountry: String
+    var currentCountryIndex: Int? {
+        didSet {
+            if currentCountryIndex != nil {
+                self.view?.chooseCountry.countryFlag.text = countries[currentCountryIndex!].entity?.flag
+                self.view?.chooseCountry.countryTitle.text = countries[currentCountryIndex!].entity?.name
+            }
         }
-        
-        return model
+    }
+    var currentTaxIndex: Int? {
+        didSet {
+            if currentTaxIndex != nil {
+                self.view?.typeTax.countryFlag.text = tax[currentTaxIndex!].entity?.country?.flag
+                self.view?.typeTax.countryTitle.text = tax[currentTaxIndex!].entity?.name
+            }
+        }
+    }
+    init() {
+        self.countries = EntityWrapper<Country>.all(sortKey: "name", ascending: true)
+        self.tax = EntityWrapper<Tax>.all(sortKey:"name", ascending: true)
+        self.selectedCountry = ""
     }
     
     func checkTextfields() {
@@ -36,40 +37,43 @@ final class AddProductPresenter {
             self.view?.addProduct.isEnabled = true
         }
     }
-
+ 
     @objc func saveButtonAction() {
-        self.model.ProductName = self.view?.nameTextField.text ?? ""
-        self.model.ProductDescription = self.view?.descriptionProductTextField.text ?? ""
-        self.model.ProductPrice = Double((self.view?.priceTextField.text) ?? "")
+        let ProductName = self.view!.nameTextField.text
+        let ProductDescription = self.view!.descriptionProductTextField.text
+        let ProductPrice = Double((self.view!.priceTextField.text!))
+        let ProductCountry = self.countries[self.currentCountryIndex!].entity!.name
+        let ProductTax = self.tax[self.currentTaxIndex!].entity!.name
         
         if self.isEditing {
-            let product = EntityWrapper<Product>.getByName(self.model.ProductName)
-            product.entity?.name = self.model.ProductName
-            product.entity?.extra = self.model.ProductDescription
-            product.entity?.price = self.model.ProductPrice ?? 0
+            product = EntityWrapper<Product>.getByName(ProductName!)
+            product.entity?.extra = ProductDescription
+            product.entity?.price = ProductPrice ?? 0
             product.entity?.date_changed = Date()
-            // TODO: изменить
-            product.entity?.country = EntityWrapper<Country>.getByField(field: "code", value: "RUS").entity
-            product.entity?.tax = EntityWrapper<Tax>.getByName("RUS: Стандартная").entity
+            product.entity?.country = EntityWrapper<Country>.getByField(field: "name", value: ProductCountry!).entity
+            product.entity?.tax = EntityWrapper<Tax>.getByField(field: "name", value: ProductTax!).entity
             product.save()
-            print("dismissed Edit view")
-            print(EntityWrapper<Product>.all())
         } else {
-            let product = EntityWrapper<Product>.createNew()
-            product.entity?.extra = self.model.ProductDescription
-            product.entity?.name = self.model.ProductName
-            product.entity?.price = self.model.ProductPrice ?? 0
+            product = EntityWrapper<Product>.createNew()
+            product.entity?.extra = ProductDescription
+            product.entity?.name = ProductName
+            product.entity?.price = ProductPrice!
             product.entity?.date_added = Date()
             product.entity?.date_changed = Date()
-            // TODO: изменить
-            product.entity?.country = EntityWrapper<Country>.getByField(field: "code", value: "RUS").entity
-            product.entity?.tax = EntityWrapper<Tax>.getByName("RUS: Стандартная").entity
+            product.entity?.country = EntityWrapper<Country>.getByField(field: "name", value: ProductCountry!).entity
+            product.entity?.tax = EntityWrapper<Tax>.getByField(field: "name", value: ProductTax!).entity
             product.save()
-            print("dismissed Add view")
-            print(EntityWrapper<Product>.all())
         }
         
-        self.view?.navigationController?.popViewController(animated: true)
+        let vcListProducts = ProductListViewController()
+        self.view?.navigationController?.pushViewController(vcListProducts, animated: true)
         self.view?.dismiss(animated: true)
+    }
+    
+    @objc func openCountryPickleView() {
+        self.view?.showChooseCountryAlert()
+    }
+    @objc func openTaxPickleView() {
+        self.view?.showChooseTaxAlert()
     }
 }

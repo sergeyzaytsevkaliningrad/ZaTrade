@@ -52,8 +52,8 @@ extension ProductListViewController: UICollectionViewDelegate, UICollectionViewD
         let product = self.presenter.products[indexPath.row]
         cell.productName = product.entity!.name!
         cell.countryFlag = product.entity!.country!.flag!
-        cell.originalPrice = "\(product.entity!.price) \(product.entity!.country!.currency!.sign!)"
-        cell.rublePrice = "? p" // TODO: сделать перевод
+        cell.originalPrice = product.entity!.formattedPrice
+        cell.rublePrice = product.entity!.formattedRubPrice
         return cell
     }
     

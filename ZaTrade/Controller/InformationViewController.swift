@@ -36,22 +36,26 @@ final class InformationViewController: CardViewController, WKUIDelegate {
     }
     
     func ChooseItem() {
-        let alert = UIAlertController(title: "Выбор статьи", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Выбор статьи", message: nil, preferredStyle: .alert)
         alert.isModalInPopover = true
         
-        let pickerView = UIPickerView(frame: CGRect(x: 5, y: 20, width: 250, height: 200))
+        let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
         pickerView.selectRow(self.presenter.currentArticleIndex ?? -1, inComponent: 0, animated: false)
         
         alert.view.addSubview(pickerView)
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        pickerView.widthAnchor.constraint(equalToConstant: 270).isActive = true
+        pickerView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 60).isActive = true
+        pickerView.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -44).isActive = true
         
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Выбрать", style: .default, handler: { (action: UIAlertAction) in
             self.presenter.currentArticleIndex = pickerView.selectedRow(inComponent: 0)
         }))
-//        self.present(alert, animated: true)
-        self.present(alert, animated: true, completion: nil)
+        
+        self.present(alert, animated: true)
     }
 
     private func setupConstraints() {

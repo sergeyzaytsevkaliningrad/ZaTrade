@@ -29,6 +29,11 @@ final class ShowProductViewController: CardViewController {
         self.setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.setup()
+    }
+    
     private func setup() {
         setupEditButton()
         setupNameLabel()
@@ -154,7 +159,7 @@ final class ShowProductViewController: CardViewController {
         nameLabel.font = UIFont(name: "Rubik-Light", size: 18)
         nameLabel.numberOfLines = 0
         nameLabel.lineBreakMode = .byWordWrapping
-        nameLabel.text = presenter.product.entity?.name
+        nameLabel.text = presenter.product!.entity?.name
     }
     
     func setupCountryLabel() {
@@ -172,7 +177,7 @@ final class ShowProductViewController: CardViewController {
         countryLabel.font = UIFont(name: "Rubik-Light", size: 18)
         countryLabel.numberOfLines = 0
         countryLabel.lineBreakMode = .byWordWrapping
-        countryLabel.text = "\(presenter.product.entity!.country!.name!) \(presenter.product.entity!.country!.flag!)"
+        countryLabel.text = presenter.product!.entity!.countryWithFlag
     }
 
     func setupTypeTaxLabel() {
@@ -190,7 +195,7 @@ final class ShowProductViewController: CardViewController {
         typeTaxLabel.font = UIFont(name: "Rubik-Light", size: 18)
         typeTaxLabel.numberOfLines = 0
         typeTaxLabel.lineBreakMode = .byWordWrapping
-        typeTaxLabel.text = presenter.product.entity?.tax!.name
+        typeTaxLabel.text = presenter.product!.entity?.tax!.name
     }
     
     func setupPriceLabel() {
@@ -208,7 +213,7 @@ final class ShowProductViewController: CardViewController {
         priceLabel.font = UIFont(name: "Rubik-Light", size: 18)
         priceLabel.numberOfLines = 0
         priceLabel.lineBreakMode = .byWordWrapping
-        priceLabel.text = presenter.product.entity!.formattedPrice
+        priceLabel.text = presenter.product!.entity!.formattedPrice
     }
     
     func setupDescriptionProductLabel(){
@@ -226,7 +231,7 @@ final class ShowProductViewController: CardViewController {
         descriptionProductLabel.font = UIFont(name: "Rubik-Light", size: 18)
         descriptionProductLabel.numberOfLines = 0
         descriptionProductLabel.lineBreakMode = .byWordWrapping
-        descriptionProductLabel.text = presenter.product.entity?.extra
+        descriptionProductLabel.text = presenter.product!.entity?.extra
     }
     
     func setupTaxSize() {

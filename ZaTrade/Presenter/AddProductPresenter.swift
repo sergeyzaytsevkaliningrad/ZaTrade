@@ -4,10 +4,11 @@ final class AddProductPresenter {
     var view: AddProductViewController?
     var showPrView: ShowProductPresenter?
     var isEditing: Bool = true
-    var product = EntityWrapper<Product>()
+    var product: EntityWrapper<Product>?
     var countries: [EntityWrapper<Country>] = []
     var tax: [EntityWrapper<Tax>] = []
     var selectedCountry: String
+    
     var currentCountryIndex: Int? {
         didSet {
             if currentCountryIndex != nil {
@@ -16,6 +17,7 @@ final class AddProductPresenter {
             }
         }
     }
+    
     var currentTaxIndex: Int? {
         didSet {
             if currentTaxIndex != nil {
@@ -24,6 +26,7 @@ final class AddProductPresenter {
             }
         }
     }
+    
     init() {
         self.countries = EntityWrapper<Country>.all(sortKey: "name", ascending: true)
         self.tax = EntityWrapper<Tax>.all(sortKey:"name", ascending: true)
@@ -41,33 +44,25 @@ final class AddProductPresenter {
     @objc func saveButtonAction() {
         let ProductName = self.view!.nameTextField.text
         let ProductDescription = self.view!.descriptionProductTextField.text
-        let ProductPrice = Double((self.view!.priceTextField.text!))
+        let ProductPrice = Double((self.view!.priceTextField.text!))!
         let ProductCountry = self.countries[self.currentCountryIndex!].entity!.name
         let ProductTax = self.tax[self.currentTaxIndex!].entity!.name
         
-        if self.isEditing {
-            product = EntityWrapper<Product>.getByName(ProductName!)
-            product.entity?.extra = ProductDescription
-            product.entity?.price = ProductPrice ?? 0
-            product.entity?.date_changed = Date()
-            product.entity?.country = EntityWrapper<Country>.getByField(field: "name", value: ProductCountry!).entity
-            product.entity?.tax = EntityWrapper<Tax>.getByField(field: "name", value: ProductTax!).entity
-            product.save()
-        } else {
+        if !self.isEditing {
             product = EntityWrapper<Product>.createNew()
-            product.entity?.extra = ProductDescription
-            product.entity?.name = ProductName
-            product.entity?.price = ProductPrice!
-            product.entity?.date_added = Date()
-            product.entity?.date_changed = Date()
-            product.entity?.country = EntityWrapper<Country>.getByField(field: "name", value: ProductCountry!).entity
-            product.entity?.tax = EntityWrapper<Tax>.getByField(field: "name", value: ProductTax!).entity
-            product.save()
+            product!.entity?.date_added = Date()
         }
         
-        let vcListProducts = ProductListViewController()
-        self.view?.navigationController?.pushViewController(vcListProducts, animated: true)
-        self.view?.dismiss(animated: true)
+        product!.entity?.name = ProductName
+        product!.entity?.extra = ProductDescription
+        product!.entity?.price = ProductPrice
+        product!.entity?.date_changed = Date()
+        product!.entity?.country = EntityWrapper<Country>.getByField(field: "name", value: ProductCountry!).entity
+        product!.entity?.tax = EntityWrapper<Tax>.getByField(field: "name", value: ProductTax!).entity
+        product!.save()
+
+        self.view?.navigationController?.popViewController(animated: true)
+        
     }
     
     @objc func openCountryPickleView() {

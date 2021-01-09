@@ -32,8 +32,7 @@ final class AddProductViewController: CardViewController {
         super.viewDidLoad()
         self.presenter.view = self
         self.presenter.isEditing = self.isEditingView
-        if isEditingView {
-        }
+        
         self.hideKeyboardWhenTappedAround()
         self.nameTextField.delegate = self
         self.priceTextField.delegate = self
@@ -124,7 +123,7 @@ final class AddProductViewController: CardViewController {
         nameTextField.backgroundColor = UIColor(red: 0.004, green: 0.004, blue: 0.004, alpha: 0.32)
         nameTextField.textAlignment = .left
         nameTextField.placeholder = "Наименование товара"
-        nameTextField.text = presenter.product.entity?.name
+        nameTextField.text = presenter.product?.entity?.name ?? ""
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
     }
@@ -142,15 +141,21 @@ final class AddProductViewController: CardViewController {
     }
     
     func showChooseCountryAlert() {
-        let alert = UIAlertController(title: "Выберите страну", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Выберите страну", message: nil, preferredStyle: .alert)
         alert.isModalInPopover = true
         
-        let pickerView_country = UIPickerView(frame: CGRect(x: 5, y: 20, width: 250, height: 200))
+        let pickerView_country = UIPickerView()
         pickerView_country.tag = 1
         pickerView_country.dataSource = self
         pickerView_country.delegate = self
         pickerView_country.selectRow(self.presenter.currentCountryIndex ?? -1, inComponent: 0, animated: false)
+        
         alert.view.addSubview(pickerView_country)
+        pickerView_country.translatesAutoresizingMaskIntoConstraints = false
+        pickerView_country.widthAnchor.constraint(equalToConstant: 270).isActive = true
+        pickerView_country.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 60).isActive = true
+        pickerView_country.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -44).isActive = true
+        
         
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Выбрать", style: .default, handler: { (action: UIAlertAction) in
@@ -174,15 +179,20 @@ final class AddProductViewController: CardViewController {
     }
     
     func showChooseTaxAlert() {
-        let alert = UIAlertController(title: "Выберите тип налога", message: "\n\n\n\n\n\n\n\n\n\n\n\n" , preferredStyle: .alert)
+        let alert = UIAlertController(title: "Выберите тип налога", message: nil , preferredStyle: .alert)
         alert.isModalInPopover = true
         
-        let pickerView_tax = UIPickerView(frame: CGRect(x: 5, y: 20, width: 250, height: 200))
+        let pickerView_tax = UIPickerView()
         pickerView_tax.tag = 2
         pickerView_tax.dataSource = self
         pickerView_tax.delegate = self
         pickerView_tax.selectRow(self.presenter.currentTaxIndex ?? -1, inComponent: 0, animated: false)
+        
         alert.view.addSubview(pickerView_tax)
+        pickerView_tax.translatesAutoresizingMaskIntoConstraints = false
+        pickerView_tax.widthAnchor.constraint(equalToConstant: 270).isActive = true
+        pickerView_tax.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 60).isActive = true
+        pickerView_tax.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -44).isActive = true
     
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Выбрать", style: .default, handler: { (action: UIAlertAction) in
@@ -206,7 +216,7 @@ final class AddProductViewController: CardViewController {
         priceTextField.textAlignment = .left
         priceTextField.keyboardType = .numberPad
         priceTextField.placeholder = "Цена"
-        if let text = presenter.product.entity?.price {
+        if let text = presenter.product?.entity?.price {
             priceTextField.text = "\(text)"
         } else {
             priceTextField.text = ""
@@ -227,7 +237,7 @@ final class AddProductViewController: CardViewController {
         descriptionProductTextField.backgroundColor = UIColor(red: 0.004, green: 0.004, blue: 0.004, alpha: 0.32)
         descriptionProductTextField.textAlignment = .left
         descriptionProductTextField.placeholder = "Описание"
-        descriptionProductTextField.text = presenter.product.entity?.extra
+        descriptionProductTextField.text = presenter.product?.entity?.extra ?? ""
         descriptionProductTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
     }

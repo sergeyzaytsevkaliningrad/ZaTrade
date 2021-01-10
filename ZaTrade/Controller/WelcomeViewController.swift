@@ -35,6 +35,8 @@ final class WelcomeViewController: BaseViewController {
         subviews.forEach({ self.view.addSubview($0) })
         
         self.setupConstraints()
+        let _ = CourseLoader.shared.courses
+        let _ = LocationManageR.shared.country
     }
     
     override func viewWillAppear(_ animated: Bool) {

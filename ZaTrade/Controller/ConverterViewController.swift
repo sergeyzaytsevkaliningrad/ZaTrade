@@ -15,7 +15,8 @@ class ConverterViewController: BaseViewController, UITextFieldDelegate {
     let presenter = ConverterPresenter()
     
     private let screenSize = UIScreen.main.bounds
-    
+    private let textColor = UIColor.black
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.view = self
@@ -34,7 +35,7 @@ class ConverterViewController: BaseViewController, UITextFieldDelegate {
         toButton.setTitle("Валюта", for: .normal)
         toButton.backgroundColor = .white
         toButton.layer.cornerRadius = 6
-        toButton.setTitleColor(.black, for: .normal)
+        toButton.setTitleColor(textColor, for: .normal)
         toButton.addTarget(self, action: #selector(self.toPick), for: .touchUpInside)
     }
     
@@ -43,7 +44,7 @@ class ConverterViewController: BaseViewController, UITextFieldDelegate {
         currentButton.setTitle("Валюта", for: .normal)
         currentButton.backgroundColor = .white
         currentButton.layer.cornerRadius = 6
-        currentButton.setTitleColor(.black, for: .normal)
+        currentButton.setTitleColor(textColor, for: .normal)
         currentButton.addTarget(self, action: #selector(self.currentPick), for: .touchUpInside)
     }
     
@@ -52,18 +53,20 @@ class ConverterViewController: BaseViewController, UITextFieldDelegate {
         clearButton.setTitle("Очистить", for: .normal)
         clearButton.backgroundColor = .white
         clearButton.layer.cornerRadius = 6
-        clearButton.setTitleColor(.black, for: .normal)
+        clearButton.setTitleColor(textColor, for: .normal)
         clearButton.addTarget(self, action: #selector(self.clear), for: .touchUpInside)
     }
     
     private func layoutTextField() {
         self.view.addSubview(textfield)
         textfield.delegate = self
-        textfield.placeholder = "Введите сумму"
         textfield.keyboardType = .numberPad
-        textfield.textAlignment = .natural
-        textfield.backgroundColor = .white
-        textfield.borderStyle = .roundedRect
+        textfield.textColor = textColor
+        textfield.layer.backgroundColor = UIColor.white.cgColor
+        textfield.layer.cornerRadius = 6
+        textfield.layer.borderWidth = 1
+        textfield.attributedPlaceholder = NSAttributedString(string: " Введите сумму", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        textfield.layer.borderColor = UIColor.black.withAlphaComponent(0.3).cgColor
         textfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
@@ -75,6 +78,7 @@ class ConverterViewController: BaseViewController, UITextFieldDelegate {
         resultLabel.layer.borderColor = UIColor.black.withAlphaComponent(0.3).cgColor
         resultLabel.layer.cornerRadius = 6
         resultLabel.layer.backgroundColor = UIColor.white.cgColor
+        resultLabel.textColor = textColor
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
@@ -91,7 +95,7 @@ class ConverterViewController: BaseViewController, UITextFieldDelegate {
     
     @objc private func currentPick() {
         let alert = UIAlertController(title: "Выберите страну", message: nil, preferredStyle: .alert)
-        alert.isModalInPopover = true
+//        alert.isModalInPopover = true
         curentPicker.dataSource = self
         curentPicker.delegate = self
         curentPicker.selectRow(self.presenter.currentCurrencyIndex ?? -1, inComponent: 0, animated: true)
@@ -111,15 +115,15 @@ class ConverterViewController: BaseViewController, UITextFieldDelegate {
     
     @objc private func toPick() {
         let alert = UIAlertController(title: "Выберите страну", message: nil, preferredStyle: .alert)
-        alert.isModalInPopover = true
         
         toPicker.dataSource = self
         toPicker.delegate = self
         toPicker.selectRow(self.presenter.convertCurrencyIndex ?? -1, inComponent: 0, animated: true)
         alert.view.addSubview(toPicker)
         toPicker.translatesAutoresizingMaskIntoConstraints = false
-        toPicker.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor).isActive = true
-        toPicker.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor).isActive = true
+        
+        toPicker.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor, constant: 20).isActive = true
+        toPicker.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor, constant: -20).isActive = true
         toPicker.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 60).isActive = true
         toPicker.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -44).isActive = true
         
@@ -209,7 +213,7 @@ extension ConverterViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let currency = self.presenter.currencies[row].entity!
-        return "\(currency.name!)"
+        return "\(currency.name!)  \(currency.sign!)"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

@@ -1,20 +1,23 @@
 import MapKit
 import CoreLocation
 
-class LocationManageR: CLLocationManager, CLLocationManagerDelegate {
+final class LocationManageR: CLLocationManager, CLLocationManagerDelegate {
+    //   how to use location manager:
+    //   let country: String = LocationManageR.shared.country
     
-    //   let manager = LocationManageR()
-    //   let country = manager.country()  how to use location manager
+    var country : String? {
+        didSet {
+            self.stopUpdatingLocation()
+        }
+    }   
+    static let shared = LocationManageR()
     
-    private var result : String = ""
-    
-    override init() {
+    private override init() {
         super.init()
         setupManager()
-        print("init")
     }
     
-    func setupManager() {
+    private func setupManager() {
         self.requestAlwaysAuthorization()
         self.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
@@ -34,13 +37,7 @@ class LocationManageR: CLLocationManager, CLLocationManagerDelegate {
         guard let location: CLLocation = manager.location else { return }
         fetchCityAndCountry(from: location) { country, error in
             guard let country = country, error == nil else { return }
-                self.result = country
-            print("getLocation: \(country)")
+                self.country = country
             }
-    }
-    
-    func country() -> String {
-        self.stopUpdatingLocation()
-        return self.result
     }
 }

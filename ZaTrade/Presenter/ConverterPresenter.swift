@@ -6,7 +6,6 @@ final class ConverterPresenter {
     weak var view: ConverterViewController?
     private var courses: [Course] = []
     let currencies: [EntityWrapper<Currency>]
-    let courseLoader = CourseLoader()
     
     var currentCurrencyIndex: Int? {
         didSet {
@@ -36,10 +35,9 @@ final class ConverterPresenter {
             if view?.input == "" {
                 view?.resultLabel.text = ""
             } else {
-                let course = calculateCourse()
-                let input = Double(view!.input!) ?? 0
-                let result = input * course
-                view?.resultLabel.text = " \(convertToTwo(result))"
+                let from = currencies[currentCurrencyIndex!].entity?.code
+                let to = currencies[convertCurrencyIndex!].entity?.code
+                view?.resultLabel.text = " \((CourseLoader.shared.convert(from: from!, to: to!, price: Double(view!.input!)!)))"
             }
         }
     }
@@ -55,35 +53,12 @@ final class ConverterPresenter {
     }
     
     func loadCourses()  {
-        courseLoader.loadArray(completionBlock: {data in 
-            self.courses.removeAll()
-            for element in data {
-                self.courses.append(element)
-            }
-        })
+        self.courses = CourseLoader.shared.courses
     }
     
-    func findValue(name: String) -> Double  {
-        var result: Double = 0
-        for element in courses {
-            if element.key == name {
-                result = element.value
-            }
-        }
-        return result
-    }
     
-    func calculateCourse() -> Double {
-        let curr = currencies[currentCurrencyIndex!].entity?.code
-        let conv = currencies[convertCurrencyIndex!].entity?.code
-        
-        let first = findValue(name: curr!)
-        let second = findValue(name: conv!)
-        
-        let result = second / first
-        return result
-    }
-    
-    func convertToTwo(_ n: Double) -> Double { Double(round(n * 100) / 100) }
-    
+}
+
+extension Double {
+    var convertToTwo: Double {(self * 100).rounded() / 100}
 }

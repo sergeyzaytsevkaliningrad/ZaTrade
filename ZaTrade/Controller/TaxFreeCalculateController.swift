@@ -13,8 +13,8 @@ class TaxFreeCalculateController: CardViewController {
     var chooseItem = UIBarButtonItem()
     
     private let spacing: CGFloat = 15
+    private let textColor = UIColor.black
     
-    var sign: String?
     // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
@@ -47,12 +47,15 @@ class TaxFreeCalculateController: CardViewController {
         self.view.addSubview(self.resultRUB)
         resultRUB.text = ""
         resultRUB.textAlignment = .center
+        resultRUB.textColor = self.textColor
     }
     
     private func layoutUSD() {
         self.view.addSubview(self.resultUSD)
         resultUSD.text = "" 
         resultUSD.textAlignment = .center
+        resultUSD.textColor = self.textColor
+
     }
     
     private func layoutTaxCount() {
@@ -61,6 +64,8 @@ class TaxFreeCalculateController: CardViewController {
         taxCount.textAlignment = .center
         taxCount.lineBreakMode = .byWordWrapping
         taxCount.numberOfLines = 0
+        taxCount.textColor = self.textColor
+
     }
     
     private func layoutToCountButton() {
@@ -78,25 +83,30 @@ class TaxFreeCalculateController: CardViewController {
         taxType.layer.borderWidth = 1
         taxType.layer.borderColor = UIColor.black.withAlphaComponent(0.3).cgColor
         taxType.selectRow(self.presenter.currentTaxIndex ?? -1, inComponent: 0, animated: true)
-        
+        taxType.layer.backgroundColor = UIColor.white.cgColor
+        taxType.setValue(textColor, forKey: "textColor")
     }
     
     private func layoutTopLabel() {
         self.view.addSubview(topCurrencyLabel)
-        topCurrencyLabel.text = sign
+        topCurrencyLabel.text = "¥"
         topCurrencyLabel.textAlignment = .natural
         topCurrencyLabel.layer.borderWidth = 1
         topCurrencyLabel.layer.borderColor = UIColor.black.withAlphaComponent(0.3).cgColor
         topCurrencyLabel.layer.cornerRadius = 6
         topCurrencyLabel.layer.backgroundColor = UIColor.white.cgColor        
-        
+        topCurrencyLabel.textColor = textColor
     }
     
     private func layoutTextField() {
         self.view.addSubview(self.textField)
-        textField.placeholder =  "Введите цену в валюте"
-        textField.borderStyle = .roundedRect
         textField.text = ""
+        textField.textColor = textColor
+        textField.layer.backgroundColor = UIColor.white.cgColor
+        textField.layer.cornerRadius = 6
+        textField.layer.borderWidth = 1
+        textField.attributedPlaceholder = NSAttributedString(string: " Введите цену в валюте", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        textField.layer.borderColor = UIColor.black.withAlphaComponent(0.3).cgColor
         textField.keyboardType = .numberPad
     }
     
@@ -132,25 +142,25 @@ class TaxFreeCalculateController: CardViewController {
             
             self.taxType.topAnchor.constraint(equalTo: self.topCurrencyLabel.bottomAnchor, constant: spacing),
             self.taxType.trailingAnchor.constraint(equalTo: self.cardView.trailingAnchor, constant: -spacing),
-            self.taxType.heightAnchor.constraint(equalToConstant: 60),
+            self.taxType.heightAnchor.constraint(equalToConstant: 80),
             self.taxType.leadingAnchor.constraint(equalTo: self.cardView.leadingAnchor, constant: spacing),
             
-            taxCount.topAnchor.constraint(equalTo: self.taxType.bottomAnchor, constant: spacing),
-            taxCount.leadingAnchor.constraint(equalTo: self.cardView.leadingAnchor, constant: spacing),
-            taxCount.trailingAnchor.constraint(equalTo: self.cardView.trailingAnchor, constant: -spacing),
-            taxCount.heightAnchor.constraint(equalTo: self.textField.heightAnchor),
+            self.taxCount.topAnchor.constraint(equalTo: self.toCountButton.bottomAnchor, constant: spacing/2),
+            self.taxCount.leadingAnchor.constraint(equalTo: self.cardView.leadingAnchor, constant: spacing),
+            self.taxCount.trailingAnchor.constraint(equalTo: self.cardView.trailingAnchor, constant: -spacing),
+            self.taxCount.heightAnchor.constraint(equalTo: self.textField.heightAnchor),
             
-            resultUSD.leadingAnchor.constraint(equalTo: self.cardView.leadingAnchor, constant: spacing),
-            resultUSD.topAnchor.constraint(equalTo: self.taxCount.bottomAnchor, constant: spacing),
-            resultUSD.heightAnchor.constraint(equalTo: self.taxCount.heightAnchor),
-            resultUSD.trailingAnchor.constraint(equalTo: self.cardView.trailingAnchor, constant: -spacing),
+            self.resultUSD.leadingAnchor.constraint(equalTo: self.cardView.leadingAnchor, constant: spacing),
+            self.resultUSD.topAnchor.constraint(equalTo: self.taxCount.bottomAnchor, constant: spacing/2),
+            self.resultUSD.heightAnchor.constraint(equalTo: self.taxCount.heightAnchor),
+            self.resultUSD.trailingAnchor.constraint(equalTo: self.cardView.trailingAnchor, constant: -spacing),
             
-            resultRUB.topAnchor.constraint(equalTo: resultUSD.bottomAnchor, constant: spacing),
-            resultRUB.leadingAnchor.constraint(equalTo: self.cardView.leadingAnchor, constant: spacing),
-            resultRUB.trailingAnchor.constraint(equalTo: self.cardView.trailingAnchor, constant: -spacing),
-            resultRUB.heightAnchor.constraint(equalTo: resultUSD.heightAnchor),
+            self.resultRUB.topAnchor.constraint(equalTo: resultUSD.bottomAnchor, constant: spacing/2),
+            self.resultRUB.leadingAnchor.constraint(equalTo: self.cardView.leadingAnchor, constant: spacing),
+            self.resultRUB.trailingAnchor.constraint(equalTo: self.cardView.trailingAnchor, constant: -spacing),
+            self.resultRUB.heightAnchor.constraint(equalTo: resultUSD.heightAnchor),
             
-            self.toCountButton.topAnchor.constraint(equalTo: self.resultRUB.bottomAnchor, constant: spacing),
+            self.toCountButton.topAnchor.constraint(equalTo: self.taxType.bottomAnchor, constant: spacing),
             self.toCountButton.centerXAnchor.constraint(equalTo: self.cardView.centerXAnchor)
             
             
@@ -172,7 +182,6 @@ class TaxFreeCalculateController: CardViewController {
     
     @objc private func tabItemAction() {
         let alert = UIAlertController(title: "Выберите страну", message: nil, preferredStyle: .alert)
-        alert.isModalInPopover = true
         
         let pickerView = UIPickerView()
         pickerView.tag = 2

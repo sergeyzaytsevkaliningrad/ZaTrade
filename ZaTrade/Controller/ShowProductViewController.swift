@@ -15,13 +15,8 @@ final class ShowProductViewController: CardViewController {
     private let typeTaxLabel = UILabel()
     private let price = UILabel()
     private let priceLabel = UILabel()
-    var taxSize = UILabel()
-    var taxSizeLabel = UILabel()
-    var afterTaxRUB = UILabel()
-    var afterTaxRUBLabel = UILabel()
-    var afterTaxUSD = UILabel()
-    var afterTaxUSDLabel = UILabel()
-    
+    private let priceRUB = UILabel()
+    private let priceRUBLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +41,7 @@ final class ShowProductViewController: CardViewController {
         setupDescriptionProductInfoLabel()
         setupTypeTaxLabel()
         setupTypeTaxInfoLabel()
-        setupTaxSize()
-        setupAfterTaxUSD()
-        setupAfterTaxRUB()
-        self.presenter.calculatePrice()
+        setupPriceRUB()
     }
     
     
@@ -73,12 +65,8 @@ final class ShowProductViewController: CardViewController {
             self.descriptionProductLabel,
             self.typeTax,
             self.typeTaxLabel,
-            self.taxSize,
-            self.taxSizeLabel,
-            self.afterTaxRUB,
-            self.afterTaxRUBLabel,
-            self.afterTaxUSD,
-            self.afterTaxUSDLabel
+            self.priceRUB,
+            self.priceRUBLabel
             
         ].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
         
@@ -119,26 +107,12 @@ final class ShowProductViewController: CardViewController {
             self.priceLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
             self.priceLabel.widthAnchor.constraint(equalToConstant: 330),
             
-            self.taxSize.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 10),
-            self.taxSize.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
+            self.priceRUB.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 10),
+            self.priceRUB.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
             
-            self.taxSizeLabel.topAnchor.constraint(equalTo: self.taxSize.bottomAnchor, constant: 10),
-            self.taxSizeLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
-            self.taxSizeLabel.widthAnchor.constraint(equalToConstant: 330),
-            
-            self.afterTaxUSD.topAnchor.constraint(equalTo: self.taxSizeLabel.bottomAnchor, constant: 10),
-            self.afterTaxUSD.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
-            
-            self.afterTaxUSDLabel.topAnchor.constraint(equalTo: self.afterTaxUSD.bottomAnchor, constant: 10),
-            self.afterTaxUSDLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
-            self.afterTaxUSDLabel.widthAnchor.constraint(equalToConstant: 330),
-            
-            self.afterTaxRUB.topAnchor.constraint(equalTo: self.afterTaxUSDLabel.bottomAnchor, constant: 10),
-            self.afterTaxRUB.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
-            
-            self.afterTaxRUBLabel.topAnchor.constraint(equalTo: self.afterTaxRUB.bottomAnchor, constant: 10),
-            self.afterTaxRUBLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
-            self.afterTaxRUBLabel.widthAnchor.constraint(equalToConstant: 330),
+            self.priceRUBLabel.topAnchor.constraint(equalTo: self.priceRUB.bottomAnchor, constant: 10),
+            self.priceRUBLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30),
+            self.priceRUBLabel.widthAnchor.constraint(equalToConstant: 330),
             
         ].forEach {$0.isActive = true}
         
@@ -234,46 +208,19 @@ final class ShowProductViewController: CardViewController {
         descriptionProductLabel.text = presenter.product!.entity?.extra
     }
     
-    func setupTaxSize() {
-        view.addSubview(self.taxSize)
-        taxSize.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        taxSize.font = UIFont(name: "Rubik-Medium", size: 18)
-        taxSize.text = "Размер TaxFree"
+    func setupPriceRUB() {
+        view.addSubview(self.priceRUB)
+        priceRUB.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        priceRUB.font = UIFont(name: "Rubik-Medium", size: 18)
+        priceRUB.text = "Цена в рублях"
         
-        view.addSubview(taxSizeLabel)
-        taxSizeLabel.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        taxSizeLabel.layer.masksToBounds = true
-        taxSizeLabel.font = UIFont(name: "Rubik-Light", size: 18)
-        taxSizeLabel.numberOfLines = 0
-        taxSizeLabel.lineBreakMode = .byWordWrapping
-    }
-    
-    func setupAfterTaxRUB() {
-        view.addSubview(self.afterTaxRUB)
-        afterTaxRUB.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        afterTaxRUB.font = UIFont(name: "Rubik-Medium", size: 18)
-        afterTaxRUB.text = "Цена в рублях после TaxFree"
-        
-        view.addSubview(self.afterTaxRUBLabel)
-        afterTaxRUBLabel.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        afterTaxRUBLabel.layer.masksToBounds = true
-        afterTaxRUBLabel.font = UIFont(name: "Rubik-Light", size: 18)
-        afterTaxRUBLabel.numberOfLines = 0
-        afterTaxRUBLabel.lineBreakMode = .byWordWrapping
-    }
-    
-    func setupAfterTaxUSD() {
-        view.addSubview(self.afterTaxUSD)
-        afterTaxUSD.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        afterTaxUSD.font = UIFont(name: "Rubik-Medium", size: 18)
-        afterTaxUSD.text = "Цена в валюте после TaxFree"
-        
-        view.addSubview(self.afterTaxUSDLabel)
-        afterTaxUSDLabel.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        afterTaxUSDLabel.layer.masksToBounds = true
-        afterTaxUSDLabel.font = UIFont(name: "Rubik-Light", size: 18)
-        afterTaxUSDLabel.numberOfLines = 0
-        afterTaxUSDLabel.lineBreakMode = .byWordWrapping
+        view.addSubview(self.priceRUBLabel)
+        priceRUBLabel.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        priceRUBLabel.layer.masksToBounds = true
+        priceRUBLabel.font = UIFont(name: "Rubik-Light", size: 18)
+        priceRUBLabel.numberOfLines = 0
+        priceRUBLabel.lineBreakMode = .byWordWrapping
+        priceRUBLabel.text = presenter.product!.entity!.formattedRubPrice
     }
 
     override func viewDidLayoutSubviews() {

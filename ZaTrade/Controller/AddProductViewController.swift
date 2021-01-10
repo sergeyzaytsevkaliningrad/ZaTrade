@@ -40,6 +40,13 @@ final class AddProductViewController: CardViewController {
         self.setup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if isEditingView == true {
+            findCountry()
+            findTax()
+        }
+    }
+    
     private func setup() {
         setupNameLabel()
         setupNameTextField()
@@ -109,7 +116,36 @@ final class AddProductViewController: CardViewController {
         ].forEach {$0.isActive = true}
         
     }
-        
+    
+    func findCountry() {
+        var i = 0
+        for country in self.presenter.countries {
+            if (country.entity?.code! == self.presenter.product?.entity?.country?.code!)
+            {
+                self.presenter.currentCountryIndex = i
+                self.chooseCountry.countryTitle.textColor = .black
+                break
+            }
+            i+=1
+        }
+    }
+    
+    func findTax() {
+        var i = 0
+        self.presenter.foundTax = self.presenter.tax
+        for tax in self.presenter.tax {
+            if (tax.entity?.name! == self.presenter.product?.entity?.tax?.name!)
+            {
+                self.presenter.currentTaxIndex = i
+                self.typeTax.countryTitle.textColor = .black
+                break
+            }
+            i+=1
+        }
+    }
+    
+    
+    
     func setupNameLabel() {
         view.addSubview(self.name)
         name.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -156,11 +192,12 @@ final class AddProductViewController: CardViewController {
         pickerView_country.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 60).isActive = true
         pickerView_country.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -44).isActive = true
         
-        
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Выбрать", style: .default, handler: { (action: UIAlertAction) in
             self.presenter.currentCountryIndex = pickerView_country.selectedRow(inComponent: 0)
+            
         }))
+        
         
         self.present(alert, animated: true)
     }
@@ -193,11 +230,12 @@ final class AddProductViewController: CardViewController {
         pickerView_tax.widthAnchor.constraint(equalToConstant: 270).isActive = true
         pickerView_tax.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 60).isActive = true
         pickerView_tax.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -44).isActive = true
-    
+        
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Выбрать", style: .default, handler: { (action: UIAlertAction) in
             self.presenter.currentTaxIndex = pickerView_tax.selectedRow(inComponent: 0)
         }))
+        
         
         self.present(alert, animated: true)
     }
@@ -285,7 +323,7 @@ extension AddProductViewController: UITextFieldDelegate, UIPickerViewDelegate, U
             return self.presenter.countries.count
         }
         else {
-            return self.presenter.tax.count
+            return self.presenter.foundTax.count
         }
     }
     
@@ -295,17 +333,21 @@ extension AddProductViewController: UITextFieldDelegate, UIPickerViewDelegate, U
             return "\(country.flag!) \(country.name!)"
         }
         else {
-            let tax = self.presenter.tax[row].entity!
+            let tax = self.presenter.foundTax[row].entity!
             return "\(tax.name!)"
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (pickerView.tag == 1) {
-            presenter.currentCountryIndex = row
-            presenter.selectedCountry = self.presenter.countries[row].entity!.name!
+            presenter.selectedCountry = self.presenter.countries[row].entity!.code!
+            presenter.loadTax()
+            presenter.checkTextfields()
+            self.chooseCountry.countryTitle.textColor = .black
         }
         else {
-            presenter.currentTaxIndex = row
+            presenter.selectedTax = self.presenter.foundTax[row].entity!.name!
+            presenter.checkTextfields()
+            self.typeTax.countryTitle.textColor = .black
         }
     }
 }

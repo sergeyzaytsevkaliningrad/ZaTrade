@@ -16,12 +16,4 @@ final class ShowProductPresenter {
         product!.delete()
         viewController?.navigationController?.popViewController(animated: true)
     }
-    
-    func calculatePrice() {
-
-//        self.viewController!.taxSizeLabel.text =
-//        self.viewController?.afterTaxUSDLabel.text =
-//        self.viewController?.afterTaxRUBLabel.text =
-    }
-    
 }

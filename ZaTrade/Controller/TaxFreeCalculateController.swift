@@ -90,7 +90,7 @@ class TaxFreeCalculateController: CardViewController {
     private func layoutTopLabel() {
         self.view.addSubview(topCurrencyLabel)
         topCurrencyLabel.text = "¥"
-        topCurrencyLabel.textAlignment = .natural
+        topCurrencyLabel.textAlignment = .center
         topCurrencyLabel.layer.borderWidth = 1
         topCurrencyLabel.layer.borderColor = UIColor.black.withAlphaComponent(0.3).cgColor
         topCurrencyLabel.layer.cornerRadius = 6
@@ -191,8 +191,7 @@ class TaxFreeCalculateController: CardViewController {
         
         alert.view.addSubview(pickerView)
         pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor).isActive = true
-        pickerView.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor).isActive = true
+        pickerView.widthAnchor.constraint(equalToConstant: 270).isActive = true
         pickerView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 60).isActive = true
         pickerView.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -44).isActive = true
         

@@ -175,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				55AC985825A84DB0003B5B04 /* Product+CoreDataClass.swift */,
-				55065A3D2558735800D2EDEC /* ProductModel.swift */,
 				55325E93256A517600079D04 /* EntityWrapper.swift */,
 				55402776256EDADB0008492F /* DataInitializer.swift */,
 				5540277B256EE3370008492F /* Data.json */,
@@ -352,7 +351,6 @@
 				5522AD66257FC5AD00823533 /* ProductViewCell.swift in Sources */,
 				55065A502558737400D2EDEC /* InformationPresenter.swift in Sources */,
 				55065A5C2558738B00D2EDEC /* Controls.swift in Sources */,
-				55065A412558735800D2EDEC /* ProductModel.swift in Sources */,
 				5523F6B1255FEF2E001B919B /* TabBarController.swift in Sources */,
 				128CFC9D25A532C900CAFE8C /* CameraViewPresenter.swift in Sources */,
 				5580346A257F5FCA004448ED /* ProductListPresenter.swift in Sources */,

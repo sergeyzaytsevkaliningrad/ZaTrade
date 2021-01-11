@@ -4,7 +4,7 @@ import CoreData
 @objc(Product)
 public class Product: NSManagedObject {
     
-    private var formatter: NumberFormatter {
+    var formatter: NumberFormatter {
         let result = NumberFormatter()
         result.numberStyle = .currency
         result.locale = Locale(identifier: "ru_RU")
@@ -23,4 +23,8 @@ public class Product: NSManagedObject {
         return formatter.string(from: NSNumber(value: price))!
     }
     
+    var countryWithFlag: String {
+        return "\(self.country!.name!) \(self.country!.flag!)"
+    }
+        
 }

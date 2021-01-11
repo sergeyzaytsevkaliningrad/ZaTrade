@@ -41,6 +41,10 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Number recognizer</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need your location to make all work</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location to make all work</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Rubik-Bold.ttf</string>

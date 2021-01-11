@@ -263,8 +263,10 @@ final class SwapButton: UIButton {
     func setupUI() {
         self.frame.size = CGSize(width: 40, height: 40)
         self.setImage(UIImage(systemName: "arrow.2.circlepath.circle"), for: .normal)
-        self.backgroundColor = .white
+        self.setTitle("Обменять", for: .normal)
         self.layer.cornerRadius = 10
+        self.backgroundColor = .white
+        self.setTitleColor(.black, for: .normal)
     }
     
 }

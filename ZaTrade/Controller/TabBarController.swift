@@ -1,8 +1,9 @@
 import UIKit
 
 
-class TabBarController: UITabBarController, UITabBarControllerDelegate {
+class TabBarController: UITabBarController, UITabBarControllerDelegate, UIPickerViewDelegate {
     
+
     override func viewDidLoad() {
         self.delegate = self
         
@@ -29,5 +30,4 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         self.navigationItem.title = viewController.title
     }
-    
 }

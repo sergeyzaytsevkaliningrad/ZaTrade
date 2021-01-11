@@ -19,7 +19,7 @@ public class Product: NSManagedObject {
     
     var formattedRubPrice: String {
         let formatter = self.formatter
-        let price = self.price // TODO: перевод в рубли
+        let price = CourseLoader.shared.convertToRub(currency: self.country!.currency!.code!, price: self.price)
         return formatter.string(from: NSNumber(value: price))!
     }
     

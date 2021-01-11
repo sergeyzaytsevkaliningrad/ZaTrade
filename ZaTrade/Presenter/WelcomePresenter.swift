@@ -44,7 +44,7 @@ class WelcomePresenter {
     
     @objc func openTaxFreeInformation() {
         let informationController = InformationViewController()
-        // TODO: add data to view controller
+        // TODO: add data to view controller (set current article)
         self.viewController!.navigationController?.pushViewController(informationController, animated: true)
     }
     

@@ -18,6 +18,8 @@ final class CameraViewController: UIViewController {
     private var classificationRequest: VNCoreMLRequest!
     
     private var mediaPicker = MediaPicker()
+
+    
     
     override func loadView() {
         
@@ -34,6 +36,7 @@ final class CameraViewController: UIViewController {
     }
 
    
+    func showCamera() { mediaPicker.showMediaPicker(from: self) }
     
     private func showIfPriceFound(){
         view.addSubview(ifPriceFound)
@@ -76,17 +79,7 @@ final class CameraViewController: UIViewController {
     //MARK: - The start of addons&&func
     
     
-    
-    func showCamera() {
-        mediaPicker.showMediaPicker(from: self)
-//        let cameraVC = UIImagePickerController()
-//        cameraVC.sourceType = .camera
-//        cameraVC.allowsEditing = true
-//        cameraVC.delegate = self
-//        present(cameraVC, animated: true)
-
-    }
-    
+   
     private func priceIsFound() {
         self.ifPriceFound.isHidden = false
         self.ifPriceNotFound.isHidden = true
@@ -119,11 +112,12 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
      
       isLoading()
      
+       // self.cameraViewPresenter.classify(image: image)
     
       
       Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
         DispatchQueue.main.async { self.isNotLoading() }
-        self.cameraViewPresenter.classify(image: image)
+    //    self.cameraViewPresenter.classify(image: image)
         self.priceIsNotFound()
       }
     }

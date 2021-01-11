@@ -20,12 +20,15 @@ final class CameraViewPresenter {
     private let ifPriceFound = IfPriceFound()
     private let ifPriceNotFound = IfPriceNotFound()
     
+    var predict = 0
+    
+    
     
     
     //Fist variant of using ML
      func predictImage() {
       do {
-        let model = try VNCoreMLModel(for: PriceRecognizer().model)
+        let model = try VNCoreMLModel(for: NumberClassifier().model)
         classificationRequest = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
           self?.processClassifications(for: request, error: error)
         })
@@ -33,39 +36,22 @@ final class CameraViewPresenter {
       } catch { fatalError("Failed to load Vision ML model: \(error)") }
     }
 
-    //Second variant of using ML
-//  private func predictImage(_ image : UIImage) {
-//
-//        let model = PriceRecognizer().model
-//        let vnModel = try! VNCoreMLModel(for: model)
-//        let request = VNCoreMLRequest(model: vnModel) { (request, error) in
-//
-//            guard let result = request.results as? [VNClassificationObservation],
-//                  let prediction = result.first else { return }
-//
-//        }
-//        let hadler = VNImageRequestHandler(cgImage: image.cgImage!, options: [:])
-//        try! hadler.perform([request])
-//
-//
-//
-//    }
     
     
     //Have to think is I need it for ML
     //one of the copys
-     func classify(image: UIImage) {
-        let vnModel = try! VNCoreMLModel(for: PriceRecognizer().model)
+    func classify(image: UIImage, complitionBlock: @escaping (Int) -> ()) -> Void {
+        let vnModel = try! VNCoreMLModel(for: NumberClassifier().model)
         let request = VNCoreMLRequest(model: vnModel) { (request, error) in
             
                     guard let result = request.results as? [VNClassificationObservation],
-                          let prediction = result.first else { return }
+                          let prediction = result.first?.requestRevision else { return }
+            print("-----------")
+            print(prediction)
+            print("-----------")
+            complitionBlock(prediction)
         }
-//        let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue))
-//      guard let ciImage = CIImage(image: image) else {
-//        print("Unable to create a CIImage from UIImage")
-//        return
-//      }
+       // print(request)
         
         DispatchQueue.main.async {
             let hadler = VNImageRequestHandler(cgImage: image.cgImage!, options: [:])
@@ -92,7 +78,7 @@ final class CameraViewPresenter {
     
      func setupClassificationRequest() {
       do {
-        let model = try VNCoreMLModel(for: PriceRecognizer().model)
+        let model = try VNCoreMLModel(for: NumberClassifier().model)
         classificationRequest = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
           self?.processClassifications(for: request, error: error)
         })
@@ -112,14 +98,21 @@ public enum MediaPickerType: String {
 }
 
 public protocol MediaPickerDelegate: NSObjectProtocol {
+   
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any])
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
 }
 
 public class MediaPicker: NSObject {
+    let cameraViewPresenter = CameraViewPresenter()
     //Data
     var viewController: UIViewController? = nil
     var imagePicker: UIImagePickerController = UIImagePickerController()
+    
+    
+    
+    
   
 
     //Delegate
@@ -128,6 +121,8 @@ public class MediaPicker: NSObject {
     public override init() {
         super.init()
     }
+    
+    
 
     public func showMediaPicker(from presentingViewController: UIViewController, type: MediaPickerType = .photos, sources: [MediaPickerSource] = [.camera, .library]) {
         //Set Data
@@ -141,6 +136,8 @@ public class MediaPicker: NSObject {
             let cameraAction: UIAlertAction = UIAlertAction(title: "Camera", style: .default) { (action) in
                 self.presentCameraPicker(type: type)
             }
+            
+            
             cameraAction.setValue(UIImage(named: "gallery_picker_camera"), forKey: "image")
             cameraAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
             alertController.addAction(cameraAction)
@@ -160,6 +157,7 @@ public class MediaPicker: NSObject {
         //Show Alert
         self.viewController?.present(alertController, animated: true, completion: nil)
     }
+    
 
      func presentCameraPicker(type: MediaPickerType) {
         //Setup Types
@@ -201,8 +199,26 @@ public class MediaPicker: NSObject {
 extension MediaPicker: UIImagePickerControllerDelegate {
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         //Dismiss Picker Controller
-        picker.dismiss(animated: true) {
-            self.delegate?.imagePickerController(picker, didFinishPickingMediaWithInfo: info)
+        
+        picker.dismiss(animated: true) { [self] in
+            guard let image = info[.editedImage] as? UIImage else {
+                print("No image found")
+                return
+            }
+            cameraViewPresenter.classify(image: image) { predict in
+                self.delegate?.imagePickerController(picker, didFinishPickingMediaWithInfo: info)
+                
+                weak var viewController: AddProductMenuViewController?
+                
+                viewController?.dismiss(animated: false, completion: nil)
+                let vc = AddProductViewController(isEditingView: false)
+                self.viewController!.navigationController?.pushViewController(vc, animated: true)
+                vc.presenter.model.ProductPrice = Double(predict)
+                vc.priceTextField.text = "\(predict)"
+                print("HEY")
+                print(vc.presenter.model.ProductPrice)
+                print("NO")
+            }
         }
     }
 
@@ -227,14 +243,3 @@ extension Bundle {
         return Bundle(url: URL(fileURLWithPath: urlString))
     }
 }
-    //need to edit name CameraView
-//extension CameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//    private func imagePickerController(_ picker: UIImagePickerController, didFinshPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]){
-//        guard let image = info[.editedImage] as? UIImage else {return}
-//        self.predictImage()
-//        dismiss(animated: true){
-//        self.showCamera()
-//        }
-//    }
-//}
-

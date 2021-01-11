@@ -2,14 +2,13 @@ import Foundation
 
 final class AddProductPresenter {
     var view: AddProductViewController?
-    var showPrView: ShowProductPresenter?
     var isEditing: Bool = true
     var product: EntityWrapper<Product>?
     var countries: [EntityWrapper<Country>] = []
     var tax: [EntityWrapper<Tax>] = []
     var selectedCountry: String
     var selectedTax: String
-    var foundTax : [EntityWrapper<Tax>] = []
+    var foundTax: [EntityWrapper<Tax>] = []
     
     var currentCountryIndex: Int? {
         didSet {

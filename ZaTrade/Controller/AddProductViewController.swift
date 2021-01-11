@@ -256,8 +256,6 @@ final class AddProductViewController: CardViewController {
         priceTextField.placeholder = "Цена"
         if let text = presenter.product?.entity?.price {
             priceTextField.text = "\(text)"
-        } else {
-            priceTextField.text = ""
         }
         priceTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }

@@ -22,7 +22,6 @@
 		55065A30255872EE00D2EDEC /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2A255872EE00D2EDEC /* ProductListViewController.swift */; };
 		55065A31255872EE00D2EDEC /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2B255872EE00D2EDEC /* AddProductViewController.swift */; };
 		55065A32255872EF00D2EDEC /* TaxFreeCalculateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2C255872EE00D2EDEC /* TaxFreeCalculateController.swift */; };
-		55065A412558735800D2EDEC /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3D2558735800D2EDEC /* ProductModel.swift */; };
 		55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A482558737300D2EDEC /* AddProductPresenter.swift */; };
 		55065A4E2558737400D2EDEC /* TaxFreeCalculatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A492558737300D2EDEC /* TaxFreeCalculatePresenter.swift */; };
 		55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */; };
@@ -73,7 +72,6 @@
 		55065A352558731700D2EDEC /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
 		55065A362558731700D2EDEC /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		55065A372558731700D2EDEC /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
-		55065A3D2558735800D2EDEC /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		55065A482558737300D2EDEC /* AddProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductPresenter.swift; sourceTree = "<group>"; };
 		55065A492558737300D2EDEC /* TaxFreeCalculatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxFreeCalculatePresenter.swift; sourceTree = "<group>"; };
 		55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductPresenter.swift; sourceTree = "<group>"; };
@@ -116,15 +114,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		128CFC9825A4B50700CAFE8C /* моя херня */ = {
-			isa = PBXGroup;
-			children = (
-				12061C4A257AF07900AA7CD9 /* CameraViewController.swift */,
-				128CFC9925A532A300CAFE8C /* TakenImageController.swift */,
-			);
-			path = "моя херня";
-			sourceTree = "<group>";
-		};
 		55065A0E2558728000D2EDEC /* Additions */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,7 +136,8 @@
 				5523F6B0255FEF2E001B919B /* TabBarController.swift */,
 				55065A2C255872EE00D2EDEC /* TaxFreeCalculateController.swift */,
 				55065A682558754A00D2EDEC /* WelcomeViewController.swift */,
-				128CFC9825A4B50700CAFE8C /* моя херня */,
+				12061C4A257AF07900AA7CD9 /* CameraViewController.swift */,
+				128CFC9925A532A300CAFE8C /* TakenImageController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

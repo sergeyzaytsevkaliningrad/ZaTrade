@@ -208,16 +208,9 @@ extension MediaPicker: UIImagePickerControllerDelegate {
             cameraViewPresenter.classify(image: image) { predict in
                 self.delegate?.imagePickerController(picker, didFinishPickingMediaWithInfo: info)
                 
-                weak var viewController: AddProductMenuViewController?
-                
-                viewController?.dismiss(animated: false, completion: nil)
                 let vc = AddProductViewController(isEditingView: false)
-                self.viewController!.navigationController?.pushViewController(vc, animated: true)
-                vc.presenter.model.ProductPrice = Double(predict)
                 vc.priceTextField.text = "\(predict)"
-                print("HEY")
-                print(vc.presenter.model.ProductPrice)
-                print("NO")
+                self.viewController!.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }

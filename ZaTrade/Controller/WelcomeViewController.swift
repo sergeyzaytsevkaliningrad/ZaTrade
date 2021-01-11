@@ -70,8 +70,7 @@ final class WelcomeViewController: BaseViewController {
         
         alert.view.addSubview(pickerView)
         pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor).isActive = true
-        pickerView.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor).isActive = true
+        pickerView.widthAnchor.constraint(equalToConstant: 270).isActive = true
         pickerView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 60).isActive = true
         pickerView.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -44).isActive = true
         

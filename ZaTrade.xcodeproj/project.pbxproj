@@ -23,7 +23,6 @@
 		55065A31255872EE00D2EDEC /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2B255872EE00D2EDEC /* AddProductViewController.swift */; };
 		55065A32255872EF00D2EDEC /* TaxFreeCalculateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A2C255872EE00D2EDEC /* TaxFreeCalculateController.swift */; };
 		55065A3A2558733400D2EDEC /* HotdogClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55065A392558733400D2EDEC /* HotdogClassifier.mlmodel */; };
-		55065A412558735800D2EDEC /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A3D2558735800D2EDEC /* ProductModel.swift */; };
 		55065A4D2558737400D2EDEC /* AddProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A482558737300D2EDEC /* AddProductPresenter.swift */; };
 		55065A4E2558737400D2EDEC /* TaxFreeCalculatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A492558737300D2EDEC /* TaxFreeCalculatePresenter.swift */; };
 		55065A4F2558737400D2EDEC /* ShowProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */; };
@@ -75,7 +74,6 @@
 		55065A362558731700D2EDEC /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		55065A372558731700D2EDEC /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		55065A392558733400D2EDEC /* HotdogClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HotdogClassifier.mlmodel; sourceTree = "<group>"; };
-		55065A3D2558735800D2EDEC /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		55065A482558737300D2EDEC /* AddProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductPresenter.swift; sourceTree = "<group>"; };
 		55065A492558737300D2EDEC /* TaxFreeCalculatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxFreeCalculatePresenter.swift; sourceTree = "<group>"; };
 		55065A4A2558737300D2EDEC /* ShowProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProductPresenter.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				55AC985825A84DB0003B5B04 /* Product+CoreDataClass.swift */,
-				55065A3D2558735800D2EDEC /* ProductModel.swift */,
 				55325E93256A517600079D04 /* EntityWrapper.swift */,
 				55402776256EDADB0008492F /* DataInitializer.swift */,
 				5540277B256EE3370008492F /* Data.json */,
@@ -349,7 +346,6 @@
 				12061CA7257D250100AA7CD9 /* IfPriceFound.swift in Sources */,
 				55065A502558737400D2EDEC /* InformationPresenter.swift in Sources */,
 				55065A5C2558738B00D2EDEC /* Controls.swift in Sources */,
-				55065A412558735800D2EDEC /* ProductModel.swift in Sources */,
 				5523F6B1255FEF2E001B919B /* TabBarController.swift in Sources */,
 				12061CAA257D251B00AA7CD9 /* IfPriceNotFound.swift in Sources */,
 				5580346A257F5FCA004448ED /* ProductListPresenter.swift in Sources */,

@@ -124,23 +124,28 @@ final class AddProductViewController: CardViewController {
             {
                 self.presenter.currentCountryIndex = i
                 self.chooseCountry.countryTitle.textColor = .black
+                self.presenter.selectedCountry = self.presenter.product?.entity?.country?.code! ?? ""
                 break
+                
             }
             i+=1
         }
     }
-    
+
     func findTax() {
         var i = 0
-        self.presenter.foundTax = self.presenter.tax
-        for tax in self.presenter.tax {
-            if (tax.entity?.name! == self.presenter.product?.entity?.tax?.name!)
-            {
-                self.presenter.currentTaxIndex = i
-                self.typeTax.countryTitle.textColor = .black
-                break
+        if self.presenter.selectedCountry != "" {
+            self.presenter.loadTax()
+            for tax in self.presenter.foundTax {
+                if (tax.entity?.name! == self.presenter.product?.entity?.tax?.name!)
+                {
+                    self.presenter.currentTaxIndex = i
+                    self.typeTax.countryTitle.textColor = .black
+                    self.presenter.selectedTax = self.presenter.product?.entity?.tax?.name! ?? ""
+                    break
+                }
+                i+=1
             }
-            i+=1
         }
     }
     

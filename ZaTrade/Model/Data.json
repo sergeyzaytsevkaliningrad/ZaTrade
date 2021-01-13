@@ -25,12 +25,12 @@
         {"name": "FIN: Сверхсниженная", "rate": 10, "country": "FI"},
                 
         {"name": "POL: Стандартная", "rate": 23, "country": "PL"},
-        {"name": "POL: Сниженная", "rate": 8, "country": "PL"},
-        {"name": "POL: Сверхсниженная", "rate": 5, "country": "PL"},
+        {"name": "POL: продукты питания, медикаменты", "rate": 8, "country": "PL"},
+        {"name": "POL: Сельскохозяйственные товары, поделки", "rate": 5, "country": "PL"},
                 
         {"name": "ESP: Стандартная", "rate": 21, "country": "ES"},
-        {"name": "ESP: Сниженная", "rate": 10, "country": "ES"},
-        {"name": "ESP: Сверхсниженная", "rate": 4, "country": "ES"},
+        {"name": "ESP: Продукты питания", "rate": 10, "country": "ES"},
+        {"name": "ESP: Фармацевтика, книги, журналы", "rate": 4, "country": "ES"},
                 
         {"name": "GBR: Стандартная", "rate": 20, "country": "GB"},
         {"name": "GBR: Сниженная", "rate": 5, "country": "GB"},

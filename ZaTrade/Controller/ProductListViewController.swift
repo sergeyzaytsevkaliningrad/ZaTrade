@@ -62,7 +62,7 @@ extension ProductListViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width - (collectionView.layoutMargins.left + collectionView.layoutMargins.right), height: 60)
+        return CGSize(width: self.view.frame.width - (collectionView.layoutMargins.left + collectionView.layoutMargins.right), height: 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

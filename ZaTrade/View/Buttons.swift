@@ -125,6 +125,7 @@ final class CustomButtonPlus: UIButton {
     
     private func setupUI() {
         clear()
+        addSubview(plus)
         self.backgroundColor = color
         self.layer.cornerRadius = 18
         
@@ -151,7 +152,6 @@ final class CustomButtonPlus: UIButton {
         plus.adjustsFontSizeToFitWidth = true
         plus.minimumScaleFactor = 0.2
         plus.numberOfLines = 0
-        addSubview(plus)
     }
     
     override var isHighlighted: Bool {

@@ -17,8 +17,7 @@ class WelcomePresenter {
     init() {
         self.counties = EntityWrapper<Country>.all(sortKey: "name", ascending: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let countryCode = LocationManageR.shared.country
-            print(countryCode)
+            let countryCode = LocationManageR.shared.country! as String
             let country = EntityWrapper<Country>.getByField(field: "code", value: countryCode)
             if !country.isEmpty {
                 for index in 0..<self.counties.count {
@@ -35,6 +34,7 @@ class WelcomePresenter {
         if currentCountryIndex != nil {
             let tabBarController = TabBarController()
             self.viewController!.navigationController?.pushViewController(tabBarController, animated: true)
+            tabBarController.navigationController?.navigationItem.leftBarButtonItem = nil
         }
     }
     

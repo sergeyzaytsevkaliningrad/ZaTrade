@@ -63,7 +63,7 @@ final class WelcomeViewController: BaseViewController {
     
     func showChooseCountryAlert() {
         let alert = UIAlertController(title: "Выберите страну", message: nil, preferredStyle: .alert)
-        alert.isModalInPopover = true
+        //alert.isModalInPopover = true
         
         let pickerView = UIPickerView()
         pickerView.dataSource = self
